@@ -1078,6 +1078,78 @@ pre.mermaid-error {
 .plan-permission-header .permission-icon { color: var(--success) !important; }
 .plan-permission-header .permission-title { color: var(--success) !important; }
 
+/* Plan permission actions: wrap buttons */
+.plan-permission-actions {
+  flex-wrap: wrap;
+}
+.plan-permission-actions .plan-btn-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+.plan-permission-actions .plan-btn-clear:hover {
+  background: var(--input-bg);
+  opacity: 1;
+}
+.plan-permission-actions .plan-btn-clear .lucide { width: 14px; height: 14px; flex-shrink: 0; }
+.plan-ctx-pct {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Plan feedback input row */
+.plan-feedback-row {
+  display: flex;
+  gap: 6px;
+  padding: 8px 14px 10px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  background: rgba(var(--overlay-rgb), 0.015);
+}
+.plan-feedback-input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.plan-feedback-input::placeholder { color: var(--text-dimmer); }
+.plan-feedback-input:focus { border-color: var(--accent); }
+
+.plan-feedback-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--text-dimmer);
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s, background 0.15s;
+}
+.plan-feedback-send:hover { background: var(--text-muted); }
+.plan-feedback-send:disabled { opacity: 0.3; cursor: default; }
+.plan-feedback-send .lucide { width: 16px; height: 16px; }
+
+/* When plan-permission has feedback row, actions lose bottom radius */
+.plan-permission .plan-permission-actions {
+  border-radius: 0;
+}
+
 /* ==========================================================================
    Todo Widget
    ========================================================================== */
