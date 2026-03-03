@@ -416,6 +416,50 @@
 }
 
 /* ==========================================================================
+   Prompt Suggestion Chips
+   ========================================================================== */
+
+#suggestion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 0 8px;
+}
+
+#suggestion-chips.hidden { display: none; }
+
+.suggestion-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  text-align: left;
+  max-width: 100%;
+  line-height: 1.3;
+}
+
+.suggestion-chip:hover {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.suggestion-chip .lucide {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+/* ==========================================================================
    Animations
    ========================================================================== */
 
