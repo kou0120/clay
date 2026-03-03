@@ -467,18 +467,17 @@ pre.mermaid-error {
   cursor: pointer;
   padding: 6px 12px;
   user-select: none;
-  background: var(--accent2-8);
+  background: rgba(var(--overlay-rgb), 0.03);
   border-radius: 8px;
   transition: background 0.15s;
 }
 
 .thinking-header:hover {
-  background: var(--accent2-12);
+  background: rgba(var(--overlay-rgb), 0.06);
 }
 
 .thinking-chevron {
-  color: var(--accent2);
-  opacity: 0.5;
+  color: var(--text-dimmer);
   transition: transform 0.2s;
   display: inline-flex;
   flex-shrink: 0;
@@ -495,7 +494,7 @@ pre.mermaid-error {
 
 .thinking-label {
   font-size: 13px;
-  color: var(--accent2);
+  color: var(--text-muted);
 }
 
 .thinking-duration {
@@ -505,7 +504,7 @@ pre.mermaid-error {
 
 .thinking-spinner {
   flex-shrink: 0;
-  color: var(--accent2);
+  color: var(--text-muted);
 }
 
 .thinking-spinner .lucide {
@@ -526,7 +525,7 @@ pre.mermaid-error {
   word-break: break-word;
   max-height: 300px;
   overflow-y: auto;
-  background: var(--accent2-8);
+  background: rgba(var(--overlay-rgb), 0.02);
   border-radius: 8px;
 }
 
