@@ -1,43 +1,44 @@
 /* --- Rewindable user messages (always active) --- */
-.msg-user[data-uuid] .bubble {
-  cursor: pointer;
-  transition: box-shadow 0.2s;
+.msg-user[data-uuid] {
   position: relative;
 }
 
-.msg-user[data-uuid] .bubble:hover {
-  box-shadow: 0 0 0 1.5px var(--text-dimmer);
-}
-
-.msg-user[data-uuid] .bubble::after {
-  content: "Click to rewind";
+.msg-user-rewind-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: -22px;
+  top: 50%;
   right: 0;
-  font-size: 11px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
   color: var(--text-dimmer);
-  opacity: 0;
-  transition: opacity 0.15s;
-  pointer-events: none;
-  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0;
+  transition: color 0.15s, background 0.15s;
+  z-index: 1;
 }
 
-.msg-user[data-uuid] .bubble:hover::after {
-  opacity: 1;
-}
+.msg-user-rewind-btn .lucide { width: 13px; height: 13px; }
+.msg-user-rewind-btn:hover { color: var(--text); background: rgba(var(--overlay-rgb), 0.08); }
+.msg-user[data-uuid]:hover .msg-user-rewind-btn { display: flex; }
 
 /* --- Rewind mode (timeline visible, strong markers) --- */
-#app.rewind-mode .msg-user[data-uuid] .bubble::after {
-  content: "Rewind to here";
-  color: var(--accent);
-}
-
 #app.rewind-mode .msg-user[data-uuid] .bubble {
   box-shadow: 0 0 0 2px var(--accent);
 }
 
 #app.rewind-mode .msg-user[data-uuid] .bubble:hover {
   box-shadow: 0 0 0 2px var(--accent-hover), 0 0 12px var(--accent-20);
+}
+
+#app.rewind-mode .msg-user[data-uuid] .msg-user-rewind-btn {
+  display: flex;
+  color: var(--accent);
 }
 
 #app.rewind-mode .msg-user:not([data-uuid]) { opacity: 0.35; }

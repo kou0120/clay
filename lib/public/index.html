@@ -52,11 +52,11 @@
 
   <!-- === Icon Strip === -->
   <div id="icon-strip">
-    <a href="/" class="icon-strip-home" title="Home">
+    <div class="icon-strip-home" title="Clay">
       <span class="icon-strip-pill"></span>
       <img class="footer-mascot icon-strip-logo" src="favicon.svg" width="38" height="38" alt="Clay">
       <span class="icon-strip-status"></span>
-    </a>
+    </div>
     <div class="icon-strip-separator"></div>
     <div class="icon-strip-projects" id="icon-strip-projects"></div>
     <button class="icon-strip-add" id="icon-strip-add" title="Add project"><i data-lucide="plus"></i></button>
@@ -74,7 +74,6 @@
             <span class="sidebar-section-title">Tools</span>
           </div>
           <div id="session-actions">
-            <button id="resume-session-btn" title="Resume a CLI session"><i data-lucide="terminal"></i> <span>Resume CLI</span></button>
             <button id="file-browser-btn"><i data-lucide="folder-tree"></i> <span>File browser</span></button>
             <button id="terminal-sidebar-btn"><i data-lucide="square-terminal"></i> <span>Terminal</span><span id="terminal-sidebar-count" class="sidebar-badge hidden"></span></button>
           </div>
@@ -84,6 +83,7 @@
             <div class="session-list-header">
               <span>Sessions</span>
               <div class="session-list-header-actions">
+                <button id="resume-session-btn" type="button" title="Resume a CLI session"><i data-lucide="terminal"></i></button>
                 <button id="new-session-btn" type="button" title="New session"><i data-lucide="plus"></i></button>
                 <button id="search-session-btn" type="button" title="Search sessions"><i data-lucide="search"></i></button>
               </div>
@@ -123,7 +123,6 @@
           <button id="header-rename-btn" type="button" title="Rename session"><i data-lucide="pencil"></i></button>
         </div>
         <div class="status">
-          <button id="footer-status" title="Status"><i data-lucide="activity"></i></button>
           <button id="terminal-toggle-btn" title="Terminal"><i data-lucide="square-terminal"></i><span id="terminal-count" class="hidden"></span></button>
         </div>
       </div>
@@ -282,6 +281,7 @@
       <button class="file-viewer-btn hidden" id="file-viewer-render" title="Toggle rendered view"><i data-lucide="book-open"></i></button>
       <button class="file-viewer-btn hidden" id="file-viewer-history" title="Edit history"><i data-lucide="clock"></i></button>
       <button class="file-viewer-btn" id="file-viewer-copy" title="Copy contents"><i data-lucide="copy"></i></button>
+      <button class="file-viewer-btn" id="file-viewer-fullscreen" title="Toggle fullscreen"><i data-lucide="maximize-2"></i></button>
       <button class="file-viewer-btn" id="file-viewer-close" title="Close"><i data-lucide="x"></i></button>
     </div>
     <div class="file-viewer-body" id="file-viewer-body"></div>
@@ -291,6 +291,7 @@
       <div id="terminal-tabs" class="terminal-tabs"></div>
       <button class="terminal-new-tab-btn" id="terminal-new-tab" title="New tab"><i data-lucide="plus"></i></button>
       <div class="terminal-header-actions">
+        <button class="file-viewer-btn" id="terminal-fullscreen" title="Toggle fullscreen"><i data-lucide="maximize-2"></i></button>
         <button class="file-viewer-btn" id="terminal-close" title="Hide panel"><i data-lucide="chevron-up"></i></button>
       </div>
     </div>

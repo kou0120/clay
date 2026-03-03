@@ -130,6 +130,16 @@
   color: var(--error);
 }
 
+/* --- Panel fullscreen --- */
+@media (min-width: 1024px) {
+  #main-column:has(.panel-fullscreen) > .title-bar-content { display: none; }
+  #main-panels:has(.panel-fullscreen) > #app { display: none; }
+}
+@media (max-width: 1023px) {
+  #file-viewer-fullscreen,
+  #terminal-fullscreen { display: none; }
+}
+
 /* --- File viewer --- */
 
 /* Wide screens: split panel beside #app */
@@ -150,6 +160,11 @@
   #file-viewer.file-viewer-wide {
     width: 70%;
     max-width: 1200px;
+  }
+  #file-viewer.panel-fullscreen {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
   }
 }
 
@@ -503,6 +518,11 @@
     flex-shrink: 0;
   }
   #terminal-container.hidden { display: none; }
+  #terminal-container.panel-fullscreen {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
 }
 
 /* Narrow screens: full overlay */

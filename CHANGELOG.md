@@ -1,6 +1,46 @@
 # Changelog
 
-## WIP
+## v2.5.0
+
+- **Rename to Clay**: rebrand from claude-relay to clay-server
+  - New 3D Clay logo for CLI and favicon
+  - Favicon uses background-only fill swap instead of color overlay (dark mode support)
+  - New Apple touch icons and PWA icons for light/dark mode
+- **Server settings page**: full settings UI accessible from the web
+  - All CLI settings available in-browser (PIN, port, keep awake, permissions, etc.)
+  - Categorized navigation (General, Notifications, Security, Advanced)
+  - Server shutdown with confirmation dialog
+- **Redesign theme system**: relocate UI elements and add session info popover
+  - Title bar redesigned with context bar, config chip, and status indicators
+  - Clay icon in top bar title
+  - Header info button always visible as filled icon next to chat title
+  - Session info popover on info button click (model, usage, cost, session ID)
+  - Hover tooltips on context usage bar
+- **Unified config chip**: replace model selector dropdown with compact chip showing model/mode/effort
+- **Context overflow detection**: guided recovery CTA when context window is full
+  - Accurate context window sizes with fallback mapping (Opus 4.6 = 1M tokens)
+  - Context data restored on session switch without full history replay
+- **Header context bar**: live token usage bar in title bar with color-coded fill (green/yellow/red)
+- **Rate limit handling**: replace inline rate limit cards with header popover
+  - HDD-style socket LED indicator for connection status
+  - Rate limit events and fast mode state tracking
+- **Task progress tracking**: show sub-agent progress with stop button
+- **Prompt suggestion chips**: contextual suggestions appear after turn completion
+- **Plan approval enhancements**: clear context, auto-accept, and feedback input options
+- **Conflict detection**: warn when concurrent Claude processes target the same project; require Node 20+
+- **Rewind UX**: replace "click to rewind" on user messages with hover-visible rewind icon (positioned to the right)
+- **Panel fullscreen toggle**: maximize file browser or terminal to fill the main column (hides chat and title bar)
+  - Toggle button in each panel header (maximize-2 / minimize-2 icon)
+  - Hidden on mobile where panels are already full overlays
+- Move "Resume CLI" button from Tools section to Sessions header
+- Remove project dashboard page; root URL now redirects to first project
+- Remove status/activity icon from title bar
+- Fix orphaned caffeinate process surviving after daemon exits (#164)
+- Fix plan card showing stale content after Edit-based revisions
+- Fix mobile sidebar taking space even when hidden (`!important` on collapsed width)
+- Fix mobile sidebar z-index and layout overflow issues
+- Fix mobile sidebar not appearing on hamburger tap
+- Fix context tracking on history prepend
 
 ## v2.4.3
 
