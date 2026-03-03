@@ -45,11 +45,11 @@
 #header-rename-btn .lucide { width: 13px; height: 13px; }
 
 #header-info-btn {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: none;
   background: transparent;
   color: var(--text-dimmer);
@@ -57,13 +57,22 @@
   border-radius: 6px;
   flex-shrink: 0;
   padding: 0;
-  margin-left: 2px;
+  margin-left: 6px;
   transition: color 0.15s, background 0.15s;
   position: relative;
 }
-#header-left:hover #header-info-btn { display: flex; }
-#header-info-btn:hover { color: var(--text); background: rgba(var(--overlay-rgb), 0.06); }
-#header-info-btn .lucide { width: 13px; height: 13px; }
+#header-info-btn:hover { color: var(--text); }
+#header-info-btn > * { pointer-events: none; }
+#header-info-btn .lucide { width: 14px; height: 14px; }
+#header-info-btn .lucide circle {
+  fill: currentColor;
+  stroke: currentColor;
+}
+#header-info-btn .lucide path,
+#header-info-btn .lucide line {
+  stroke: var(--bg);
+  stroke-width: 2.5;
+}
 
 /* Session info popover */
 .session-info-popover {

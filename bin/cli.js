@@ -1685,6 +1685,7 @@ function showMainMenu(config, ip) {
         }
       }, {
         hint: [
+          "claude-relay has been renamed to clay-server  ·  npx clay-server",
           "Run npx clay-server in other directories to add more projects.",
           "★ github.com/chadbyte/claude-relay — Press s to star the repo",
         ],
