@@ -554,6 +554,7 @@
           <div class="settings-nav-category">Server</div>
           <button class="settings-nav-item" data-section="security"><span>Security</span></button>
           <div class="settings-nav-separator"></div>
+          <button class="settings-nav-item" data-section="restart"><span>Restart Server</span></button>
           <button class="settings-nav-item settings-nav-danger" data-section="shutdown"><span>Shutdown Server</span></button>
         </div>
       </div>
@@ -772,6 +773,20 @@
           </div>
           <div class="ps-env-list" id="ss-env-list">
             <!-- rows rendered by JS -->
+          </div>
+        </div>
+        <div class="server-settings-section" data-section="restart">
+          <h2>Restart Server</h2>
+          <p class="settings-hint" style="margin-bottom: 16px;">Restart the Clay daemon process. All active sessions will be briefly interrupted and clients will automatically reconnect.</p>
+          <div class="settings-card">
+            <div class="settings-field">
+              <label class="settings-label">Restart Daemon</label>
+              <div class="settings-hint">Spawns a new daemon process and gracefully shuts down the current one.</div>
+              <div style="margin-top: 12px;">
+                <button class="settings-btn-sm" id="settings-restart-btn"><i data-lucide="refresh-cw" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>Restart Server</button>
+              </div>
+              <div class="settings-hint settings-restart-error hidden" id="settings-restart-error" style="margin-top: 8px;"></div>
+            </div>
           </div>
         </div>
         <div class="server-settings-section" data-section="shutdown">

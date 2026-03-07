@@ -33,6 +33,7 @@ var debugMode = false;
 var autoYes = false;
 var cliPin = null;
 var shutdownMode = false;
+var restartMode = false;
 var addPath = null;
 var removePath = null;
 var listMode = false;
@@ -65,6 +66,8 @@ for (var i = 0; i < args.length; i++) {
     i++;
   } else if (args[i] === "--shutdown") {
     shutdownMode = true;
+  } else if (args[i] === "--restart") {
+    restartMode = true;
   } else if (args[i] === "--add") {
     addPath = args[i + 1] || ".";
     i++;
@@ -79,7 +82,7 @@ for (var i = 0; i < args.length; i++) {
   } else if (args[i] === "--dangerously-skip-permissions") {
     dangerouslySkipPermissions = true;
   } else if (args[i] === "-h" || args[i] === "--help") {
-    console.log("Usage: clay-server [-p|--port <port>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown]");
+    console.log("Usage: clay-server [-p|--port <port>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown] [--restart]");
     console.log("       clay-server --add <path>     Add a project to the running daemon");
     console.log("       clay-server --remove <path>  Remove a project from the running daemon");
     console.log("       clay-server --list            List registered projects");
@@ -92,6 +95,7 @@ for (var i = 0; i < args.length; i++) {
     console.log("  -y, --yes          Skip interactive prompts (accept defaults)");
     console.log("  --pin <pin>        Set 6-digit PIN (use with --yes)");
     console.log("  --shutdown         Shut down the running relay daemon");
+    console.log("  --restart          Restart the running relay daemon");
     console.log("  --add <path>       Add a project directory (use '.' for current)");
     console.log("  --remove <path>    Remove a project directory");
     console.log("  --list             List all registered projects");
@@ -122,6 +126,25 @@ if (shutdownMode) {
       process.exit(0);
     }).catch(function (err) {
       console.error("Shutdown failed:", err.message);
+      process.exit(1);
+    });
+  });
+  return;
+}
+
+// --- Handle --restart before anything else ---
+if (restartMode) {
+  var restartConfig = loadConfig();
+  isDaemonAliveAsync(restartConfig).then(function (alive) {
+    if (!alive) {
+      console.error("No running daemon found.");
+      process.exit(1);
+    }
+    sendIPCCommand(socketPath(), { cmd: "restart" }).then(function () {
+      console.log("Server restarted.");
+      process.exit(0);
+    }).catch(function (err) {
+      console.error("Restart failed:", err.message);
       process.exit(1);
     });
   });
