@@ -156,9 +156,6 @@
 .top-bar-actions #debug-btn:hover { opacity: 1; background: var(--error-8); }
 .top-bar-actions #debug-btn.active { opacity: 1; background: var(--error-12); }
 
-/* QR/Share button in top bar */
-.top-bar-actions #qr-btn.active { color: var(--text); background: rgba(var(--overlay-rgb),0.06); }
-
 /* ==========================================================================
    Title Bar — split into sidebar-column and main-column sections
    ========================================================================== */
