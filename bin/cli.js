@@ -54,6 +54,7 @@ var listMode = false;
 var dangerouslySkipPermissions = false;
 var headlessMode = false;
 var watchMode = false;
+var host = null;
 
 for (var i = 0; i < args.length; i++) {
   if (args[i] === "-p" || args[i] === "--port") {
@@ -62,6 +63,9 @@ for (var i = 0; i < args.length; i++) {
       console.error("Invalid port number");
       process.exit(1);
     }
+    i++;
+  } else if (args[i] === "--host" || args[i] === "--bind") {
+    host = args[i + 1] || null;
     i++;
   } else if (args[i] === "--no-https") {
     useHttps = false;
@@ -96,13 +100,14 @@ for (var i = 0; i < args.length; i++) {
   } else if (args[i] === "--dangerously-skip-permissions") {
     dangerouslySkipPermissions = true;
   } else if (args[i] === "-h" || args[i] === "--help") {
-    console.log("Usage: clay-server [-p|--port <port>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown] [--restart]");
+    console.log("Usage: clay-server [-p|--port <port>] [--host <address>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown] [--restart]");
     console.log("       clay-server --add <path>     Add a project to the running daemon");
     console.log("       clay-server --remove <path>  Remove a project from the running daemon");
     console.log("       clay-server --list            List registered projects");
     console.log("");
     console.log("Options:");
     console.log("  -p, --port <port>  Port to listen on (default: 2633)");
+    console.log("  --host <address>   Address to bind to (default: 0.0.0.0)");
     console.log("  --no-https         Disable HTTPS (enabled by default via mkcert)");
     console.log("  --no-update        Skip auto-update check on startup");
     console.log("  --debug            Enable debug panel in the web UI");
@@ -1314,6 +1319,7 @@ async function forkDaemon(pin, keepAwake, extraProjects, addCwd) {
   var config = {
     pid: null,
     port: port,
+    host: host,
     pinHash: pin ? generateAuthToken(pin) : null,
     tls: hasTls,
     debug: debugMode,
@@ -1423,6 +1429,7 @@ async function devMode(pin, keepAwake, existingPinHash) {
   var config = {
     pid: null,
     port: port,
+    host: host,
     pinHash: existingPinHash || (pin ? generateAuthToken(pin) : null),
     tls: hasTls,
     debug: true,
