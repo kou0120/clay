@@ -17,11 +17,12 @@
     left: 0;
     right: 0;
     height: calc(56px + var(--safe-bottom));
+    padding-top: 1px;
     padding-bottom: var(--safe-bottom);
     background: var(--bg);
     border-top: 1px solid var(--border);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
     z-index: 200;
   }
@@ -88,33 +89,32 @@
 
   .mobile-tab { position: relative; }
 
-  /* --- Center "+" button (raised) --- */
+  /* --- Center "+" button --- */
   .mobile-tab-new {
-    flex: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
+    flex: 1;
+    height: 100%;
+    background: none;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: -12px;
-    box-shadow: 0 2px 12px rgba(var(--shadow-rgb), 0.25);
     -webkit-tap-highlight-color: transparent;
-    transition: transform 0.1s, box-shadow 0.15s;
   }
 
   .mobile-tab-new .lucide {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background: var(--border);
+    color: #fff;
+    transition: transform 0.1s;
   }
 
-  .mobile-tab-new:active {
+  .mobile-tab-new:active .lucide {
     transform: scale(0.92);
-    box-shadow: 0 1px 6px rgba(var(--shadow-rgb), 0.2);
   }
 
   /* --- Mobile project list items (inside sidebar) --- */

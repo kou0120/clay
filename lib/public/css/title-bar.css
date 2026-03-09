@@ -131,21 +131,21 @@
   z-index: 1;
 }
 
-/* Dark mode (unchecked) — thumb LEFT on sun */
-.theme-toggle-sun { color: var(--bg); }           /* dark icon on lighter thumb */
-.theme-toggle-moon { color: var(--text-muted); }   /* light icon on dark track */
+/* Dark mode (unchecked) — thumb LEFT on moon */
+.theme-toggle-moon { color: var(--bg); }           /* dark icon on lighter thumb */
+.theme-toggle-sun { color: var(--text-muted); }    /* light icon on dark track */
 
-/* Light mode (checked) — thumb RIGHT on moon */
+/* Light mode (checked) — thumb RIGHT on sun */
 .theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-thumb {
   left: 24px;
   background: var(--bg-alt);
 }
 
-.theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-sun {
+.theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-moon {
   color: var(--text-muted);   /* darker icon on light track */
 }
 
-.theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-moon {
+.theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-sun {
   color: var(--text-dimmer);  /* darker icon on light thumb */
 }
 

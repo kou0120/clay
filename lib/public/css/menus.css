@@ -507,6 +507,7 @@
 }
 
 #config-chip .lucide { width: 10px; height: 10px; }
+#config-chip .config-chip-icon { display: none; }
 #config-chip:hover { color: var(--text-secondary); background: rgba(var(--overlay-rgb),0.06); }
 #config-chip.active { color: var(--text-secondary); background: rgba(var(--overlay-rgb),0.06); }
 
@@ -851,6 +852,10 @@
     width: auto;
     max-height: 60vh;
   }
+
+  /* Config chip: icon-only on mobile */
+  #config-chip .config-chip-icon { display: inline; width: 14px; height: 14px; }
+  #config-chip-label { display: none; }
 }
 
 
