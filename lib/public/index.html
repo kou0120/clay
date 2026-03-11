@@ -123,31 +123,6 @@
           <div class="hub-playbooks-grid" id="hub-playbooks-grid"></div>
         </div>
 
-        <div class="hub-card hub-cert-download hidden" id="hub-cert-download">
-          <div class="hub-card-header">
-            <span class="hub-card-title">Certificate</span>
-          </div>
-          <div class="hub-cert-body">
-            <div class="hub-cert-icon"><i data-lucide="shield-check"></i></div>
-            <div class="hub-cert-text">
-              <p>Install the CA certificate to trust this server on your device.</p>
-              <a href="/ca/download" class="hub-cert-btn" id="hub-cert-btn">
-                <i data-lucide="download"></i>
-                <span>Download CA Certificate</span>
-              </a>
-              <div class="hub-cert-instructions">
-                <p class="hub-cert-step-label">After downloading, run in terminal:</p>
-                <div class="hub-cert-code-wrap">
-                  <code id="hub-cert-code">sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/clay-ca.pem</code>
-                  <button class="hub-cert-copy" id="hub-cert-copy" title="Copy">
-                    <i data-lucide="copy"></i>
-                  </button>
-                </div>
-                <p class="hub-cert-step-hint">Then restart your browser.</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="hub-tip">
           <div class="hub-tip-icon">💡</div>
