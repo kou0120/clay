@@ -16,6 +16,46 @@
   border-top-left-radius: 8px;
   animation: hubFadeIn 0.35s ease;
 }
+/* Close button (X / ESC) */
+.home-hub-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--text-dimmer);
+  background: none;
+  color: var(--text-dimmer);
+  cursor: pointer;
+  padding: 0;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+  z-index: 5;
+}
+.home-hub-close-btn .lucide {
+  width: 18px;
+  height: 18px;
+}
+.home-hub-close-btn span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: absolute;
+  top: calc(100% + 6px);
+  font-family: inherit;
+}
+.home-hub-close-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-secondary);
+}
+.home-hub-close-btn.hidden {
+  display: none;
+}
+
 #home-hub.hidden {
   display: none;
 }

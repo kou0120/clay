@@ -202,10 +202,12 @@
   border-color: var(--accent);
 }
 .hub-playbook-card.completed {
-  opacity: 0.5;
+  background: rgba(76, 175, 80, 0.08);
+  border-color: rgba(76, 175, 80, 0.25);
 }
 .hub-playbook-card.completed:hover {
-  opacity: 0.8;
+  background: rgba(76, 175, 80, 0.14);
+  border-color: rgba(76, 175, 80, 0.4);
 }
 .hub-playbook-card-icon {
   font-size: 18px;
@@ -233,19 +235,18 @@
   flex-shrink: 0;
 }
 
-/* --- Tip "Try it" button --- */
+/* --- Tip "Try it" button (inline after text) --- */
 .hub-tip-try {
-  flex-shrink: 0;
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--accent);
+  display: inline;
+  padding: 0;
+  border: none;
   background: none;
   color: var(--accent);
-  font-size: 11px;
+  font-size: inherit;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s;
-  margin-left: 4px;
+  margin-left: 6px;
+  font-family: inherit;
 }
 .hub-tip-try:hover {
   background: var(--accent-12);

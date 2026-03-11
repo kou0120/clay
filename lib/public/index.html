@@ -83,6 +83,10 @@
   <!-- === Main Area (sidebar + resize-handle + main-column) === -->
   <div id="main-area">
     <div id="home-hub" class="hidden">
+      <button id="home-hub-close" class="home-hub-close-btn hidden">
+        <i data-lucide="x"></i>
+        <span>ESC</span>
+      </button>
       <div class="home-hub-inner">
         <div class="hub-greeting">
           <h1 id="hub-greeting-text"></h1>
@@ -368,7 +372,7 @@
   <div id="mobile-tab-bar">
     <button class="mobile-tab" data-tab="projects"><i data-lucide="folder-kanban"></i><span class="mobile-tab-label">Projects</span></button>
     <button class="mobile-tab" data-tab="sessions"><i data-lucide="messages-square"></i><span class="mobile-tab-label">Sessions</span></button>
-    <button class="mobile-tab-new" id="mobile-new-session-btn"><i data-lucide="plus"></i></button>
+    <button class="mobile-tab-home" id="mobile-home-btn"><img src="/icon-banded-76.png" alt="Clay" class="mobile-home-icon"></button>
     <button class="mobile-tab" data-tab="files"><i data-lucide="folder-tree"></i><span class="mobile-tab-label">Files</span></button>
     <button class="mobile-tab" data-tab="terminal"><i data-lucide="square-terminal"></i><span id="mobile-terminal-count" class="mobile-tab-badge hidden"></span><span class="mobile-tab-label">Terminal</span></button>
   </div>
