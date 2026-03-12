@@ -677,6 +677,7 @@
   color: var(--text);
   white-space: pre-wrap;
   word-break: break-word;
+  tab-size: 2;
 }
 
 .file-viewer-body pre code {
@@ -700,6 +701,7 @@
   line-height: 1.55;
   white-space: pre;
   word-break: normal;
+  tab-size: 2;
 }
 
 .file-viewer-gutter {
