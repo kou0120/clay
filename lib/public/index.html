@@ -621,6 +621,11 @@
           <button class="settings-nav-item" data-section="models"><span>Model &amp; Behavior</span></button>
           <button class="settings-nav-item" data-section="claudemd"><span>CLAUDE.md</span></button>
           <button class="settings-nav-item" data-section="environment"><span>Environment Variables</span></button>
+          <div class="settings-nav-separator settings-admin-only"></div>
+          <div class="settings-nav-category settings-admin-only">Admin</div>
+          <button class="settings-nav-item settings-admin-only" data-section="admin-users"><span>Users</span></button>
+          <button class="settings-nav-item settings-admin-only" data-section="admin-invites"><span>Invites</span></button>
+          <button class="settings-nav-item settings-admin-only" data-section="admin-projects"><span>Projects</span></button>
           <div class="settings-nav-separator"></div>
           <div class="settings-nav-category">Server</div>
           <button class="settings-nav-item" data-section="security"><span>Security</span></button>
@@ -880,6 +885,20 @@
               <div class="settings-hint settings-shutdown-error hidden" id="settings-shutdown-error"></div>
             </div>
           </div>
+        <!-- Admin sections (multi-user, admin only) -->
+        <div class="server-settings-section settings-admin-only" data-section="admin-users">
+          <h2>Users</h2>
+          <div class="settings-card" id="admin-users-body"></div>
+        </div>
+        <div class="server-settings-section settings-admin-only" data-section="admin-invites">
+          <h2>Invites</h2>
+          <div class="settings-card" id="admin-invites-body"></div>
+        </div>
+        <div class="server-settings-section settings-admin-only" data-section="admin-projects">
+          <h2>Project Access</h2>
+          <div class="settings-card" id="admin-projects-body"></div>
+        </div>
+
         </div>
       </div>
     </div>
