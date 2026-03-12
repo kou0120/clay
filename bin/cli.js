@@ -28,6 +28,7 @@ if (_isDev) process.env.CLAY_DEV = "1";
 var { loadConfig, saveConfig, configPath, socketPath, logPath, ensureConfigDir, isDaemonAlive, isDaemonAliveAsync, generateSlug, clearStaleConfig, loadClayrc, saveClayrc, readCrashInfo } = require("../lib/config");
 var { sendIPCCommand } = require("../lib/ipc");
 var { generateAuthToken } = require("../lib/server");
+var { enableMultiUser, hasAdmin } = require("../lib/users");
 
 function openUrl(url) {
   try {
@@ -56,6 +57,7 @@ var dangerouslySkipPermissions = false;
 var headlessMode = false;
 var watchMode = false;
 var host = null;
+var multiUserMode = false;
 
 for (var i = 0; i < args.length; i++) {
   if (args[i] === "-p" || args[i] === "--port") {
@@ -100,6 +102,8 @@ for (var i = 0; i < args.length; i++) {
     autoYes = true;
   } else if (args[i] === "--dangerously-skip-permissions") {
     dangerouslySkipPermissions = true;
+  } else if (args[i] === "--multi-user") {
+    multiUserMode = true;
   } else if (args[i] === "-h" || args[i] === "--help") {
     console.log("Usage: clay-server [-p|--port <port>] [--host <address>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown] [--restart]");
     console.log("       clay-server --add <path>     Add a project to the running daemon");
@@ -120,6 +124,7 @@ for (var i = 0; i < args.length; i++) {
     console.log("  --remove <path>    Remove a project directory");
     console.log("  --list             List all registered projects");
     console.log("  --headless         Start daemon and exit immediately (implies --yes)");
+    console.log("  --multi-user       Enable multi-user mode (generates setup code)");
     console.log("  --dangerously-skip-permissions");
     console.log("                     Bypass all permission prompts");
     process.exit(0);
@@ -256,6 +261,27 @@ if (listMode) {
     });
   });
   return;
+}
+
+// --- Handle --multi-user before anything else ---
+if (multiUserMode) {
+  var muResult = enableMultiUser();
+  if (muResult.alreadyEnabled && muResult.hasAdmin) {
+    console.log("");
+    console.log("Multi-user mode is already enabled and an admin account exists.");
+    console.log("No changes made.");
+    console.log("");
+  } else if (muResult.setupCode) {
+    console.log("");
+    console.log("\x1b[32mMulti-user mode enabled.\x1b[0m");
+    console.log("");
+    console.log("Setup code:  \x1b[1m" + muResult.setupCode + "\x1b[0m");
+    console.log("");
+    console.log("Open Clay in your browser and enter this code to create the admin account.");
+    console.log("The code is single-use and will be cleared once the admin is set up.");
+    console.log("");
+  }
+  process.exit(0);
 }
 
 var cwd = process.cwd();
