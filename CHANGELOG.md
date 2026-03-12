@@ -1,5 +1,14 @@
 # Changelog
 
+## WIP
+
+## v2.8.1
+
+- Disable twemoji in chat area, use native emoji rendering
+- Allow `--dangerously-skip-permissions` without PIN; shows warning and confirmation prompt, loops back to PIN input on decline
+- Improve disconnect screen ASCII logo: bold Roboto Mono font, larger size, glyph cache for performance, render underscores for 3D depth, smoother easing
+- Update disconnect overlay message to "Reconnecting to server…"
+
 ## v2.8.0
 
 - **Scheduled Tasks**: cron-based task scheduler with calendar view, sidebar list, and detail panel
