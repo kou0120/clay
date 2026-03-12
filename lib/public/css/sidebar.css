@@ -515,6 +515,35 @@
 .session-loop-group:hover .session-more-btn { opacity: 1; }
 .session-more-btn:hover { color: var(--text); background: rgba(var(--overlay-rgb), 0.06); }
 
+/* --- Session presence avatars (multi-user) --- */
+.session-presence {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.session-presence-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sidebar-bg);
+  background: var(--bg-alt);
+  object-fit: cover;
+  transition: filter 0.15s;
+}
+
+.session-presence-avatar:hover {
+  filter: brightness(1.3);
+}
+
+.session-presence-more {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-dimmer);
+  margin-left: 2px;
+}
+
 /* --- Session context menu --- */
 .session-ctx-menu {
   position: fixed;
@@ -889,6 +918,26 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
+}
+
+.user-island-cta {
+  font-size: 11px;
+  color: var(--accent, #7c3aed);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 1.2;
+}
+
+.user-island-cta.hidden {
+  display: none;
+}
+
+.user-island-cta:hover {
+  text-decoration: underline;
 }
 
 .user-island-actions {

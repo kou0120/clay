@@ -28,6 +28,7 @@ if (_isDev) process.env.CLAY_DEV = "1";
 var { loadConfig, saveConfig, configPath, socketPath, logPath, ensureConfigDir, isDaemonAlive, isDaemonAliveAsync, generateSlug, clearStaleConfig, loadClayrc, saveClayrc, readCrashInfo } = require("../lib/config");
 var { sendIPCCommand } = require("../lib/ipc");
 var { generateAuthToken } = require("../lib/server");
+var { enableMultiUser, hasAdmin, isMultiUser } = require("../lib/users");
 
 function openUrl(url) {
   try {
@@ -56,6 +57,7 @@ var dangerouslySkipPermissions = false;
 var headlessMode = false;
 var watchMode = false;
 var host = null;
+var multiUserMode = false;
 
 for (var i = 0; i < args.length; i++) {
   if (args[i] === "-p" || args[i] === "--port") {
@@ -100,6 +102,8 @@ for (var i = 0; i < args.length; i++) {
     autoYes = true;
   } else if (args[i] === "--dangerously-skip-permissions") {
     dangerouslySkipPermissions = true;
+  } else if (args[i] === "--multi-user") {
+    multiUserMode = true;
   } else if (args[i] === "-h" || args[i] === "--help") {
     console.log("Usage: clay-server [-p|--port <port>] [--host <address>] [--no-https] [--no-update] [--debug] [-y|--yes] [--pin <pin>] [--shutdown] [--restart]");
     console.log("       clay-server --add <path>     Add a project to the running daemon");
@@ -120,6 +124,7 @@ for (var i = 0; i < args.length; i++) {
     console.log("  --remove <path>    Remove a project directory");
     console.log("  --list             List all registered projects");
     console.log("  --headless         Start daemon and exit immediately (implies --yes)");
+    console.log("  --multi-user       Enable multi-user mode (generates setup code)");
     console.log("  --dangerously-skip-permissions");
     console.log("                     Bypass all permission prompts");
     process.exit(0);
@@ -256,6 +261,34 @@ if (listMode) {
     });
   });
   return;
+}
+
+// --- Handle --multi-user before anything else ---
+if (multiUserMode) {
+  var muResult = enableMultiUser();
+  if (muResult.alreadyEnabled && muResult.hasAdmin) {
+    console.log("");
+    console.log("Multi-user mode is already enabled and an admin account exists.");
+    console.log("No changes made.");
+    console.log("");
+  } else if (muResult.setupCode) {
+    console.log("");
+    console.log("\x1b[33m⚠ Experimental Feature\x1b[0m");
+    console.log("");
+    console.log("  Multi-user mode is experimental and may change in future releases.");
+    console.log("  Sharing access to AI-powered tools may be subject to your provider's");
+    console.log("  terms of service. Please review the applicable usage policies before");
+    console.log("  granting access to other users.");
+    console.log("");
+    console.log("\x1b[32mMulti-user mode enabled.\x1b[0m");
+    console.log("");
+    console.log("Setup code:  \x1b[1m" + muResult.setupCode + "\x1b[0m");
+    console.log("");
+    console.log("Open Clay in your browser and enter this code to create the admin account.");
+    console.log("The code is single-use and will be cleared once the admin is set up.");
+    console.log("");
+  }
+  process.exit(0);
 }
 
 var cwd = process.cwd();
@@ -1312,6 +1345,15 @@ async function forkDaemon(pin, keepAwake, extraProjects, addCwd) {
   var allProjects = [];
   var usedSlugs = [];
 
+  // Load previous config to preserve per-project settings (visibility, allowedUsers)
+  var prevConfig = loadConfig();
+  var prevProjectMap = {};
+  if (prevConfig && prevConfig.projects) {
+    for (var pi = 0; pi < prevConfig.projects.length; pi++) {
+      prevProjectMap[prevConfig.projects[pi].path] = prevConfig.projects[pi];
+    }
+  }
+
   // Only include cwd if explicitly requested
   if (addCwd) {
     var slug = generateSlug(cwd, []);
@@ -1326,6 +1368,11 @@ async function forkDaemon(pin, keepAwake, extraProjects, addCwd) {
         break;
       }
     }
+    // Restore access settings from previous config
+    if (prevProjectMap[cwd]) {
+      if (prevProjectMap[cwd].visibility) cwdEntry.visibility = prevProjectMap[cwd].visibility;
+      if (prevProjectMap[cwd].allowedUsers) cwdEntry.allowedUsers = prevProjectMap[cwd].allowedUsers;
+    }
     allProjects.push(cwdEntry);
     usedSlugs.push(slug);
   }
@@ -1338,7 +1385,13 @@ async function forkDaemon(pin, keepAwake, extraProjects, addCwd) {
       if (!fs.existsSync(rp.path)) continue; // skip missing directories
       var rpSlug = generateSlug(rp.path, usedSlugs);
       usedSlugs.push(rpSlug);
-      allProjects.push({ path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() });
+      var rpEntry = { path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() };
+      // Restore access settings from previous config
+      if (prevProjectMap[rp.path]) {
+        if (prevProjectMap[rp.path].visibility) rpEntry.visibility = prevProjectMap[rp.path].visibility;
+        if (prevProjectMap[rp.path].allowedUsers) rpEntry.allowedUsers = prevProjectMap[rp.path].allowedUsers;
+      }
+      allProjects.push(rpEntry);
     }
   }
 
@@ -1429,6 +1482,15 @@ async function devMode(pin, keepAwake, existingPinHash) {
   var slug = generateSlug(cwd, []);
   var cwdDevEntry = { path: cwd, slug: slug, addedAt: Date.now() };
 
+  // Load previous config to preserve per-project settings (visibility, allowedUsers)
+  var prevDevConfig = loadConfig();
+  var prevDevProjectMap = {};
+  if (prevDevConfig && prevDevConfig.projects) {
+    for (var pdi = 0; pdi < prevDevConfig.projects.length; pdi++) {
+      prevDevProjectMap[prevDevConfig.projects[pdi].path] = prevDevConfig.projects[pdi];
+    }
+  }
+
   // Restore previous projects
   var rc = loadClayrc();
   var restorable = (rc.recentProjects || []).filter(function (p) {
@@ -1443,13 +1505,24 @@ async function devMode(pin, keepAwake, existingPinHash) {
       break;
     }
   }
+  // Restore access settings for cwd from previous config
+  if (prevDevProjectMap[cwd]) {
+    if (prevDevProjectMap[cwd].visibility) cwdDevEntry.visibility = prevDevProjectMap[cwd].visibility;
+    if (prevDevProjectMap[cwd].allowedUsers) cwdDevEntry.allowedUsers = prevDevProjectMap[cwd].allowedUsers;
+  }
   var allProjects = [cwdDevEntry];
   var usedSlugs = [slug];
   for (var ri = 0; ri < restorable.length; ri++) {
     var rp = restorable[ri];
     var rpSlug = generateSlug(rp.path, usedSlugs);
     usedSlugs.push(rpSlug);
-    allProjects.push({ path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() });
+    var rpDevEntry = { path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() };
+    // Restore access settings from previous config
+    if (prevDevProjectMap[rp.path]) {
+      if (prevDevProjectMap[rp.path].visibility) rpDevEntry.visibility = prevDevProjectMap[rp.path].visibility;
+      if (prevDevProjectMap[rp.path].allowedUsers) rpDevEntry.allowedUsers = prevDevProjectMap[rp.path].allowedUsers;
+    }
+    allProjects.push(rpDevEntry);
   }
 
   var config = {
@@ -2222,7 +2295,13 @@ function showSettingsMenu(config, ip) {
     log(sym.bar + "  Tailscale    " + tsStatus);
     log(sym.bar + "  mkcert       " + mcStatus);
     log(sym.bar + "  HTTPS        " + tlsStatus);
+    var muEnabled = isMultiUser();
+    var muStatus = muEnabled
+      ? a.green + "Enabled" + a.reset
+      : a.dim + "Off" + a.reset;
+
     log(sym.bar + "  PIN          " + pinStatus);
+    log(sym.bar + "  Multi-user   " + muStatus);
     if (process.platform === "darwin") {
       log(sym.bar + "  Keep awake   " + awakeStatus);
     }
@@ -2238,6 +2317,11 @@ function showSettingsMenu(config, ip) {
       items.push({ label: "Remove PIN", value: "remove_pin" });
     } else {
       items.push({ label: "Set PIN", value: "pin" });
+    }
+    if (muEnabled) {
+      items.push({ label: "Multi-user mode (enabled)", value: "multi_user" });
+    } else {
+      items.push({ label: "Enable multi-user mode", value: "multi_user" });
     }
     if (process.platform === "darwin") {
       items.push({ label: isAwake ? "Disable keep awake" : "Enable keep awake", value: "awake" });
@@ -2278,6 +2362,42 @@ function showSettingsMenu(config, ip) {
           log("");
           showSettingsMenu(config, ip);
         });
+        break;
+
+      case "multi_user":
+        if (muEnabled && hasAdmin()) {
+          log(sym.bar);
+          log(sym.bar + "  " + a.dim + "Multi-user mode is already enabled and an admin account exists." + a.reset);
+          log(sym.bar + "  " + a.dim + "No changes made." + a.reset);
+          log(sym.bar);
+          promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
+            showSettingsMenu(config, ip);
+          });
+        } else {
+          var muResult = enableMultiUser();
+          log(sym.bar);
+          log(sym.bar + "  " + a.yellow + sym.warn + " Experimental Feature" + a.reset);
+          log(sym.bar);
+          log(sym.bar + "  " + a.dim + "Multi-user mode is experimental and may change in future releases." + a.reset);
+          log(sym.bar + "  " + a.dim + "Sharing access to AI-powered tools may be subject to your provider's" + a.reset);
+          log(sym.bar + "  " + a.dim + "terms of service. Please review the applicable usage policies before" + a.reset);
+          log(sym.bar + "  " + a.dim + "granting access to other users." + a.reset);
+          log(sym.bar);
+          if (muResult.setupCode) {
+            log(sym.bar + "  " + a.green + "Multi-user mode enabled." + a.reset);
+            log(sym.bar);
+            log(sym.bar + "  Setup code:  " + a.bold + muResult.setupCode + a.reset);
+            log(sym.bar);
+            log(sym.bar + "  " + a.dim + "Open Clay in your browser and enter this code to create the admin account." + a.reset);
+            log(sym.bar + "  " + a.dim + "The code is single-use and will be cleared once the admin is set up." + a.reset);
+          } else {
+            log(sym.bar + "  " + a.dim + "Multi-user mode is already enabled." + a.reset);
+          }
+          log(sym.bar);
+          promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
+            showSettingsMenu(config, ip);
+          });
+        }
         break;
 
       case "logs":

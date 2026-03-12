@@ -2,6 +2,25 @@
 
 ## WIP
 
+## v2.9.0
+
+- **Multi-user mode**: role-based authentication system with admin and user roles
+  - PIN-based login with per-user session isolation and project access control
+  - Admin panel integrated into server settings for user and invite management
+  - Invite system with link generation and revocation
+  - Restrict Make Private to session owner only
+- **SMTP email system**: OTP-based email login with separate username/email fields
+  - Explicit email login policy toggle separate from SMTP configuration
+- **Real-time presence**: see who is online across the server and per project
+  - Topbar avatars show all connected server users
+  - Sidebar header avatars show users in the current project
+  - Broadcast avatar and profile changes in real-time to all clients
+  - Per-user filtered project lists to prevent unauthorized project visibility
+- **Auth page redesign**: replace logos with clear CTA headings and descriptions per step
+- Add name personalization CTA to user island when display name matches username
+- Fix project settings lost on restart and add Enter key for PIN submit
+- Fix project access API silently succeeding when callbacks are null
+
 ## v2.8.2
 
 - Replace twemoji JS parsing with Twemoji COLR font — eliminates emoji blinking during streaming, removes MutationObserver overhead

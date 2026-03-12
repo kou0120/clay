@@ -720,10 +720,8 @@ button.top-bar-pill.pill-success:hover { background: color-mix(in srgb, var(--su
 }
 
 #ascii-logo-canvas {
-  width: 100%;
-  height: 100%;
-  max-width: 800px;
-  max-height: 400px;
+  width: 800px;
+  height: 400px;
 }
 
 #connect-overlay-msg {
