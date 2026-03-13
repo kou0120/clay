@@ -1160,6 +1160,7 @@
   min-width: 220px;
   max-width: 300px;
 }
+.schedule-popover.hidden { display: none; }
 
 .schedule-popover-name {
   font-weight: 700;

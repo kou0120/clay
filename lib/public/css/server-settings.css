@@ -71,7 +71,7 @@
 .server-settings-nav-inner {
   width: 200px;
   flex-shrink: 0;
-  padding: 60px 6px 40px 0;
+  padding: calc(var(--safe-top) + 60px) 6px 40px 0;
 }
 
 /* --- Nav header --- */
@@ -149,13 +149,13 @@
 }
 
 .server-settings-content-inner {
-  padding: 60px 40px 60px 40px;
+  padding: calc(var(--safe-top) + 60px) 40px calc(var(--safe-bottom) + 60px) 40px;
 }
 
 /* ==========  CLOSE COLUMN  ========== */
 .server-settings-close-col {
   position: fixed;
-  top: 60px;
+  top: calc(var(--safe-top) + 60px);
   right: 20px;
   z-index: 5;
 }
@@ -734,7 +734,7 @@
 
   .server-settings-nav-inner {
     width: 100%;
-    padding: 0;
+    padding: var(--safe-top) 0 0;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -787,11 +787,11 @@
   }
 
   .server-settings-content-inner {
-    padding: 24px 16px;
+    padding: calc(var(--safe-top) + 24px) 16px calc(var(--safe-bottom) + 24px);
   }
 
   .server-settings-close-col {
-    top: 12px;
+    top: calc(var(--safe-top) + 12px);
     right: 12px;
   }
 

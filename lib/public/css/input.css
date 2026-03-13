@@ -559,6 +559,10 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
+  #layout-body {
+    background: var(--bg);
+  }
+
   #main-area {
     overflow: visible;
     border-radius: 0;
