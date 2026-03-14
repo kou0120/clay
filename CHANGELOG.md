@@ -1,3 +1,11 @@
+## [2.9.3-beta.8](https://github.com/chadbyte/clay/compare/v2.9.3-beta.7...v2.9.3-beta.8) (2026-03-14)
+
+
+### Bug Fixes
+
+* **auth:** redirect to login on reconnect when auth token is expired ([d6476e4](https://github.com/chadbyte/clay/commit/d6476e4fa00245e1bd2670efce801636c31d9f79))
+* **session:** set active session on ws before broadcasting session list ([ca72260](https://github.com/chadbyte/clay/commit/ca7226046cf66a06033eaf63c194f73bcb0eaf01))
+
 ## [2.9.3-beta.7](https://github.com/chadbyte/clay/compare/v2.9.3-beta.6...v2.9.3-beta.7) (2026-03-14)
 
 
