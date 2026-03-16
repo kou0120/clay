@@ -8,25 +8,25 @@ Covers all unapplied changes from 0.2.38 through 0.2.76.
 
 ## Priority 1 - High (Functional gaps, user-facing impact) -- DONE
 
-### 1.1 `onElicitation` callback (since 0.2.39+)
-- **Status:** Not implemented
-- **What:** MCP servers can request user input (OAuth login, form fields) via elicitation. Without this callback, all elicitation requests are auto-declined.
-- **Impact:** Slack, GitHub, and other OAuth-based MCP servers cannot authenticate through the relay UI.
-- **Where:** `sdk-bridge.js` - add `onElicitation` to queryOptions in `startQuery()`. Forward elicitation requests to the client via WebSocket, collect user response, return result.
-- **Types:** `ElicitationRequest`, `ElicitationResult`, `OnElicitation`, `SDKElicitationCompleteMessage`
-- **Related messages:** `SDKElicitationCompleteMessage` (new message type to handle)
+### ~~1.1 `onElicitation` callback (since 0.2.39+)~~
+- ~~**Status:** Implemented~~
+- ~~**What:** MCP servers can request user input (OAuth login, form fields) via elicitation. Without this callback, all elicitation requests are auto-declined.~~
+- ~~**Impact:** Slack, GitHub, and other OAuth-based MCP servers cannot authenticate through the relay UI.~~
+- ~~**Where:** `sdk-bridge.js` - add `onElicitation` to queryOptions in `startQuery()`. Forward elicitation requests to the client via WebSocket, collect user response, return result.~~
+- ~~**Types:** `ElicitationRequest`, `ElicitationResult`, `OnElicitation`, `SDKElicitationCompleteMessage`~~
+- ~~**Related messages:** `SDKElicitationCompleteMessage` (new message type to handle)~~
 
-### 1.2 `setEffort()` mid-query method (since 0.2.45+)
-- **Status:** Partially implemented (effort passed at query creation, but no mid-query change)
-- **What:** Change effort level on an active query without restarting it.
-- **Impact:** UI already has effort selector. Currently changing effort mid-conversation requires a new query.
-- **Where:** `sdk-bridge.js` - add `setEffort(session, effort)` method similar to `setModel()`. Call `session.queryInstance.setEffort(effort)`.
+### ~~1.2 `setEffort()` mid-query method (since 0.2.45+)~~
+- ~~**Status:** Implemented~~
+- ~~**What:** Change effort level on an active query without restarting it.~~
+- ~~**Impact:** UI already has effort selector. Currently changing effort mid-conversation requires a new query.~~
+- ~~**Where:** `sdk-bridge.js` - add `setEffort(session, effort)` method similar to `setModel()`. Call `session.queryInstance.setEffort(effort)`.~~
 
-### 1.3 npm upgrade to 0.2.76 (prerequisite for all below)
-- **Status:** Pending
-- **What:** `npm install @anthropic-ai/claude-agent-sdk@0.2.76`
-- **Impact:** Required for all new APIs. Peer dependency changed to `zod ^4.0.0`.
-- **Breaking:** `PermissionMode` removed `'delegate'` option (was in 0.2.38, gone by 0.2.63). Verify no code references it.
+### ~~1.3 npm upgrade to 0.2.76 (prerequisite for all below)~~
+- ~~**Status:** Done~~
+- ~~**What:** `npm install @anthropic-ai/claude-agent-sdk@0.2.76`~~
+- ~~**Impact:** Required for all new APIs. Peer dependency changed to `zod ^4.0.0`.~~
+- ~~**Breaking:** `PermissionMode` removed `'delegate'` option (was in 0.2.38, gone by 0.2.63). Verify no code references it.~~
 
 
 ## Priority 2 - Medium (Improved reliability, better UX)
@@ -49,11 +49,11 @@ Covers all unapplied changes from 0.2.38 through 0.2.76.
 - **What:** Lightweight single-session metadata lookup (vs listing all sessions).
 - **Impact:** Faster session info retrieval without scanning all sessions.
 
-### 2.4 `agentProgressSummaries` query option (since 0.2.72+) -- DONE
-- **Status:** Enabled
-- **What:** AI-generated periodic progress summaries for running sub-agents. Piggybacks on prompt cache, so nearly free.
-- **Impact:** Better sub-agent progress visibility in UI. Currently only tool names/descriptions are shown.
-- **Where:** `sdk-bridge.js` - add `agentProgressSummaries: true` to queryOptions. Handle new summary messages in `processSDKMessage()`.
+### ~~2.4 `agentProgressSummaries` query option (since 0.2.72+)~~
+- ~~**Status:** Implemented~~
+- ~~**What:** AI-generated periodic progress summaries for running sub-agents. Piggybacks on prompt cache, so nearly free.~~
+- ~~**Impact:** Better sub-agent progress visibility in UI. Currently only tool names/descriptions are shown.~~
+- ~~**Where:** `sdk-bridge.js` - add `agentProgressSummaries: true` to queryOptions. Handle new summary messages in `processSDKMessage()`.~~
 
 ### 2.5 `forkSession()` top-level function (since 0.2.76+)
 - **Status:** Not implemented
@@ -80,24 +80,24 @@ Covers all unapplied changes from 0.2.38 through 0.2.76.
 - **What:** Get list of available sub-agent types with names, descriptions, and models.
 - **Impact:** Could show agent capabilities in UI when Task tool is used.
 
-### 3.4 `ThinkingConfig` types (since 0.2.51+)
-- **Status:** Not implemented
-- **What:** `ThinkingAdaptive | ThinkingEnabled | ThinkingDisabled` config for controlling extended thinking.
-- **Impact:** Fine-grained thinking control. Current code doesn't expose thinking settings.
+### ~~3.4 `ThinkingConfig` types (since 0.2.51+)~~
+- ~~**Status:** Implemented~~
+- ~~**What:** `ThinkingAdaptive | ThinkingEnabled | ThinkingDisabled` config for controlling extended thinking.~~
+- ~~**Impact:** Fine-grained thinking control. Current code doesn't expose thinking settings.~~
 
 ### 3.5 `ToolConfig` type (since 0.2.76+)
 - **Status:** Not implemented
 - **What:** Configure AskUserQuestion preview format (`'markdown'` vs `'html'`).
 - **Impact:** Relay is web-based, so `'html'` preview mode would render better than markdown in monospace boxes.
 
-### 3.6 New hook events (since 0.2.51+, 0.2.76+) -- N/A
-- **Status:** Available (no code change needed, hooks not used)
+### ~~3.6 New hook events (since 0.2.51+, 0.2.76+) -- N/A~~
+- ~~**Status:** Available (no code change needed, hooks not used)~~
 
-### 3.7 `AgentDefinition.model` expanded type (since 0.2.76+) -- N/A
-- **Status:** Available (no code change needed)
+### ~~3.7 `AgentDefinition.model` expanded type (since 0.2.76+) -- N/A~~
+- ~~**Status:** Available (no code change needed)~~
 
-### 3.8 `Settings` interface export (since 0.2.76+) -- N/A
-- **Status:** Available (TypeScript not used)
+### ~~3.8 `Settings` interface export (since 0.2.76+) -- N/A~~
+- ~~**Status:** Available (TypeScript not used)~~
 
 
 ## Already Implemented (0.2.38 -> 0.2.63 range)
