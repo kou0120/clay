@@ -49,8 +49,8 @@ Covers all unapplied changes from 0.2.38 through 0.2.76.
 - **What:** Lightweight single-session metadata lookup (vs listing all sessions).
 - **Impact:** Faster session info retrieval without scanning all sessions.
 
-### 2.4 `agentProgressSummaries` query option (since 0.2.72+)
-- **Status:** Not implemented
+### 2.4 `agentProgressSummaries` query option (since 0.2.72+) -- DONE
+- **Status:** Enabled
 - **What:** AI-generated periodic progress summaries for running sub-agents. Piggybacks on prompt cache, so nearly free.
 - **Impact:** Better sub-agent progress visibility in UI. Currently only tool names/descriptions are shown.
 - **Where:** `sdk-bridge.js` - add `agentProgressSummaries: true` to queryOptions. Handle new summary messages in `processSDKMessage()`.
@@ -90,25 +90,14 @@ Covers all unapplied changes from 0.2.38 through 0.2.76.
 - **What:** Configure AskUserQuestion preview format (`'markdown'` vs `'html'`).
 - **Impact:** Relay is web-based, so `'html'` preview mode would render better than markdown in monospace boxes.
 
-### 3.6 New hook events (since 0.2.51+, 0.2.76+)
-- **Status:** Not implemented
-- **What:** New hook event types available:
-  - `Elicitation` / `ElicitationResult` (0.2.51+)
-  - `ConfigChange` (0.2.51+)
-  - `WorktreeCreate` / `WorktreeRemove` (0.2.51+)
-  - `PostCompact` (0.2.76+)
-  - `InstructionsLoaded` (0.2.76+)
-- **Impact:** Only relevant if hook system is used. Currently no hooks are registered.
+### 3.6 New hook events (since 0.2.51+, 0.2.76+) -- N/A
+- **Status:** Available (no code change needed, hooks not used)
 
-### 3.7 `AgentDefinition.model` expanded type (since 0.2.76+)
-- **Status:** Not impactful yet
-- **What:** Model field changed from `'sonnet' | 'opus' | 'haiku' | 'inherit'` to `string` (accepts full model IDs like `'claude-opus-4-5'`).
-- **Impact:** No code change needed unless custom agent definitions are used.
+### 3.7 `AgentDefinition.model` expanded type (since 0.2.76+) -- N/A
+- **Status:** Available (no code change needed)
 
-### 3.8 `Settings` interface export (since 0.2.76+)
-- **Status:** Not implemented
-- **What:** TypeScript Settings interface now exported from SDK.
-- **Impact:** Useful for type-checking settings objects if migrating to TypeScript.
+### 3.8 `Settings` interface export (since 0.2.76+) -- N/A
+- **Status:** Available (TypeScript not used)
 
 
 ## Already Implemented (0.2.38 -> 0.2.63 range)
