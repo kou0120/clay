@@ -1,3 +1,15 @@
+# [2.11.0-beta.14](https://github.com/chadbyte/clay/compare/v2.11.0-beta.13...v2.11.0-beta.14) (2026-03-17)
+
+
+### Bug Fixes
+
+* **daemon:** chown project dir before git init as OS user ([0b2e6f5](https://github.com/chadbyte/clay/commit/0b2e6f5bc5ed841cfd59868ead0f7b81e144a520))
+
+
+### Features
+
+* **auth:** show contextual welcome message and add favicon to PIN page ([2a9ea23](https://github.com/chadbyte/clay/commit/2a9ea23dca1fd4ff643d899957f8465d958223e9))
+
 # [2.11.0-beta.13](https://github.com/chadbyte/clay/compare/v2.11.0-beta.12...v2.11.0-beta.13) (2026-03-17)
 
 
