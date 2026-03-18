@@ -1,3 +1,10 @@
+# [2.11.0-beta.27](https://github.com/chadbyte/clay/compare/v2.11.0-beta.26...v2.11.0-beta.27) (2026-03-18)
+
+
+### Bug Fixes
+
+* **os-users:** include ownerId in project access response ([7ec7473](https://github.com/chadbyte/clay/commit/7ec7473ccaa17d6203449acf6b0b553f5d92649d))
+
 # [2.11.0-beta.26](https://github.com/chadbyte/clay/compare/v2.11.0-beta.25...v2.11.0-beta.26) (2026-03-18)
 
 
