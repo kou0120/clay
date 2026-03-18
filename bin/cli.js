@@ -450,6 +450,16 @@ async function restartDaemonFromConfig() {
   saveConfig(newConfig);
 
   var daemonScript = path.join(__dirname, "..", "lib", "daemon.js");
+
+  // Debug mode: run in foreground with logs to stdout
+  if (debugMode) {
+    process.env.CLAY_CONFIG = configPath();
+    newConfig.pid = process.pid;
+    saveConfig(newConfig);
+    require(daemonScript);
+    return;
+  }
+
   var logFile = logPath();
   var logFd = fs.openSync(logFile, "a");
 
