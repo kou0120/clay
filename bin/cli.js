@@ -1223,13 +1223,29 @@ function setup(callback) {
   log("");
   log(sym.pointer + "  " + a.bold + "Clay" + a.reset + a.dim + "  ·  Unofficial, open-source project" + a.reset);
   log(sym.bar);
-  log(sym.bar + "  " + a.dim + "Anyone with the URL gets full Claude Code access to this machine." + a.reset);
-  log(sym.bar + "  " + a.dim + "Use a private network (Tailscale, VPN)." + a.reset);
-  log(sym.bar + "  " + a.dim + "The authors assume no responsibility for any damage or data loss." + a.reset);
+  log(sym.bar + "  " + a.yellow + sym.warn + " Disclaimer" + a.reset);
+  log(sym.bar);
+  log(sym.bar + "  " + a.dim + "This is an independent project and is not affiliated with Anthropic." + a.reset);
+  log(sym.bar + "  " + a.dim + "Claude is a trademark of Anthropic." + a.reset);
+  log(sym.bar);
+  log(sym.bar + "  " + a.dim + "Clay is provided \"as is\" without warranty of any kind. Users are" + a.reset);
+  log(sym.bar + "  " + a.dim + "responsible for complying with the terms of service of underlying AI" + a.reset);
+  log(sym.bar + "  " + a.dim + "providers (e.g., Anthropic, OpenAI) and all applicable terms of any" + a.reset);
+  log(sym.bar + "  " + a.dim + "third-party services." + a.reset);
+  log(sym.bar);
+  log(sym.bar + "  " + a.dim + "Features such as multi-user mode are experimental and may involve" + a.reset);
+  log(sym.bar + "  " + a.dim + "sharing access to API-based services. Before enabling such features," + a.reset);
+  log(sym.bar + "  " + a.dim + "review your provider's usage policies regarding account sharing," + a.reset);
+  log(sym.bar + "  " + a.dim + "acceptable use, and any applicable rate limits or restrictions." + a.reset);
+  log(sym.bar);
+  log(sym.bar + "  " + a.dim + "The authors assume no liability for misuse or violations arising" + a.reset);
+  log(sym.bar + "  " + a.dim + "from the use of this software." + a.reset);
+  log(sym.bar);
+  log(sym.bar + "  Type " + a.bold + "agree" + a.reset + " to accept and continue.");
   log(sym.bar);
 
-  promptToggle("Accept and continue", null, true, function (accepted) {
-    if (!accepted) {
+  promptText("", "", function (val) {
+    if (!val || val.trim().toLowerCase() !== "agree") {
       log(sym.end + "  " + a.dim + "Aborted." + a.reset);
       log("");
       process.exit(0);
@@ -1284,8 +1300,37 @@ function setup(callback) {
         return;
       }
       log(sym.bar);
-      promptToggle("Enable OS-level user isolation?", "Run each user's sessions as a separate Linux account", false, function (wantOsUsers) {
-        if (wantOsUsers) {
+      promptSelect("Enable OS-level user isolation?", [
+        { label: "Yes", value: "yes" },
+        { label: "No", value: "no" },
+      ], function (choice) {
+        if (choice !== "yes") {
+          finishSetup(mode, false);
+          return;
+        }
+        log(sym.bar);
+        log(sym.bar + "  " + a.yellow + sym.warn + " OS-Level User Isolation" + a.reset);
+        log(sym.bar);
+        log(sym.bar + "  " + a.dim + "This feature maps each Clay user to a Linux OS user account." + a.reset);
+        log(sym.bar + "  " + a.dim + "The daemon must run as root and will spawn processes (SDK workers," + a.reset);
+        log(sym.bar + "  " + a.dim + "terminals, file operations) as the mapped Linux user." + a.reset);
+        log(sym.bar);
+        log(sym.bar + "  " + a.dim + "What this means:" + a.reset);
+        log(sym.bar + "  " + a.dim + "- Each mapped user uses their own ~/.claude/ credentials" + a.reset);
+        log(sym.bar + "  " + a.dim + "- Terminals and file access follow Linux permissions" + a.reset);
+        log(sym.bar + "  " + a.dim + "- Linux user accounts are created automatically (clay-username)" + a.reset);
+        log(sym.bar);
+        log(sym.bar + "  " + a.dim + "Recommended: Run on a dedicated Clay server or cloud instance," + a.reset);
+        log(sym.bar + "  " + a.dim + "not on a personal computer or general-purpose server." + a.reset);
+        log(sym.bar);
+        promptSelect("Confirm", [
+          { label: "Enable OS-level user isolation", value: "confirm" },
+          { label: "Cancel", value: "cancel" },
+        ], function (confirmChoice) {
+          if (confirmChoice !== "confirm") {
+            finishSetup(mode, false);
+            return;
+          }
           var isRoot = typeof process.getuid === "function" && process.getuid() === 0;
           if (!isRoot) {
             // Save config so sudo clay can pick it up
@@ -1307,8 +1352,8 @@ function setup(callback) {
             process.exit(0);
             return;
           }
-        }
-        finishSetup(mode, wantOsUsers);
+          finishSetup(mode, true);
+        });
       });
     }
 
