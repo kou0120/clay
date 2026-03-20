@@ -1625,7 +1625,14 @@
   <!-- Bottom bar -->
   <div class="sched-create-bottom">
     <div class="sched-create-bottom-left">
-      <label class="sched-create-iter-label" title="Number of code → judge cycles per run. Claude writes code, the judge reviews it, and repeats up to this many times."><i data-lucide="repeat" class="sched-create-iter-icon"></i> <input type="number" id="sched-create-iterations" min="1" max="100" value="3" class="sched-create-iter-input"> <span class="sched-create-iter-hint">rounds per run</span></label>
+      <div class="sched-create-run-mode">
+        <button type="button" class="sched-run-mode-btn active" data-mode="single" title="Run once without iteration"><i data-lucide="play"></i> Single run</button>
+        <button type="button" class="sched-run-mode-btn" data-mode="multi" title="Run multiple iterations with a judge reviewing each round"><i data-lucide="repeat"></i> Multi-round</button>
+        <label class="sched-create-iter-label hidden" id="sched-create-iter-group">
+          <input type="number" id="sched-create-iterations" min="2" max="100" value="3" class="sched-create-iter-input">
+          <span class="sched-create-iter-hint">rounds</span>
+        </label>
+      </div>
     </div>
     <div class="sched-create-bottom-right">
       <button class="sched-create-delete-btn hidden" id="sched-create-delete" title="Delete"><i data-lucide="trash-2"></i></button>
