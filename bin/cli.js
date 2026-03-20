@@ -32,6 +32,7 @@ if (_isDev || process.argv.includes("--debug")) {
   console.clear = function() {};
 }
 
+var crypto = require("crypto");
 var { loadConfig, saveConfig, configPath, socketPath, logPath, ensureConfigDir, isDaemonAlive, isDaemonAliveAsync, generateSlug, clearStaleConfig, loadClayrc, saveClayrc, readCrashInfo } = require("../lib/config");
 var { sendIPCCommand } = require("../lib/ipc");
 var { generateAuthToken } = require("../lib/server");
@@ -2450,6 +2451,9 @@ function showSettingsMenu(config, ip) {
     } else {
       items.push({ label: "Enable multi-user mode", value: "multi_user" });
     }
+    if (muEnabled && hasAdmin()) {
+      items.push({ label: "Recover admin password", value: "recover_admin" });
+    }
     if (process.platform === "darwin") {
       items.push({ label: isAwake ? "Disable keep awake" : "Enable keep awake", value: "awake" });
     }
@@ -2743,6 +2747,48 @@ function showSettingsMenu(config, ip) {
           showSettingsMenu(config, ip);
         });
         break;
+
+      case "recover_admin": {
+        var recoveryUrlPath = crypto.randomBytes(16).toString("hex");
+        var recoveryPassword = crypto.randomBytes(8).toString("base64url");
+        sendIPCCommand(socketPath(), { cmd: "enable_recovery", urlPath: recoveryUrlPath, password: recoveryPassword }).then(function (res) {
+          if (!res.ok) {
+            log(sym.bar + "  " + a.red + "Failed to enable recovery mode." + a.reset);
+            log(sym.bar);
+            showSettingsMenu(config, ip);
+            return;
+          }
+          var protocol = config.tls ? "https" : "http";
+          var recoveryUrl = protocol + "://" + ip + ":" + config.port + "/recover/" + recoveryUrlPath;
+          log(sym.bar);
+          log(sym.bar + "  " + a.yellow + sym.warn + " Admin Password Recovery" + a.reset);
+          log(sym.bar);
+          log(sym.bar + "  " + a.dim + "Recovery URL:" + a.reset);
+          log(sym.bar + "  " + a.bold + recoveryUrl + a.reset);
+          log(sym.bar);
+          log(sym.bar + "  " + a.dim + "Recovery password:" + a.reset);
+          log(sym.bar + "  " + a.bold + recoveryPassword + a.reset);
+          log(sym.bar);
+          log(sym.bar + "  " + a.dim + "Open the URL in a browser and enter the password above." + a.reset);
+          log(sym.bar + "  " + a.dim + "This link is single-use and will expire when the PIN is reset." + a.reset);
+          log(sym.bar);
+          promptSelect("Done?", [
+            { label: "Disable recovery link", value: "disable" },
+            { label: "Back (keep link active)", value: "back" },
+          ], function (rc) {
+            if (rc === "disable") {
+              sendIPCCommand(socketPath(), { cmd: "disable_recovery" }).then(function () {
+                log(sym.done + "  " + a.dim + "Recovery link disabled." + a.reset);
+                log("");
+                showSettingsMenu(config, ip);
+              });
+            } else {
+              showSettingsMenu(config, ip);
+            }
+          });
+        });
+        break;
+      }
 
       case "back":
         showMainMenu(config, ip);
