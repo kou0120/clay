@@ -798,8 +798,10 @@
 .mate-knowledge-header {
   display: flex;
   align-items: center;
-  padding: 10px 16px;
+  height: 48px;
+  padding: 0 16px;
   flex-shrink: 0;
+  border-bottom: 1px solid var(--border-subtle);
 }
 .mate-knowledge-title-wrap {
   display: flex;
@@ -1129,4 +1131,87 @@
   background: var(--success);
   margin-right: 8px;
   vertical-align: middle;
+}
+
+/* --- Mate color theming for panels --- */
+
+/* Match panel header heights to sidebar header (48px) */
+body.mate-dm-active .mate-knowledge-header,
+body.mate-dm-active .scheduler-top-bar,
+body.mate-dm-active .notes-archive-header {
+  height: 48px;
+  box-sizing: border-box;
+}
+
+/* Knowledge header */
+body.mate-dm-active .mate-knowledge-header {
+  background: var(--mate-color);
+  color: #fff;
+}
+body.mate-dm-active .mate-knowledge-header .lucide,
+body.mate-dm-active .mate-knowledge-header h2 {
+  color: #fff;
+}
+body.mate-dm-active .mate-knowledge-header-actions button {
+  color: rgba(255, 255, 255, 0.85);
+}
+body.mate-dm-active .mate-knowledge-header-actions button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+body.mate-dm-active .mate-knowledge-count {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Scheduler top bar (main header) */
+body.mate-dm-active .scheduler-top-bar {
+  background: var(--mate-color);
+  color: #fff;
+}
+body.mate-dm-active .scheduler-top-title,
+body.mate-dm-active .scheduler-top-title .lucide {
+  color: #fff;
+}
+body.mate-dm-active .scheduler-close-btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+body.mate-dm-active .scheduler-close-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+body.mate-dm-active .scheduler-scope-toggle {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.mate-dm-active .scheduler-scope-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.mate-dm-active .scheduler-scope-label[data-side="off"],
+body.mate-dm-active .scheduler-scope-toggle.active .scheduler-scope-label[data-side="on"] {
+  color: #fff;
+}
+
+/* Scheduler: breathing room below top-bar */
+body.mate-dm-active .scheduler-sidebar,
+body.mate-dm-active .scheduler-content {
+  padding-top: 12px;
+}
+
+/* Sticky Notes header */
+body.mate-dm-active .notes-archive-header {
+  background: var(--mate-color);
+  color: #fff;
+}
+body.mate-dm-active .notes-archive-header .lucide,
+body.mate-dm-active .notes-archive-header h2 {
+  color: #fff;
+}
+body.mate-dm-active .notes-archive-count {
+  color: rgba(255, 255, 255, 0.7);
+}
+body.mate-dm-active .notes-archive-header button {
+  color: rgba(255, 255, 255, 0.85);
+}
+body.mate-dm-active .notes-archive-header button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
 }
