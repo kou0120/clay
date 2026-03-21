@@ -1,3 +1,10 @@
+# [2.14.0-beta.6](https://github.com/chadbyte/clay/compare/v2.14.0-beta.5...v2.14.0-beta.6) (2026-03-21)
+
+
+### Bug Fixes
+
+* **mates:** pass mate context to tools module, fixing broken permission dialog ([e0d30dd](https://github.com/chadbyte/clay/commit/e0d30dd03af1aac004fb87b4cf1ea70bf2364289))
+
 # [2.14.0-beta.5](https://github.com/chadbyte/clay/compare/v2.14.0-beta.4...v2.14.0-beta.5) (2026-03-21)
 
 
