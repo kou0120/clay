@@ -1,3 +1,10 @@
+# [2.14.0-beta.3](https://github.com/chadbyte/clay/compare/v2.14.0-beta.2...v2.14.0-beta.3) (2026-03-21)
+
+
+### Features
+
+* **mates:** show instant thinking dots after user sends message ([13bb5bd](https://github.com/chadbyte/clay/commit/13bb5bd9c2a003f0e80416c3b01e8ba18c5900c1))
+
 # [2.14.0-beta.2](https://github.com/chadbyte/clay/compare/v2.14.0-beta.1...v2.14.0-beta.2) (2026-03-21)
 
 
