@@ -1,3 +1,34 @@
+# [2.14.0](https://github.com/chadbyte/clay/compare/v2.13.0...v2.14.0) (2026-03-21)
+
+
+### Bug Fixes
+
+* **daemon:** prevent single-session AbortError from crashing all sessions ([984c68f](https://github.com/chadbyte/clay/commit/984c68ff545b6e80fc3363795067ea68ce256717)), closes [#236](https://github.com/chadbyte/clay/issues/236)
+* **mates:** align AskUserQuestion avatar layout with msg-assistant ([52d9522](https://github.com/chadbyte/clay/commit/52d9522783833bb20d0709324c5655b0d0befa2f))
+* **mates:** left-align thinking and tool badges in mate DM ([cca618d](https://github.com/chadbyte/clay/commit/cca618d41aa6ded8976c4e766e6028dcc324bdd8))
+* **mates:** pass mate context to tools module, fixing broken permission dialog ([e0d30dd](https://github.com/chadbyte/clay/commit/e0d30dd03af1aac004fb87b4cf1ea70bf2364289))
+* **mates:** restore thinking dots when thinking group is reused ([add1867](https://github.com/chadbyte/clay/commit/add186732fe5ce9ce857582fb823e3f953e138b4))
+* **mates:** restore user identity on refresh and update knowledge badge on connect ([9771d60](https://github.com/chadbyte/clay/commit/9771d60ed4127386c06c7dd1b528044df60c3d5c))
+* **mates:** show disconnect screen when server shuts down during mate DM ([f477a80](https://github.com/chadbyte/clay/commit/f477a80551c99d71e1c89b8e1e116a8d417e8542))
+* **mates:** show mate display name in title bar instead of session title ([df9428e](https://github.com/chadbyte/clay/commit/df9428e66cb501014e680a74f339d25ccadcfeeb))
+* **sdk:** remove invalid setEffort call on query instance ([19168b9](https://github.com/chadbyte/clay/commit/19168b927f0c3868ed89a032f7def8eef7e2491a))
+
+
+### Features
+
+* **knowledge:** redesign as Obsidian-style split editor with sidebar integration ([20ab9b6](https://github.com/chadbyte/clay/commit/20ab9b673a53107a951449f17003f1dc23547cca))
+* **mates:** add JSONL knowledge file support with read-only table view ([621a227](https://github.com/chadbyte/clay/commit/621a2271feccffbe6d36225900e49296a7ab1424))
+* **mates:** add session search to mate sidebar with in-session search linking ([7623817](https://github.com/chadbyte/clay/commit/7623817fabacbb9bacee886194a11e7d1d9c63f8))
+* **mates:** collapse thinking and tools by default in mate DM ([c8ccdfb](https://github.com/chadbyte/clay/commit/c8ccdfb5772ed35664a85615efaeed043634b729))
+* **mates:** delay pre-thinking dots by 1s to feel more natural ([b485ba6](https://github.com/chadbyte/clay/commit/b485ba635310449499adc1bc46ba2e5647bf0f1a))
+* **mates:** enforce crisis safety section on mate CLAUDE.md files ([da16e5d](https://github.com/chadbyte/clay/commit/da16e5d46107c35f8b1eb0080c50c8502bc6cb79))
+* **mates:** humanize thinking, tools, and permission UI in mate DM ([9f122c9](https://github.com/chadbyte/clay/commit/9f122c956f52b7253ab53b07512354fbef22d896))
+* **mates:** inject mate avatar and name into AskUserQuestion cards ([91666f2](https://github.com/chadbyte/clay/commit/91666f24d528cdc368aa5967614bacd90c153ee0))
+* **mates:** redesign permission dialog as conversational chat bubble ([3778e43](https://github.com/chadbyte/clay/commit/3778e43f91fd3bbd031c6414a29219318c978f0b))
+* **mates:** show instant thinking dots after user sends message ([13bb5bd](https://github.com/chadbyte/clay/commit/13bb5bd9c2a003f0e80416c3b01e8ba18c5900c1))
+* **mates:** unify DM element layouts with consistent avatar column ([2156a63](https://github.com/chadbyte/clay/commit/2156a633102716d95eb059e4ac8959a9151b8d8a))
+* **ui:** full-width DM input, reduce border-radius, restore mate DM on refresh ([a69132b](https://github.com/chadbyte/clay/commit/a69132b4452c7af157358650b3b88150e9615116))
+
 # [2.14.0-beta.11](https://github.com/chadbyte/clay/compare/v2.14.0-beta.10...v2.14.0-beta.11) (2026-03-21)
 
 
