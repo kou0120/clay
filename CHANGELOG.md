@@ -1,3 +1,15 @@
+# [2.14.0-beta.1](https://github.com/chadbyte/clay/compare/v2.13.1-beta.1...v2.14.0-beta.1) (2026-03-21)
+
+
+### Bug Fixes
+
+* **daemon:** prevent single-session AbortError from crashing all sessions ([984c68f](https://github.com/chadbyte/clay/commit/984c68ff545b6e80fc3363795067ea68ce256717)), closes [#236](https://github.com/chadbyte/clay/issues/236)
+
+
+### Features
+
+* **mates:** humanize thinking, tools, and permission UI in mate DM ([9f122c9](https://github.com/chadbyte/clay/commit/9f122c956f52b7253ab53b07512354fbef22d896))
+
 ## [2.13.1-beta.1](https://github.com/chadbyte/clay/compare/v2.13.0...v2.13.1-beta.1) (2026-03-20)
 
 
