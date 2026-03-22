@@ -1,3 +1,10 @@
+# [2.15.0-beta.3](https://github.com/chadbyte/clay/compare/v2.15.0-beta.2...v2.15.0-beta.3) (2026-03-22)
+
+
+### Features
+
+* **scheduler:** add minute/hour interval scheduling with skip-if-running ([cfda2ee](https://github.com/chadbyte/clay/commit/cfda2ee9f69a8eed82b2f13f63c28802e002423a)), closes [#235](https://github.com/chadbyte/clay/issues/235)
+
 # [2.15.0-beta.2](https://github.com/chadbyte/clay/compare/v2.15.0-beta.1...v2.15.0-beta.2) (2026-03-22)
 
 
