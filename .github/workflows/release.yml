@@ -29,7 +29,9 @@ jobs:
             RELEASE_AHEAD=$(git rev-list --count HEAD..origin/release)
             if [ "$RELEASE_AHEAD" -gt 0 ]; then
               echo "Release branch is $RELEASE_AHEAD commits ahead of main, merging..."
-              git merge origin/release --no-edit
+              git merge origin/release --no-edit -X theirs || true
+              git checkout origin/release -- CHANGELOG.md package.json package-lock.json 2>/dev/null || true
+              git diff --quiet || git commit -am "chore: resolve merge conflicts from release"
               git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main
             fi
           fi
@@ -64,7 +66,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout release
-          git merge main --no-edit
+          git merge main --no-edit -X theirs || true
+          git checkout main -- CHANGELOG.md package.json package-lock.json 2>/dev/null || true
+          git diff --quiet || git commit -am "chore: resolve merge conflicts from main"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -103,7 +107,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
-          git merge release --no-edit
+          git merge release --no-edit -X theirs || true
+          git checkout release -- CHANGELOG.md package.json package-lock.json 2>/dev/null || true
+          git diff --quiet || git commit -am "chore: resolve merge conflicts from release"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
