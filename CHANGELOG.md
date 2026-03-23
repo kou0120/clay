@@ -1,3 +1,10 @@
+# [2.17.0-beta.1](https://github.com/chadbyte/clay/compare/v2.16.0...v2.17.0-beta.1) (2026-03-23)
+
+
+### Features
+
+* **tls:** use builtin *.d.clay.studio wildcard certificate by default ([4c30000](https://github.com/chadbyte/clay/commit/4c30000ff4004286469de0d0016a6d6c920b7020))
+
 # [2.16.0](https://github.com/chadbyte/clay/compare/v2.15.2...v2.16.0) (2026-03-23)
 
 
