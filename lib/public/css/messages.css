@@ -232,14 +232,15 @@
 
 .msg-copy-hint {
   position: absolute;
-  top: 4px;
+  bottom: -18px;
   right: 20px;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-dimmer);
   font-weight: 500;
   opacity: 0;
   transition: color 0.15s, opacity 0.15s;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .msg-assistant:hover .msg-copy-hint { opacity: 1; }
