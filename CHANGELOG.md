@@ -1,3 +1,10 @@
+# [2.17.0-beta.6](https://github.com/chadbyte/clay/compare/v2.17.0-beta.5...v2.17.0-beta.6) (2026-03-23)
+
+
+### Bug Fixes
+
+* **images:** hydrate image refs during session switch replay ([a71c771](https://github.com/chadbyte/clay/commit/a71c771c7f29c0654d21fef51a1a5b1de7f91e7a))
+
 # [2.17.0-beta.5](https://github.com/chadbyte/clay/compare/v2.17.0-beta.4...v2.17.0-beta.5) (2026-03-23)
 
 
