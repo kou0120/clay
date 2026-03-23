@@ -1,3 +1,10 @@
+# [2.17.0-beta.8](https://github.com/chadbyte/clay/compare/v2.17.0-beta.7...v2.17.0-beta.8) (2026-03-23)
+
+
+### Features
+
+* **avatar:** add custom avatar upload with position picker ([a6a3497](https://github.com/chadbyte/clay/commit/a6a34970f9692c954545121b77872f939992e05c))
+
 # [2.17.0-beta.7](https://github.com/chadbyte/clay/compare/v2.17.0-beta.6...v2.17.0-beta.7) (2026-03-23)
 
 
