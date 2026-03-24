@@ -86,6 +86,7 @@
   border: 1px solid color-mix(in srgb, var(--chip-color, #6c5ce7) 25%, transparent);
   cursor: default;
   flex-shrink: 0;
+  width: fit-content;
   animation: chip-in 0.15s ease-out;
 }
 
