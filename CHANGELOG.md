@@ -1,3 +1,10 @@
+# [2.18.0-beta.2](https://github.com/chadbyte/clay/compare/v2.18.0-beta.1...v2.18.0-beta.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* **mention:** add missing action bar to mention user messages ([fccb766](https://github.com/chadbyte/clay/commit/fccb76637173f7e0505d89efcc836732fe1a2be0))
+
 # [2.18.0-beta.1](https://github.com/chadbyte/clay/compare/v2.17.0...v2.18.0-beta.1) (2026-03-24)
 
 
