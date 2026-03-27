@@ -822,6 +822,85 @@
   background: var(--accent-12, rgba(108, 92, 231, 0.12));
 }
 
+/* --- Loop run sub-groups (interval runs within a date group) --- */
+.session-loop-run-wrapper {
+  position: relative;
+}
+
+.session-loop-run {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 12px 0 6px;
+  height: 28px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.session-loop-run::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 0;
+  border-top: 1.5px solid var(--border-subtle);
+}
+
+.session-loop-run:hover {
+  background: var(--sidebar-hover);
+  color: var(--text-secondary);
+}
+
+.session-loop-run.active {
+  background: var(--sidebar-active);
+  color: var(--text);
+}
+
+.session-loop-run.expanded .session-loop-chevron {
+  transform: rotate(90deg);
+}
+
+.session-loop-run .session-loop-chevron {
+  width: 18px;
+  height: 18px;
+}
+
+.session-loop-run .session-item-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.session-loop-run .session-processing {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.session-loop-run-time {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-dimmer);
+}
+
+.session-loop-run-wrapper .session-loop-children {
+  margin-left: 12px;
+}
+
 /* --- New Ralph Loop pill button --- */
 .new-ralph-pill {
   display: inline-flex;
