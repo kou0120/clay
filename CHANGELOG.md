@@ -1,3 +1,11 @@
+# [2.18.0-beta.10](https://github.com/chadbyte/clay/compare/v2.18.0-beta.9...v2.18.0-beta.10) (2026-03-27)
+
+
+### Bug Fixes
+
+* **scheduler:** respect start time in cron intervals and fix session title leaks ([9f9c489](https://github.com/chadbyte/clay/commit/9f9c48987146ec7eda3e5eb0186fe38bd9ff50fd))
+* **scheduler:** show next run in detail panel and recognize offset cron lists ([3264825](https://github.com/chadbyte/clay/commit/3264825f6baf44b8bae9f75b0da3002d2d90c830))
+
 # [2.18.0-beta.9](https://github.com/chadbyte/clay/compare/v2.18.0-beta.8...v2.18.0-beta.9) (2026-03-26)
 
 
