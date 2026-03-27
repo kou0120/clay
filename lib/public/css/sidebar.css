@@ -1041,13 +1041,7 @@
 #layout.sidebar-collapsed #user-island .user-island-actions {
   display: none;
 }
-/* Keep user island expanded in mate DM mode regardless of sidebar state */
-body.mate-dm-active #layout.sidebar-collapsed #user-island .user-island-info {
-  display: block;
-}
-body.mate-dm-active #layout.sidebar-collapsed #user-island .user-island-actions {
-  display: flex;
-}
+/* Mate DM: user island collapses with sidebar like project mode */
 
 
 
