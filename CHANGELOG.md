@@ -1,3 +1,50 @@
+# [2.18.0](https://github.com/chadbyte/clay/compare/v2.17.0...v2.18.0) (2026-03-28)
+
+
+### Bug Fixes
+
+* **debate:** add missing debate CSS and JS module files ([af6e0c2](https://github.com/chadbyte/clay/commit/af6e0c271750fad33c1dd5d3ce989c657a671a66))
+* **debate:** persist round number and conclude state across reloads ([93930a7](https://github.com/chadbyte/clay/commit/93930a7b73409a0d7e1cfa605a3c47194b02a9e6))
+* **debate:** remove round limit and fix conclude state persistence ([55fdb94](https://github.com/chadbyte/clay/commit/55fdb94ce0447c2c082cecdce59d22cfef9ebe21))
+* **deps:** regenerate package-lock.json with missing entries ([77ea3fc](https://github.com/chadbyte/clay/commit/77ea3fc3bab2edbbfcbd2b32df48363c2eeddfca))
+* **dm:** block main WS messages during mate WS connect transition ([3c51e3b](https://github.com/chadbyte/clay/commit/3c51e3bf918560c52b9f40935d763206fc70ddad))
+* **dm:** insert pre-thinking avatar before sparkle activity indicator ([2075247](https://github.com/chadbyte/clay/commit/2075247b9b63d022db8314c0b120bea8182d8e69))
+* **dm:** show sparkle activity indicator in mate DM mode ([78a4ad9](https://github.com/chadbyte/clay/commit/78a4ad9c1a0e16a7236f2ac97054f376a873c8f8))
+* **dm:** suppress regular project history during mate DM restore ([39ae3d2](https://github.com/chadbyte/clay/commit/39ae3d2456558f21de9b1e49213233b44e694493))
+* **input:** allow send when pending pastes, images, or files exist without text ([b95eb80](https://github.com/chadbyte/clay/commit/b95eb809838ad48b9910729280da543eff668cac))
+* **loop:** add loopSource.name fallback to judge session title ([d28e2d1](https://github.com/chadbyte/clay/commit/d28e2d1dd2345d85aa1a98addbb2a871abdeadca))
+* **mate:** auto-approve read tools in mate DM sessions ([d14c9e2](https://github.com/chadbyte/clay/commit/d14c9e255dafc8dcf98cd928ba632208672412b6))
+* **mate:** auto-approve WebFetch for mates and fix DM restore on server restart ([59a78c5](https://github.com/chadbyte/clay/commit/59a78c5f302f9acaf57043d0fe89bf6b97591414))
+* **mate:** pass mateDisplayName on daemon startup mate restoration ([c2e0cf7](https://github.com/chadbyte/clay/commit/c2e0cf7f358b6d6ccb03f6dea106c0b5d824d895))
+* **mention:** add missing action bar to mention user messages ([fccb766](https://github.com/chadbyte/clay/commit/fccb76637173f7e0505d89efcc836732fe1a2be0))
+* **mention:** improve mention UX in mate DM and project chat ([6927a4c](https://github.com/chadbyte/clay/commit/6927a4cc8eaef7e9e56f2780ec34fc5305a60b52))
+* **mention:** include pasted content when sending mentions ([4c277c6](https://github.com/chadbyte/clay/commit/4c277c6b7d2a4fdbbc933b02a64f3e481d7864c3))
+* **mention:** pass addToMessages to mention module context ([07391db](https://github.com/chadbyte/clay/commit/07391db192dad14bef9d09526408464230640808))
+* **mention:** prevent digest callbacks from being nulled after onDone ([5580733](https://github.com/chadbyte/clay/commit/558073313593bd47738aec3955412d81cffeb79b))
+* **mention:** render mention messages in correct DOM position during history replay ([9754135](https://github.com/chadbyte/clay/commit/9754135b0f441f66c1523b11dbe0b0ca2fe4b7a7))
+* **mention:** use addToMessages for correct history replay ordering ([1c116ea](https://github.com/chadbyte/clay/commit/1c116eaa664d6ffb30d81e36acf87159cefc0d2c))
+* **mobile:** eliminate gap between input bar and iOS keyboard ([5cd807d](https://github.com/chadbyte/clay/commit/5cd807dab576d530744cb97540a0da5417a997d1)), closes [#layout](https://github.com/chadbyte/clay/issues/layout)
+* **scheduler:** allow "Run now" for loops without JUDGE.md ([aefe59e](https://github.com/chadbyte/clay/commit/aefe59eb189f09becf916322a8a59b7a22126d7b))
+* **scheduler:** respect start time in cron intervals and fix session title leaks ([9f9c489](https://github.com/chadbyte/clay/commit/9f9c48987146ec7eda3e5eb0186fe38bd9ff50fd))
+* **scheduler:** show next run in detail panel and recognize offset cron lists ([3264825](https://github.com/chadbyte/clay/commit/3264825f6baf44b8bae9f75b0da3002d2d90c830))
+* **scheduler:** single run respects maxIterations, use schedule name in banner ([baa254b](https://github.com/chadbyte/clay/commit/baa254bbd96dda0ce04bb329cfac68ed5d0a3d9a))
+* **scheduler:** use schedule id instead of linked task id for session grouping ([abd4cbd](https://github.com/chadbyte/clay/commit/abd4cbdbbbc4893ff1a6103a3b1e8f2b79052fbf))
+* **session:** persist active session per project in localStorage ([8074574](https://github.com/chadbyte/clay/commit/807457497d871391489422037df6b3ff4b33ab62))
+* **sessions:** guard ownerId assignment with isMultiUser() on session creation ([186a69e](https://github.com/chadbyte/clay/commit/186a69e717144e4832028de8282ebb32de1adf11))
+* **sessions:** prevent ownerId backfill from scrambling session dates in single-user mode ([82df2bf](https://github.com/chadbyte/clay/commit/82df2bfe96401430fe082dd6a82120f9af29a644))
+* **ui:** collapse user island in mate DM mode when sidebar is folded ([18530b5](https://github.com/chadbyte/clay/commit/18530b5970093b88e8f4ba33df7c2e157664891b))
+
+
+### Features
+
+* **debate:** add structured debate engine with moderator and panelist sessions ([8bf08f5](https://github.com/chadbyte/clay/commit/8bf08f54da2a4f0c08c886858194adbb02dc174b))
+* **mention:** add [@mention](https://github.com/mention) system for invoking Mates in project chat ([4daee97](https://github.com/chadbyte/clay/commit/4daee97921e3c638003c95dd404eeabd92b3c9b1))
+* **mention:** add session digest and memory section for mates ([3c58f17](https://github.com/chadbyte/clay/commit/3c58f17eb3e21bad178868655da3d03489919a13))
+* **mention:** inject recent session digests into mention context ([ed3718b](https://github.com/chadbyte/clay/commit/ed3718beeb9d60ff9212087a1765d07b34538866))
+* **mention:** route non-read tools through permission system ([09749cc](https://github.com/chadbyte/clay/commit/09749ccff04fb84dd339ee0dee3f387e090f84d9))
+* **scheduler:** add past date blocking, smart defaults, and interval end conditions ([6cae0b6](https://github.com/chadbyte/clay/commit/6cae0b6aada96a8646d7fc909e355fa4dc8d9afa))
+* **sidebar:** group scheduled task sessions by date to reduce clutter ([b7e2ae9](https://github.com/chadbyte/clay/commit/b7e2ae936eb69167ea710406ce39db2d4f4b303a))
+
 # [2.18.0-beta.11](https://github.com/chadbyte/clay/compare/v2.18.0-beta.10...v2.18.0-beta.11) (2026-03-28)
 
 
