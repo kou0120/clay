@@ -1,3 +1,33 @@
+# [2.18.0-beta.11](https://github.com/chadbyte/clay/compare/v2.18.0-beta.10...v2.18.0-beta.11) (2026-03-28)
+
+
+### Bug Fixes
+
+* **debate:** add missing debate CSS and JS module files ([af6e0c2](https://github.com/chadbyte/clay/commit/af6e0c271750fad33c1dd5d3ce989c657a671a66))
+* **debate:** persist round number and conclude state across reloads ([93930a7](https://github.com/chadbyte/clay/commit/93930a7b73409a0d7e1cfa605a3c47194b02a9e6))
+* **debate:** remove round limit and fix conclude state persistence ([55fdb94](https://github.com/chadbyte/clay/commit/55fdb94ce0447c2c082cecdce59d22cfef9ebe21))
+* **deps:** regenerate package-lock.json with missing entries ([77ea3fc](https://github.com/chadbyte/clay/commit/77ea3fc3bab2edbbfcbd2b32df48363c2eeddfca))
+* **dm:** block main WS messages during mate WS connect transition ([3c51e3b](https://github.com/chadbyte/clay/commit/3c51e3bf918560c52b9f40935d763206fc70ddad))
+* **dm:** insert pre-thinking avatar before sparkle activity indicator ([2075247](https://github.com/chadbyte/clay/commit/2075247b9b63d022db8314c0b120bea8182d8e69))
+* **input:** allow send when pending pastes, images, or files exist without text ([b95eb80](https://github.com/chadbyte/clay/commit/b95eb809838ad48b9910729280da543eff668cac))
+* **loop:** add loopSource.name fallback to judge session title ([d28e2d1](https://github.com/chadbyte/clay/commit/d28e2d1dd2345d85aa1a98addbb2a871abdeadca))
+* **mention:** pass addToMessages to mention module context ([07391db](https://github.com/chadbyte/clay/commit/07391db192dad14bef9d09526408464230640808))
+* **mention:** render mention messages in correct DOM position during history replay ([9754135](https://github.com/chadbyte/clay/commit/9754135b0f441f66c1523b11dbe0b0ca2fe4b7a7))
+* **mention:** use addToMessages for correct history replay ordering ([1c116ea](https://github.com/chadbyte/clay/commit/1c116eaa664d6ffb30d81e36acf87159cefc0d2c))
+* **scheduler:** allow "Run now" for loops without JUDGE.md ([aefe59e](https://github.com/chadbyte/clay/commit/aefe59eb189f09becf916322a8a59b7a22126d7b))
+* **scheduler:** single run respects maxIterations, use schedule name in banner ([baa254b](https://github.com/chadbyte/clay/commit/baa254bbd96dda0ce04bb329cfac68ed5d0a3d9a))
+* **scheduler:** use schedule id instead of linked task id for session grouping ([abd4cbd](https://github.com/chadbyte/clay/commit/abd4cbdbbbc4893ff1a6103a3b1e8f2b79052fbf))
+* **sessions:** guard ownerId assignment with isMultiUser() on session creation ([186a69e](https://github.com/chadbyte/clay/commit/186a69e717144e4832028de8282ebb32de1adf11))
+* **sessions:** prevent ownerId backfill from scrambling session dates in single-user mode ([82df2bf](https://github.com/chadbyte/clay/commit/82df2bfe96401430fe082dd6a82120f9af29a644))
+* **ui:** collapse user island in mate DM mode when sidebar is folded ([18530b5](https://github.com/chadbyte/clay/commit/18530b5970093b88e8f4ba33df7c2e157664891b))
+
+
+### Features
+
+* **debate:** add structured debate engine with moderator and panelist sessions ([8bf08f5](https://github.com/chadbyte/clay/commit/8bf08f54da2a4f0c08c886858194adbb02dc174b))
+* **scheduler:** add past date blocking, smart defaults, and interval end conditions ([6cae0b6](https://github.com/chadbyte/clay/commit/6cae0b6aada96a8646d7fc909e355fa4dc8d9afa))
+* **sidebar:** group scheduled task sessions by date to reduce clutter ([b7e2ae9](https://github.com/chadbyte/clay/commit/b7e2ae936eb69167ea710406ce39db2d4f4b303a))
+
 # [2.18.0-beta.10](https://github.com/chadbyte/clay/compare/v2.18.0-beta.9...v2.18.0-beta.10) (2026-03-27)
 
 
