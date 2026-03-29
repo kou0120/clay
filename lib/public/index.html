@@ -717,6 +717,7 @@
       </div>
     </div>
     <div class="user-island-actions">
+      <button id="user-settings-btn" title="User settings"><i data-lucide="settings"></i></button>
     </div>
   </div>
 
@@ -752,6 +753,67 @@
       <input type="checkbox" id="notif-toggle-sound">
       <span class="toggle-track"><span class="toggle-thumb"></span></span>
     </label>
+  </div>
+</div>
+
+<!-- === User Settings (modal dialog) === -->
+<div id="user-settings" class="hidden">
+  <div class="confirm-backdrop" id="user-settings-backdrop"></div>
+  <div class="us-modal">
+    <div class="us-modal-header">
+      <span class="us-modal-title">User Settings</span>
+      <button class="us-modal-close" id="user-settings-close" title="Close"><i data-lucide="x"></i></button>
+    </div>
+    <div class="us-modal-body">
+      <nav class="us-modal-nav">
+        <select id="user-settings-nav-dropdown" class="settings-nav-dropdown">
+          <option value="us-account" selected>Account</option>
+        </select>
+        <div class="us-modal-nav-items">
+          <button class="us-nav-item active" data-section="us-account"><span>Account</span></button>
+          <div class="us-nav-separator"></div>
+          <button class="us-nav-item us-nav-danger" data-section="us-logout"><span>Log Out</span></button>
+        </div>
+      </nav>
+      <div class="us-modal-content">
+
+        <!-- Account section -->
+        <div class="us-section" data-section="us-account">
+          <h2>Account</h2>
+          <div class="settings-card">
+            <div class="settings-field-row">
+              <div>
+                <div class="settings-label">Username</div>
+                <div class="settings-value" id="us-username">-</div>
+              </div>
+            </div>
+          </div>
+          <h3>Change PIN</h3>
+          <div class="settings-card">
+            <div class="settings-field">
+              <label class="settings-label">New PIN (6 digits)</label>
+              <div class="us-pin-row">
+                <input type="password" class="us-text-input us-pin-input" id="us-pin-input" maxlength="6" inputmode="numeric" pattern="[0-9]*" placeholder="000000" autocomplete="off">
+                <button class="us-btn" id="us-pin-save" disabled>Update PIN</button>
+              </div>
+              <div class="us-pin-msg hidden" id="us-pin-msg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log out section -->
+        <div class="us-section" data-section="us-logout">
+          <h2>Log Out</h2>
+          <div class="settings-card settings-card-danger">
+            <div class="settings-field">
+              <p class="settings-hint" style="margin:0 0 12px;font-size:14px;color:var(--text-secondary)">You will be signed out and redirected to the login screen.</p>
+              <button class="us-btn us-btn-danger" id="us-logout-btn">Log Out</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
 

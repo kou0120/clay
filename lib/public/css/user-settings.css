@@ -1,0 +1,321 @@
+/* ==========================================================================
+   User Settings — Modal dialog with left nav + right content
+   ========================================================================== */
+
+/* --- Overlay container --- */
+#user-settings {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#user-settings.hidden {
+  display: none;
+}
+
+/* --- Modal box --- */
+.us-modal {
+  position: relative;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: 680px;
+  max-width: 100%;
+  height: min(560px, calc(100vh - 40px));
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(var(--shadow-rgb), 0.5);
+  animation: usModalIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+@keyframes usModalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- Header --- */
+.us-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.us-modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.us-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.us-modal-close .lucide {
+  width: 18px;
+  height: 18px;
+}
+
+.us-modal-close:hover {
+  background: rgba(var(--overlay-rgb), 0.08);
+  color: var(--text);
+}
+
+/* --- Body: nav + content side by side --- */
+.us-modal-body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* --- Left nav --- */
+.us-modal-nav {
+  width: 172px;
+  flex-shrink: 0;
+  padding: 12px 8px;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--sidebar-bg);
+  overflow-y: auto;
+}
+
+.us-modal-nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.us-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  text-align: left;
+}
+
+.us-nav-item:hover {
+  background: rgba(var(--overlay-rgb), 0.04);
+  color: var(--text-secondary);
+}
+
+.us-nav-item.active {
+  background: rgba(var(--overlay-rgb), 0.08);
+  color: var(--text);
+}
+
+.us-nav-separator {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 10px;
+}
+
+.us-nav-danger {
+  color: var(--error);
+}
+
+.us-nav-danger:hover {
+  background: var(--error-12);
+  color: var(--error);
+}
+
+.us-nav-danger.active {
+  background: var(--error-12);
+  color: var(--error);
+}
+
+/* --- Right content --- */
+.us-modal-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+/* --- Sections --- */
+.us-section {
+  display: none;
+}
+
+.us-section.active {
+  display: block;
+}
+
+.us-section h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.us-section h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 20px 0 10px;
+}
+
+/* --- Text inputs --- */
+.us-text-input {
+  width: 100%;
+  max-width: 320px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  margin-top: 4px;
+}
+
+.us-text-input:focus {
+  border-color: var(--accent);
+}
+
+.us-text-input::placeholder {
+  color: var(--text-dimmer);
+}
+
+/* --- Buttons --- */
+.us-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.us-btn:hover {
+  opacity: 0.9;
+}
+
+.us-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.us-btn-danger {
+  background: var(--error);
+}
+
+/* --- PIN row --- */
+.us-pin-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.us-pin-input {
+  max-width: 140px;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.us-pin-msg {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.us-pin-msg.hidden {
+  display: none;
+}
+
+.us-pin-msg-ok {
+  color: #3fb950;
+}
+
+.us-pin-msg-err {
+  color: var(--error);
+}
+
+/* --- Active state on gear button --- */
+#user-settings-btn.active {
+  background: var(--sidebar-hover);
+  color: var(--text);
+}
+
+/* --- Mobile nav dropdown (hidden on desktop) --- */
+#user-settings .settings-nav-dropdown {
+  display: none;
+}
+
+/* ==========  RESPONSIVE  ========== */
+@media (max-width: 580px) {
+  .us-modal {
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    border-radius: 12px;
+  }
+
+  .us-modal-body {
+    flex-direction: column;
+  }
+
+  .us-modal-nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 8px 12px;
+    overflow-y: visible;
+  }
+
+  .us-modal-nav-items {
+    display: none;
+  }
+
+  #user-settings .settings-nav-dropdown {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .us-modal-content {
+    padding: 16px;
+  }
+}
