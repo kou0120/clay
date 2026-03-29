@@ -91,7 +91,7 @@ The frontend is served directly from your machine. There is no third-party hoste
 npx clay-server
 ```
 
-On first run, it walks you through port and PIN setup.
+On first run, it asks for a port number and whether you're using it solo or with a team.
 Scan the QR code to connect from your phone instantly.
 
 For remote access, use a VPN like Tailscale.
