@@ -1,14 +1,90 @@
 # Clay
 
-<p align="center">
-  <img src="media/phone.gif" alt="Clay on phone" width="300">
-</p>
-
-<h3 align="center">Turn Claude Code into a team workspace. Any device, one command.</h3>
+<h3 align="center">Claude Code in your browser. Bring your team, or build one.</h3>
 
 [![npm version](https://img.shields.io/npm/v/clay-server)](https://www.npmjs.com/package/clay-server) [![npm downloads](https://img.shields.io/npm/dw/clay-server)](https://www.npmjs.com/package/clay-server) [![GitHub stars](https://img.shields.io/github/stars/chadbyte/clay)](https://github.com/chadbyte/clay) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chadbyte/clay/blob/main/LICENSE)
 
-Clay gives Claude Code a browser UI that runs on any device. Use it from your phone, run it on macOS, Windows, or Linux. Invite teammates, manage multiple projects from one sidebar, and get push notifications when Claude needs you. HTTPS and push notifications work out of the box with zero config. Built on the official Claude Agent SDK, not a terminal parser. Your machine is the server. No cloud relay in between, no extra network surface.
+Everything Claude Code does, Clay does in your browser. Plus multi-session, file browser, scheduled agents, mobile notifications, and more. Invite your team to work together in the same session, or build an AI team from scratch. **Your machine is the server.** No cloud relay, no middleman.
+
+```bash
+npx clay-server
+# Scan the QR code to connect from any device
+```
+
+---
+
+## What you get
+
+### Everything the CLI does
+
+Your CLI sessions, your CLAUDE.md rules, your MCP servers. **All of it works in Clay as-is.** Pick up a CLI session in the browser, or continue a browser session in the CLI. Same SDK, same tools, same results.
+
+<p align="center">
+  <img src="media/split.gif" alt="split-screen workflow" width="700">
+</p>
+
+### Everything the CLI doesn't
+
+**Multiple agents, multiple projects, at the same time.** Switch between them in the sidebar. Browse project files live while the agent works, with syntax highlighting for 180+ languages. Mermaid diagrams render as diagrams. Tables render as tables.
+
+**Schedule agents with cron**, or let them run autonomously with **Ralph Loop**. Your phone buzzes when Claude needs approval, finishes a task, or hits an error. Install as a **PWA for push notifications**. Close your laptop, sessions keep running.
+
+<p align="center">
+  <img src="media/phone.gif" alt="Clay on phone" width="280">
+</p>
+
+### Bring your whole team
+
+**One API key runs the whole workspace.** Invite teammates, set permissions per person, per project, per session. A designer reports a bug in plain language. A junior dev works with guardrails. If someone gets stuck, **jump into their session** to help in real time.
+
+Add a CLAUDE.md and the AI operates within those rules: explains technical terms simply, escalates risky operations to seniors, summarizes changes in plain words. Real-time presence shows who's where.
+
+### Build your team with Mates
+
+Not *"act like a design expert."* Mates are AI teammates shaped through real conversation, trained with your context, and built to hold their own perspective. Give them a name, avatar, expertise, and working style. **They don't flatter you. They push back.**
+
+They live in your sidebar next to your human teammates. @mention them in any project session when you need their take, DM them directly, or bring multiple into the same conversation. Each Mate builds persistent knowledge over time, remembering past decisions, project context, and how you work together.
+
+#### Debate before you decide
+
+Let your Mates challenge each other. Set up a debate. Pick a moderator and panelists, give them a topic, and let them go. You can raise your hand to interject. When it wraps up, you get opposing perspectives from every angle.
+
+"Should we rewrite this in Rust?" "Should we delay the launch to fix onboarding?" "Should we position this as enterprise-first or PLG?" Get real opposing perspectives before you commit.
+
+### Your machine, your server
+
+Clay runs as a daemon on your machine. **No cloud relay, no intermediary service** between your browser and your code. Data flows directly to the Anthropic API, exactly as it does from the CLI.
+
+PIN authentication, per-project permissions, and HTTPS are built in. For remote access, use a VPN like Tailscale.
+
+---
+
+## How a bug gets fixed
+
+**Without Clay:**
+Designer finds a bug → writes up a ticket on Asana → dev asks clarifying questions → PM prioritizes → dev opens terminal, fixes it → shares a preview → QA checks → deploy
+<br>*7 steps. 3 people. 2 days.*
+
+**With Clay:**
+Designer opens Clay in the browser, describes the bug in plain language → senior joins the same session, reviews the fix together → merge
+<br>*2 steps. 2 people. Minutes. The designer never touched a terminal.*
+
+---
+
+## How Clay compares
+
+*As of March 2026.*
+
+| | CLI | Remote Control | Channels | **Clay** |
+|---|---|---|---|---|
+| Multi-user with roles | – | – | Platform-dependent | **Accounts + RBAC** |
+| AI teammates (Mates + Debates) | – | – | – | **Yes** |
+| Join teammate's session | – | – | – | **Yes** |
+| Persistent daemon | – | Session-based | – | **Yes** |
+| Native mobile app | – | **Yes** | **Platform app** | PWA |
+| Official support | **Anthropic** | **Anthropic** | **Anthropic** | Community |
+
+Clay is a community project, not affiliated with Anthropic. Official tools receive guaranteed support and updates.
 
 ---
 
@@ -31,110 +107,6 @@ For remote access, use a VPN like Tailscale.
 
 ---
 
-## Multi-session, multi-project
-
-Add a project in the browser and an agent attaches to it.
-Run backend, frontend, and docs simultaneously. Switch between them in the sidebar.
-
-The server runs as a background daemon. Sessions persist even after you close the terminal.
-
-Mermaid diagrams render as diagrams. Tables render as tables.
-Code blocks highlight 180+ languages.
-Browse project files in the file browser — changes reflect live while the agent works.
-
-<p align="center">
-  <img src="media/split.gif" alt="split-screen workflow" width="700">
-</p>
-
----
-
-## Multi-user
-
-Invite teammates and give them access to a project. They talk to Claude Code directly in the browser — no terminal, no setup on their end.
-
-Add a CLAUDE.md and the AI operates within those rules: explains technical terms in plain language, escalates risky operations to seniors, summarizes changes in simple words.
-
-If someone gets stuck, join their session to unblock them in real time. Permissions can be separated per project and per session. Real-time presence shows who's where.
-
----
-
-## Mates
-
-Build your team, even if you're solo.
-
-Mates are AI teammates you create through conversation. Interview them, give them a name, avatar, and role. A code reviewer, a marketing lead, a writing partner. They remember how you work together and carry context across sessions.
-
-They sit in your sidebar next to your human teammates. DM them, bring them into projects, let them work autonomously. In a multi-user workspace, your whole team, human and AI, works in one place.
-
-<!-- screenshot: sidebar with Mates visible -->
-
----
-
-## Mobile & notifications
-
-Phone, tablet, couch. All you need is a browser.
-Pick up a terminal session in the browser. Continue a browser session from another device.
-One QR code to connect. Install as a PWA for a native-like experience.
-
-When Claude asks for approval, your phone buzzes. You also get notified on completion or error. No need to keep the browser open.
-
-<p align="center">
-  <img src="media/push-notification.jpg" alt="push notification" width="300">
-</p>
-
----
-
-## Automation
-
-The scheduler kicks off agents at set times.
-Have it check open issues and submit PRs every morning at 8 AM.
-Or compile world news and email you a digest every day.
-
-Take it further with Ralph Loop, an autonomous coding loop built into Clay. The agent works, commits, and a judge evaluates. If it fails, a fresh session starts over with no memory of the previous attempt. Only the code carries over. Based on [Geoffrey Huntley's Ralph Wiggum technique](https://ghuntley.com/loop/).
-
----
-
-## Security & Privacy
-
-Your data flows directly from your machine to the Anthropic API, exactly as it does when you use the CLI. Clay adds a browser layer on top, not a middleman.
-
-HTTPS is enabled by default with a builtin certificate. PIN authentication and per-project/session permissions are built in. For local network use, this is sufficient. For remote access, we recommend a VPN like Tailscale.
-
----
-
-## Why Clay?
-
-*As of March 2026.*
-
-| | CLI + Remote Control | tmux | Desktop | Cowork | **Clay** |
-|---|---|---|---|---|---|
-| Multi-user | ❌ | ✅ | ❌ | ❌ | ✅ |
-| Mobile / PWA | ✅ | ➖ | ➖ | ➖ | ✅ |
-| Push notifications | 🟠 | ❌ | 🟠 | ❌ | ✅ |
-| GUI | 🟠 | ❌ | ✅ | ✅ | ✅ |
-| Scheduler (cron) | 🟠 | ❌ | ✅ | ✅ | ✅ |
-| Scheduler survives logout | ❌ | ➖ | 🟠 | 🟠 | ✅ |
-| Join teammate's session | ❌ | 🟠 | ❌ | ❌ | ✅ |
-
-✅ Supported · 🟠 Partial / limited · ❌ Not supported · ➖ N/A
-
----
-
-## Key Features
-
-* **Mates** - AI teammates with persistent identity, context, and memory. Create through an interview, DM them, collaborate across sessions.
-* **Multi-user** - Accounts, invitations, per-project/session permissions, real-time presence.
-* **Multi-agent** - Parallel agents per project, sidebar switching.
-* **Push notifications** - Approval, completion, error. Native-like PWA experience.
-* **Scheduler** - Cron-based automatic agent execution.
-* **Ralph Loop** - Autonomous coding loop. The agent works, a judge evaluates, and it iterates until it passes.
-* **File browser** - File exploration, syntax highlighting, live reload.
-* **Built-in terminal** - Multi-tab terminal, mobile keyboard support.
-* **Session search** - Full-text search across all conversation history.
-* **Session persistence** - Survives crashes, restarts, and network drops.
-
----
-
 ## FAQ
 
 **"Is this just a terminal wrapper?"**
@@ -150,19 +122,10 @@ Yes. Pick up a CLI session in the browser, or continue a browser session in the 
 Yes. If your project has a CLAUDE.md, it works in Clay as-is.
 
 **"Does each teammate need their own API key?"**
-No. Teammates share the Claude Code session logged in on the server. If needed, you can configure per-project environment variables to use different API keys.
+No. Teammates share the Claude Code session logged in on the server. You can also assign different API keys per project for billing isolation.
 
 **"Does it work with MCP servers?"**
 Yes. MCP configurations from the CLI carry over as-is.
-
-**"What are Mates?"**
-AI teammates you create through a conversation. Each Mate has a name, avatar, personality, and persistent memory. They live in your sidebar and you can DM them or bring them into projects.
-
-**"How is a Mate different from Claude Projects?"**
-Claude Projects save prompts and files as context. A Mate is a teammate. It has its own identity formed through an interview, remembers how you work together across sessions, and exists alongside your human teammates in the workspace. You're not organizing prompts. You're building a team.
-
-**"Can I create multiple Mates?"**
-Yes. Create as many as you need. A code reviewer, a writing partner, a project manager. Each one is independent.
 
 ---
 
