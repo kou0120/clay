@@ -443,7 +443,7 @@ async function restartDaemonFromConfig() {
   }
 
   // Rebuild config (preserve everything except pid)
-  var newConfig = {
+  var newConfig = Object.assign({}, lastConfig, {
     pid: null,
     port: targetPort,
     pinHash: lastConfig.pinHash || null,
@@ -456,7 +456,7 @@ async function restartDaemonFromConfig() {
       return fs.existsSync(p.path);
     }),
     removedProjects: lastConfig.removedProjects || [],
-  };
+  });
 
   ensureConfigDir();
   saveConfig(newConfig);
@@ -1539,7 +1539,7 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
     }
   }
 
-  var config = {
+  var config = Object.assign({}, prevConfig || {}, {
     pid: null,
     port: port,
     host: host,
@@ -1554,7 +1554,7 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
     mode: mode || "single",
     setupCompleted: true,
     projects: allProjects,
-  };
+  });
 
   ensureConfigDir();
   saveConfig(config);
@@ -1708,7 +1708,7 @@ async function devMode(mode, keepAwake, existingPinHash) {
     allProjects.push(rpDevEntry);
   }
 
-  var config = {
+  var config = Object.assign({}, prevDevConfig || {}, {
     pid: null,
     port: port,
     host: host,
@@ -1722,7 +1722,7 @@ async function devMode(mode, keepAwake, existingPinHash) {
     mode: mode || "single",
     setupCompleted: true,
     projects: allProjects,
-  };
+  });
 
   ensureConfigDir();
   saveConfig(config);
@@ -1884,7 +1884,7 @@ async function restartDaemonWithTLS(config, callback) {
   clearStaleConfig();
 
   // Re-fork with TLS
-  var newConfig = {
+  var newConfig = Object.assign({}, config || {}, {
     pid: null,
     port: config.port,
     pinHash: config.pinHash || null,
@@ -1895,7 +1895,7 @@ async function restartDaemonWithTLS(config, callback) {
     keepAwake: config.keepAwake || false,
     dangerouslySkipPermissions: config.dangerouslySkipPermissions || false,
     projects: config.projects || [],
-  };
+  });
 
   ensureConfigDir();
   saveConfig(newConfig);
