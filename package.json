@@ -38,6 +38,7 @@
   "author": "Chad",
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.76",
+    "@wecom/aibot-node-sdk": "^1.0.4",
     "@lydell/node-pty": "^1.2.0-beta.3",
     "nodemailer": "^6.10.1",
     "qrcode-terminal": "^0.12.0",
