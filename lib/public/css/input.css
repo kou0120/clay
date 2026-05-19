@@ -737,6 +737,24 @@
   flex-shrink: 0;
 }
 #vendor-toggle-wrap.hidden { display: none; }
+
+/* Compact session-vendor icon shown next to the config-chip when the
+   full vendor-toggle is hidden (because the session's vendor is already
+   committed). Visual only - not clickable. */
+#active-vendor-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+#active-vendor-indicator.hidden { display: none; }
+#active-vendor-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+}
 #vendor-toggle-wrap.locked {
   border: none;
   height: auto;
