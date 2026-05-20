@@ -360,6 +360,71 @@
   color: var(--text-muted);
 }
 
+/* Auto-approve allow-list editor */
+#us-claude-allow-list {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#us-claude-allow-list:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.settings-allow-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.settings-allow-actions .settings-action {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+}
+.settings-allow-actions .settings-action:hover {
+  background: var(--sidebar-hover);
+}
+.settings-allow-status {
+  font-size: 12px;
+  color: var(--text-dimmer);
+}
+.settings-allow-status.error { color: var(--error); }
+.settings-allow-defaults {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-dimmer);
+}
+.settings-allow-defaults summary {
+  cursor: pointer;
+  user-select: none;
+}
+.settings-allow-managed {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+}
+.settings-allow-managed code {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--code-bg);
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
 /* --- Toggle rows --- */
 #user-settings .settings-toggle-row {
   display: flex;
