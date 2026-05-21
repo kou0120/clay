@@ -197,11 +197,11 @@
 }
 .notif-banner-tui-open:hover { opacity: 0.85; }
 .notif-banner-tui-goto {
-  background: none;
-  border: 1px solid var(--border, #333);
-  color: var(--text-secondary);
+  background: var(--accent2);
+  border: none;
+  color: #fff;
 }
-.notif-banner-tui-goto:hover { color: var(--text); border-color: var(--text-secondary); }
+.notif-banner-tui-goto:hover { opacity: 0.85; }
 .notif-banner-allow {
   background: var(--accent, #6c5ce7);
   color: #fff;
