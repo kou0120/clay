@@ -1,3 +1,10 @@
+# [2.39.0-beta.3](https://github.com/chadbyte/clay/compare/v2.39.0-beta.2...v2.39.0-beta.3) (2026-05-25)
+
+
+### Features
+
+* prepare 2026-06-15 cutover with What's New system ([f02c85b](https://github.com/chadbyte/clay/commit/f02c85b1184be30d901ef34d9e33e99b9d200e1a))
+
 # [2.39.0-beta.2](https://github.com/chadbyte/clay/compare/v2.39.0-beta.1...v2.39.0-beta.2) (2026-05-21)
 
 
