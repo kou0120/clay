@@ -862,8 +862,32 @@
 
 /* Header TUI font icon button - single trigger that opens a popover
    with the full font picker + size stepper. Visible only when a TUI
-   session is active. Inherits title-bar icon button styling so it
-   blends with the existing toolbar. */
+   session is active. Matches the title-bar icon button tone used by
+   #terminal-toggle-btn / #find-in-session-btn / #debate-pdf-btn so
+   it blends into the toolbar instead of looking like a raw button. */
+.header-tui-font-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--text-dimmer);
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.header-tui-font-btn .lucide { width: 15px; height: 15px; }
+.header-tui-font-btn:hover {
+  color: var(--text-secondary);
+  background: rgba(var(--overlay-rgb), 0.04);
+  border-color: var(--border);
+}
+.header-tui-font-btn.active {
+  color: var(--text);
+  background: rgba(var(--overlay-rgb), 0.06);
+  border-color: var(--border);
+}
 .header-tui-font-btn.hidden { display: none; }
 
 /* Floating popover that holds the font menu + size row. Anchored
