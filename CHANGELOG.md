@@ -1,3 +1,11 @@
+# [2.40.0-beta.1](https://github.com/chadbyte/clay/compare/v2.39.0...v2.40.0-beta.1) (2026-05-26)
+
+
+### Features
+
+* **codex:** add gpt-5.5 model selector and make it default ([505b5fe](https://github.com/chadbyte/clay/commit/505b5feb9208592166fc1d2c70c0f652a3d5c558))
+* **tui:** move terminal font picker to title bar during TUI sessions ([293b9b4](https://github.com/chadbyte/clay/commit/293b9b4760d1697552975f37cffa2acc4ac06861))
+
 # [2.39.0](https://github.com/chadbyte/clay/compare/v2.38.0...v2.39.0) (2026-05-25)
 
 
