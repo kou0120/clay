@@ -860,45 +860,133 @@
   }
 }
 
-/* Terminal font picker row */
-.us-term-font-row {
+/* Header TUI font icon button - single trigger that opens a popover
+   with the full font picker + size stepper. Visible only when a TUI
+   session is active. Inherits title-bar icon button styling so it
+   blends with the existing toolbar. */
+.header-tui-font-btn.hidden { display: none; }
+
+/* Floating popover that holds the font menu + size row. Anchored
+   under the title-bar button via JS positioning. */
+.header-tui-font-popover {
+  position: fixed;
+  min-width: 220px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 8px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(var(--shadow-rgb), 0.45);
+  z-index: 200;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+.header-tui-font-popover.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.header-tui-font-popover-label {
+  padding: 4px 8px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dimmer);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.header-tui-font-popover-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.header-tui-font-popover-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
 }
-.us-term-font-family {
+.header-tui-font-popover-item:hover {
+  background: rgba(var(--overlay-rgb), 0.06);
+}
+.header-tui-font-popover-check {
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  opacity: 0;
+  flex-shrink: 0;
+}
+.header-tui-font-popover-item.active .header-tui-font-popover-check { opacity: 1; }
+.header-tui-font-popover-item-label {
   flex: 1 1 auto;
-  min-width: 180px;
-  padding: 7px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.us-term-font-custom {
-  flex: 1 1 100%;
-  padding: 7px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 13px;
-  font-family: "Roboto Mono", monospace;
+.header-tui-font-popover-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 4px;
 }
-.us-term-font-custom.hidden { display: none; }
-.us-term-font-size {
-  width: 64px;
-  padding: 7px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--input-bg);
-  color: var(--text);
+.header-tui-font-popover-size {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 10px 4px;
+}
+.header-tui-font-popover-size-label {
   font-size: 13px;
+  color: var(--text-secondary);
+}
+.header-tui-font-popover-size-stepper {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.header-tui-font-popover-size-stepper button {
+  width: 26px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.header-tui-font-popover-size-stepper button:hover {
+  background: rgba(var(--overlay-rgb), 0.06);
+  color: var(--text);
+}
+.header-tui-font-popover-size-stepper button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.header-tui-font-popover-size-val {
+  min-width: 28px;
   text-align: center;
-}
-.us-term-font-unit {
-  font-size: 13px;
-  color: var(--text-dimmer);
+  font-size: 12px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  user-select: none;
 }

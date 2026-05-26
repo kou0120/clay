@@ -18,6 +18,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+<!-- Monospace web fonts used by the TUI font picker in the title bar.
+     SF Mono is Apple-system-only (no Google Fonts entry) and
+     ui-monospace is a system keyword - both rely on the user's OS. -->
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500;700&family=Cascadia+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5/css/xterm.min.css">
 <script>
 (function(){try{var k="clay-theme-vars",v=localStorage.getItem(k),r=document.documentElement;if(v){var o=JSON.parse(v),p;for(p in o)r.style.setProperty(p,o[p]);var vt=localStorage.getItem(k.replace("-vars","-variant"));if(vt==="light"){r.classList.add("light-theme");r.classList.remove("dark-theme")}else{r.classList.add("dark-theme");r.classList.remove("light-theme")}var m=document.querySelector('meta[name="theme-color"]');if(m&&o["--bg"])m.setAttribute("content",o["--bg"])}else{var sl=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;if(sl){r.classList.add("light-theme");r.classList.remove("dark-theme")}}}catch(e){}})();
@@ -367,6 +371,9 @@
         <div id="ralph-sticky" class="hidden"></div>
         <div id="debate-sticky" class="hidden"></div>
         <div class="status">
+          <button type="button" id="header-tui-font-btn" class="header-tui-font-btn hidden" title="Terminal font" aria-label="Terminal font">
+            <i data-lucide="type"></i>
+          </button>
           <button id="debate-pdf-btn" class="hidden" title="Export debate as PDF"><i data-lucide="download"></i></button>
           <button id="find-in-session-btn" title="Search in session (Ctrl+F)"><i data-lucide="search"></i></button>
           <button id="terminal-toggle-btn" title="Terminal"><i data-lucide="square-terminal"></i><span id="terminal-count" class="hidden"></span></button>
@@ -1001,25 +1008,6 @@
         <!-- Appearance section -->
         <div class="us-section" data-section="us-appearance">
           <h2>Appearance</h2>
-          <div class="settings-card">
-            <div class="settings-label" style="margin-bottom:10px;">Terminal font</div>
-            <div class="us-term-font-row">
-              <select id="us-term-font-family" class="us-term-font-family">
-                <option value="'SF Mono', Menlo, Monaco, 'Courier New', monospace">SF Mono / Menlo (default)</option>
-                <option value="'JetBrains Mono', 'SF Mono', Menlo, monospace">JetBrains Mono</option>
-                <option value="'Fira Code', 'SF Mono', Menlo, monospace">Fira Code</option>
-                <option value="'Cascadia Code', 'SF Mono', Menlo, monospace">Cascadia Code</option>
-                <option value="'IBM Plex Mono', 'SF Mono', Menlo, monospace">IBM Plex Mono</option>
-                <option value="'Source Code Pro', 'SF Mono', Menlo, monospace">Source Code Pro</option>
-                <option value="'Roboto Mono', 'SF Mono', Menlo, monospace">Roboto Mono</option>
-                <option value="ui-monospace, monospace">System monospace</option>
-                <option value="__custom__">Custom...</option>
-              </select>
-              <input type="text" id="us-term-font-family-custom" class="us-term-font-custom hidden" placeholder="e.g. 'My Font', monospace" maxlength="200">
-              <input type="number" id="us-term-font-size" class="us-term-font-size" min="9" max="32" step="1">
-              <span class="us-term-font-unit">px</span>
-            </div>
-          </div>
           <div class="settings-card">
             <div class="settings-label" style="margin-bottom:10px;">Chat layout</div>
             <div class="layout-switcher" id="us-layout-switcher">
