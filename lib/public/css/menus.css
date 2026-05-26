@@ -544,6 +544,27 @@
 .config-radio-item:hover { background: rgba(var(--overlay-rgb),0.05); color: var(--text); }
 .config-radio-item.active { color: var(--accent); font-weight: 600; }
 
+/* Locked picker items (Codex GUI sessions after the first message: model
+   is bound to the thread, picks would be silently ignored). Active model
+   stays slightly more legible so the user can still see which one's live. */
+.config-radio-item.locked {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.config-radio-item.locked:hover {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.config-radio-item.locked.active {
+  opacity: 0.85;
+}
+.config-model-hint {
+  padding: 4px 14px 10px;
+  font-size: 11px;
+  color: var(--text-dimmer);
+  font-style: italic;
+}
+
 /* Segmented control for effort */
 .config-segmented {
   display: flex;
