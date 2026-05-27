@@ -1,3 +1,12 @@
+# [2.40.0-beta.4](https://github.com/chadbyte/clay/compare/v2.40.0-beta.3...v2.40.0-beta.4) (2026-05-27)
+
+
+### Features
+
+* **tui:** lazy-resume sessions instead of respawning claude on switch ([d56b8f1](https://github.com/chadbyte/clay/commit/d56b8f14a4f917cabe3dd0a0d17fb4c0fa082738))
+* **tui:** reclaim idle session PTYs and add explicit Close ([63ac6ba](https://github.com/chadbyte/clay/commit/63ac6bae4b82242c8e001e6e573f009b5d25b639))
+* **tui:** usable mobile input for TUI sessions ([fc0764e](https://github.com/chadbyte/clay/commit/fc0764eb5a715497e7b64978d3cf7975d3edd995))
+
 # [2.40.0-beta.3](https://github.com/chadbyte/clay/compare/v2.40.0-beta.2...v2.40.0-beta.3) (2026-05-26)
 
 
