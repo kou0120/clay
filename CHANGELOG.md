@@ -1,3 +1,25 @@
+# [2.40.0](https://github.com/chadbyte/clay/compare/v2.39.0...v2.40.0) (2026-05-27)
+
+
+### Bug Fixes
+
+* **claude-hook:** migrate Bash allow-list to space-wildcard form ([a5d52c3](https://github.com/chadbyte/clay/commit/a5d52c3e3e61a32ffd46b9fba28038dbc08a4cc8))
+* **codex:** restore model picker, lock it after first message ([d9d8176](https://github.com/chadbyte/clay/commit/d9d8176fa3e0d0a59105c1f7a1815a174ac86c49)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **mobile:** let new-session row pick Codex vs Claude ([2d71f18](https://github.com/chadbyte/clay/commit/2d71f18254e4e85df36b9b2b9a0a2a869559d762)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **terminal:** rebuild WebGL glyph atlas on font change and resize ([ebfe3e1](https://github.com/chadbyte/clay/commit/ebfe3e19d6246eaf3a8f90e01416a7c7bc569fb7))
+* **tui:** clear screen after fit dimensions change ([deaeb49](https://github.com/chadbyte/clay/commit/deaeb496f456c44ea1dbf2d811228bbc4456d5df))
+* **tui:** hydrate terminal font prefs on boot ([43b3416](https://github.com/chadbyte/clay/commit/43b3416d25df64b5dbc7f74e8dccff6808cd074c)), closes [user-settings.js#populateAccount](https://github.com/user-settings.js/issues/populateAccount)
+* **vendor:** stop duplicating the active-vendor avatar ([0943097](https://github.com/chadbyte/clay/commit/0943097908effe08bb449cf03902b8b0e2c07229)), closes [#vendor-toggle-wrap](https://github.com/chadbyte/clay/issues/vendor-toggle-wrap)
+
+
+### Features
+
+* **codex:** add gpt-5.5 model selector and make it default ([505b5fe](https://github.com/chadbyte/clay/commit/505b5feb9208592166fc1d2c70c0f652a3d5c558))
+* **tui:** lazy-resume sessions instead of respawning claude on switch ([d56b8f1](https://github.com/chadbyte/clay/commit/d56b8f14a4f917cabe3dd0a0d17fb4c0fa082738))
+* **tui:** move terminal font picker to title bar during TUI sessions ([293b9b4](https://github.com/chadbyte/clay/commit/293b9b4760d1697552975f37cffa2acc4ac06861))
+* **tui:** reclaim idle session PTYs and add explicit Close ([63ac6ba](https://github.com/chadbyte/clay/commit/63ac6bae4b82242c8e001e6e573f009b5d25b639))
+* **tui:** usable mobile input for TUI sessions ([fc0764e](https://github.com/chadbyte/clay/commit/fc0764eb5a715497e7b64978d3cf7975d3edd995))
+
 # [2.40.0-beta.4](https://github.com/chadbyte/clay/compare/v2.40.0-beta.3...v2.40.0-beta.4) (2026-05-27)
 
 
