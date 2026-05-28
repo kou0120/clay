@@ -22,6 +22,9 @@
      SF Mono is Apple-system-only (no Google Fonts entry) and
      ui-monospace is a system keyword - both rely on the user's OS. -->
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500;700&family=Cascadia+Code:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- D2 Coding isn't on Google Fonts and its CJK woff2 is ~1.4MB, so it
+     is lazy-loaded by terminal-prefs.js the first time the user selects
+     it (or boots with it already saved). See ensureD2CodingWebfont(). -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5/css/xterm.min.css">
 <script>
 (function(){try{var k="clay-theme-vars",v=localStorage.getItem(k),r=document.documentElement;if(v){var o=JSON.parse(v),p;for(p in o)r.style.setProperty(p,o[p]);var vt=localStorage.getItem(k.replace("-vars","-variant"));if(vt==="light"){r.classList.add("light-theme");r.classList.remove("dark-theme")}else{r.classList.add("dark-theme");r.classList.remove("light-theme")}var m=document.querySelector('meta[name="theme-color"]');if(m&&o["--bg"])m.setAttribute("content",o["--bg"])}else{var sl=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;if(sl){r.classList.add("light-theme");r.classList.remove("dark-theme")}}}catch(e){}})();
