@@ -2,7 +2,9 @@
    Home Hub — Personalized command center & dashboard
    ========================================================================== */
 
-/* Hub covers #main-area (sidebar + chat), sits inside it with absolute */
+/* Hub covers #main-area (sidebar + chat), sits inside it with absolute.
+   Pure widget surface — Clay chat is reachable via the global FAB
+   instead of being embedded here. */
 #home-hub {
   position: absolute;
   inset: 0;
@@ -525,6 +527,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
+}
+.home-hub-mate-primary .home-hub-mate-name {
+  color: var(--text);
+  font-weight: 600;
+}
+.home-hub-mate-primary .home-hub-mate-avatar {
+  box-shadow: 0 0 0 2px #00b894;
+}
+.home-hub-mate-primary-star {
+  color: #00b894;
+  font-size: 8px;
+  margin-left: 2px;
+  vertical-align: super;
 }
 
 /* ==========================================================================
