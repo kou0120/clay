@@ -1,3 +1,2579 @@
+## [2.41.1](https://github.com/chadbyte/clay/compare/v2.41.0...v2.41.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tui:** read transcript from session owner's home in OS-isolation mode ([3b79723](https://github.com/chadbyte/clay/commit/3b79723b70a80809db41af2d761c4f0b3c6760d5))
+
+## [2.41.1-beta.1](https://github.com/chadbyte/clay/compare/v2.41.0...v2.41.1-beta.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tui:** read transcript from session owner's home in OS-isolation mode ([3b79723](https://github.com/chadbyte/clay/commit/3b79723b70a80809db41af2d761c4f0b3c6760d5))
+
+# [2.41.0](https://github.com/chadbyte/clay/compare/v2.40.0...v2.41.0) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tui:** keep a session in its live mode for every viewer ([26893de](https://github.com/chadbyte/clay/commit/26893decf81e35b0b64ee288a1068bb0341f3b05))
+* **tui:** tighten grab boundaries against false stops and false matches ([0d3ec5a](https://github.com/chadbyte/clay/commit/0d3ec5ac7328f2b6cd2aeab0b85949a2a8acec5e))
+
+
+### Features
+
+* **server:** let users create their first project from the app shell ([d8cd2b7](https://github.com/chadbyte/clay/commit/d8cd2b792828f036f09f28785d9ede53b7a38f17))
+* **tui:** add D2 Coding font option and bump default size to 14pt ([d3947dd](https://github.com/chadbyte/clay/commit/d3947ddb3908faa290518beb5f9d1d8e45b3e325))
+* **tui:** hover-to-grab assistant messages from xterm output ([91fffed](https://github.com/chadbyte/clay/commit/91fffed9201b256c0b60fe198f7d583144734a97))
+* **tui:** polish grab overlay with entry animation, auto-hide on scroll ([5a02f3d](https://github.com/chadbyte/clay/commit/5a02f3d28a4626c369e8edbe7e15fe31c5f66c04))
+* **tui:** shake icon, blink favicon, and ding on tui_attention ([34fe571](https://github.com/chadbyte/clay/commit/34fe571dacd015d0599ca9590102f877e846cd41))
+
+# [2.41.0-beta.1](https://github.com/chadbyte/clay/compare/v2.40.1-beta.1...v2.41.0-beta.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tui:** tighten grab boundaries against false stops and false matches ([0d3ec5a](https://github.com/chadbyte/clay/commit/0d3ec5ac7328f2b6cd2aeab0b85949a2a8acec5e))
+
+
+### Features
+
+* **server:** let users create their first project from the app shell ([d8cd2b7](https://github.com/chadbyte/clay/commit/d8cd2b792828f036f09f28785d9ede53b7a38f17))
+* **tui:** add D2 Coding font option and bump default size to 14pt ([d3947dd](https://github.com/chadbyte/clay/commit/d3947ddb3908faa290518beb5f9d1d8e45b3e325))
+* **tui:** hover-to-grab assistant messages from xterm output ([91fffed](https://github.com/chadbyte/clay/commit/91fffed9201b256c0b60fe198f7d583144734a97))
+* **tui:** polish grab overlay with entry animation, auto-hide on scroll ([5a02f3d](https://github.com/chadbyte/clay/commit/5a02f3d28a4626c369e8edbe7e15fe31c5f66c04))
+* **tui:** shake icon, blink favicon, and ding on tui_attention ([34fe571](https://github.com/chadbyte/clay/commit/34fe571dacd015d0599ca9590102f877e846cd41))
+
+## [2.40.1-beta.1](https://github.com/chadbyte/clay/compare/v2.40.0...v2.40.1-beta.1) (2026-05-27)
+
+
+### Bug Fixes
+
+* **tui:** keep a session in its live mode for every viewer ([26893de](https://github.com/chadbyte/clay/commit/26893decf81e35b0b64ee288a1068bb0341f3b05))
+
+# [2.40.0](https://github.com/chadbyte/clay/compare/v2.39.0...v2.40.0) (2026-05-27)
+
+
+### Bug Fixes
+
+* **claude-hook:** migrate Bash allow-list to space-wildcard form ([a5d52c3](https://github.com/chadbyte/clay/commit/a5d52c3e3e61a32ffd46b9fba28038dbc08a4cc8))
+* **codex:** restore model picker, lock it after first message ([d9d8176](https://github.com/chadbyte/clay/commit/d9d8176fa3e0d0a59105c1f7a1815a174ac86c49)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **mobile:** let new-session row pick Codex vs Claude ([2d71f18](https://github.com/chadbyte/clay/commit/2d71f18254e4e85df36b9b2b9a0a2a869559d762)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **terminal:** rebuild WebGL glyph atlas on font change and resize ([ebfe3e1](https://github.com/chadbyte/clay/commit/ebfe3e19d6246eaf3a8f90e01416a7c7bc569fb7))
+* **tui:** clear screen after fit dimensions change ([deaeb49](https://github.com/chadbyte/clay/commit/deaeb496f456c44ea1dbf2d811228bbc4456d5df))
+* **tui:** hydrate terminal font prefs on boot ([43b3416](https://github.com/chadbyte/clay/commit/43b3416d25df64b5dbc7f74e8dccff6808cd074c)), closes [user-settings.js#populateAccount](https://github.com/user-settings.js/issues/populateAccount)
+* **vendor:** stop duplicating the active-vendor avatar ([0943097](https://github.com/chadbyte/clay/commit/0943097908effe08bb449cf03902b8b0e2c07229)), closes [#vendor-toggle-wrap](https://github.com/chadbyte/clay/issues/vendor-toggle-wrap)
+
+
+### Features
+
+* **codex:** add gpt-5.5 model selector and make it default ([505b5fe](https://github.com/chadbyte/clay/commit/505b5feb9208592166fc1d2c70c0f652a3d5c558))
+* **tui:** lazy-resume sessions instead of respawning claude on switch ([d56b8f1](https://github.com/chadbyte/clay/commit/d56b8f14a4f917cabe3dd0a0d17fb4c0fa082738))
+* **tui:** move terminal font picker to title bar during TUI sessions ([293b9b4](https://github.com/chadbyte/clay/commit/293b9b4760d1697552975f37cffa2acc4ac06861))
+* **tui:** reclaim idle session PTYs and add explicit Close ([63ac6ba](https://github.com/chadbyte/clay/commit/63ac6bae4b82242c8e001e6e573f009b5d25b639))
+* **tui:** usable mobile input for TUI sessions ([fc0764e](https://github.com/chadbyte/clay/commit/fc0764eb5a715497e7b64978d3cf7975d3edd995))
+
+# [2.40.0-beta.4](https://github.com/chadbyte/clay/compare/v2.40.0-beta.3...v2.40.0-beta.4) (2026-05-27)
+
+
+### Features
+
+* **tui:** lazy-resume sessions instead of respawning claude on switch ([d56b8f1](https://github.com/chadbyte/clay/commit/d56b8f14a4f917cabe3dd0a0d17fb4c0fa082738))
+* **tui:** reclaim idle session PTYs and add explicit Close ([63ac6ba](https://github.com/chadbyte/clay/commit/63ac6bae4b82242c8e001e6e573f009b5d25b639))
+* **tui:** usable mobile input for TUI sessions ([fc0764e](https://github.com/chadbyte/clay/commit/fc0764eb5a715497e7b64978d3cf7975d3edd995))
+
+# [2.40.0-beta.3](https://github.com/chadbyte/clay/compare/v2.40.0-beta.2...v2.40.0-beta.3) (2026-05-26)
+
+
+### Bug Fixes
+
+* **terminal:** rebuild WebGL glyph atlas on font change and resize ([ebfe3e1](https://github.com/chadbyte/clay/commit/ebfe3e19d6246eaf3a8f90e01416a7c7bc569fb7))
+
+# [2.40.0-beta.2](https://github.com/chadbyte/clay/compare/v2.40.0-beta.1...v2.40.0-beta.2) (2026-05-26)
+
+
+### Bug Fixes
+
+* **claude-hook:** migrate Bash allow-list to space-wildcard form ([a5d52c3](https://github.com/chadbyte/clay/commit/a5d52c3e3e61a32ffd46b9fba28038dbc08a4cc8))
+* **codex:** restore model picker, lock it after first message ([d9d8176](https://github.com/chadbyte/clay/commit/d9d8176fa3e0d0a59105c1f7a1815a174ac86c49)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **mobile:** let new-session row pick Codex vs Claude ([2d71f18](https://github.com/chadbyte/clay/commit/2d71f18254e4e85df36b9b2b9a0a2a869559d762)), closes [#361](https://github.com/chadbyte/clay/issues/361)
+* **tui:** clear screen after fit dimensions change ([deaeb49](https://github.com/chadbyte/clay/commit/deaeb496f456c44ea1dbf2d811228bbc4456d5df))
+* **tui:** hydrate terminal font prefs on boot ([43b3416](https://github.com/chadbyte/clay/commit/43b3416d25df64b5dbc7f74e8dccff6808cd074c)), closes [user-settings.js#populateAccount](https://github.com/user-settings.js/issues/populateAccount)
+* **vendor:** stop duplicating the active-vendor avatar ([0943097](https://github.com/chadbyte/clay/commit/0943097908effe08bb449cf03902b8b0e2c07229)), closes [#vendor-toggle-wrap](https://github.com/chadbyte/clay/issues/vendor-toggle-wrap)
+
+# [2.40.0-beta.1](https://github.com/chadbyte/clay/compare/v2.39.0...v2.40.0-beta.1) (2026-05-26)
+
+
+### Features
+
+* **codex:** add gpt-5.5 model selector and make it default ([505b5fe](https://github.com/chadbyte/clay/commit/505b5feb9208592166fc1d2c70c0f652a3d5c558))
+* **tui:** move terminal font picker to title bar during TUI sessions ([293b9b4](https://github.com/chadbyte/clay/commit/293b9b4760d1697552975f37cffa2acc4ac06861))
+
+# [2.39.0](https://github.com/chadbyte/clay/compare/v2.38.0...v2.39.0) (2026-05-25)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** preserve MCP-mode AskUserQuestion entries across turn boundaries ([b506369](https://github.com/chadbyte/clay/commit/b506369949a6b27ac7944a0e3b736993db4578d7))
+
+
+### Features
+
+* prepare 2026-06-15 cutover with What's New system ([f02c85b](https://github.com/chadbyte/clay/commit/f02c85b1184be30d901ef34d9e33e99b9d200e1a))
+* **sessions:** embed claude TUI as a session mode with cross-mode resume ([6812ef6](https://github.com/chadbyte/clay/commit/6812ef69de25c39f58ab77fa886579c1522241b6)), closes [#messages](https://github.com/chadbyte/clay/issues/messages) [#input-area](https://github.com/chadbyte/clay/issues/input-area) [#new-msg-btn](https://github.com/chadbyte/clay/issues/new-msg-btn)
+* **settings:** theme picker, terminal font, IME-safe renderer ([04ca4fe](https://github.com/chadbyte/clay/commit/04ca4fe4c0707cddebc71e0540a851aad0ca886c)), closes [#us-theme-switcher](https://github.com/chadbyte/clay/issues/us-theme-switcher)
+* **theme:** move theme picker to user island palette button ([583c43e](https://github.com/chadbyte/clay/commit/583c43e9432afa7fec9bd3fe008a9f4a781e3c54))
+* **tui:** notification pipeline, auto-approve allow-list, inline modal, jsonl watcher ([a012413](https://github.com/chadbyte/clay/commit/a0124133f12f39d950e3c6a95fc07b25ea84e7c5))
+* **tui:** policy explainer modal, Go-to-session secondary CTA, restart persistence ([584beac](https://github.com/chadbyte/clay/commit/584beac4a99a0ada55005290942c8dc626fc0e50))
+* unify CLI sessions with Clay list and clean SDK warmup ([7e4ebdd](https://github.com/chadbyte/clay/commit/7e4ebdd3b966f2e9011ef04265d0885cd132eeb4))
+
+# [2.39.0-beta.5](https://github.com/chadbyte/clay/compare/v2.39.0-beta.4...v2.39.0-beta.5) (2026-05-25)
+
+
+### Features
+
+* **settings:** theme picker, terminal font, IME-safe renderer ([04ca4fe](https://github.com/chadbyte/clay/commit/04ca4fe4c0707cddebc71e0540a851aad0ca886c)), closes [#us-theme-switcher](https://github.com/chadbyte/clay/issues/us-theme-switcher)
+* **theme:** move theme picker to user island palette button ([583c43e](https://github.com/chadbyte/clay/commit/583c43e9432afa7fec9bd3fe008a9f4a781e3c54))
+
+# [2.39.0-beta.4](https://github.com/chadbyte/clay/compare/v2.39.0-beta.3...v2.39.0-beta.4) (2026-05-25)
+
+
+### Features
+
+* unify CLI sessions with Clay list and clean SDK warmup ([7e4ebdd](https://github.com/chadbyte/clay/commit/7e4ebdd3b966f2e9011ef04265d0885cd132eeb4))
+
+# [2.39.0-beta.3](https://github.com/chadbyte/clay/compare/v2.39.0-beta.2...v2.39.0-beta.3) (2026-05-25)
+
+
+### Features
+
+* prepare 2026-06-15 cutover with What's New system ([f02c85b](https://github.com/chadbyte/clay/commit/f02c85b1184be30d901ef34d9e33e99b9d200e1a))
+
+# [2.39.0-beta.2](https://github.com/chadbyte/clay/compare/v2.39.0-beta.1...v2.39.0-beta.2) (2026-05-21)
+
+
+### Features
+
+* **tui:** notification pipeline, auto-approve allow-list, inline modal, jsonl watcher ([a012413](https://github.com/chadbyte/clay/commit/a0124133f12f39d950e3c6a95fc07b25ea84e7c5))
+* **tui:** policy explainer modal, Go-to-session secondary CTA, restart persistence ([584beac](https://github.com/chadbyte/clay/commit/584beac4a99a0ada55005290942c8dc626fc0e50))
+
+# [2.39.0-beta.1](https://github.com/chadbyte/clay/compare/v2.38.0...v2.39.0-beta.1) (2026-05-19)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** preserve MCP-mode AskUserQuestion entries across turn boundaries ([b506369](https://github.com/chadbyte/clay/commit/b506369949a6b27ac7944a0e3b736993db4578d7))
+
+
+### Features
+
+* **sessions:** embed claude TUI as a session mode with cross-mode resume ([6812ef6](https://github.com/chadbyte/clay/commit/6812ef69de25c39f58ab77fa886579c1522241b6)), closes [#messages](https://github.com/chadbyte/clay/issues/messages) [#input-area](https://github.com/chadbyte/clay/issues/input-area) [#new-msg-btn](https://github.com/chadbyte/clay/issues/new-msg-btn)
+
+# [2.38.0](https://github.com/chadbyte/clay/compare/v2.37.0...v2.38.0) (2026-05-16)
+
+
+### Bug Fixes
+
+* **ask-user:** keep question text with the answer so the model recognizes it ([e6fd603](https://github.com/chadbyte/clay/commit/e6fd6035440ef2e76849bb8248eaaf787034a671))
+* **clay:** forward home_clay_* messages to the server-level handler ([a5f789a](https://github.com/chadbyte/clay/commit/a5f789ac9a569c8777506cdad835e56840b4c9c4))
+* **clay:** use Clay app icon for Clay avatar instead of Ally asset ([48a4337](https://github.com/chadbyte/clay/commit/48a4337f60e5bf16d39ed8887e73065fdd1bc68a))
+
+
+### Features
+
+* **clay:** introduce Clay host agent and split Home into Clay chat + widgets ([d6081ae](https://github.com/chadbyte/clay/commit/d6081ae504a4a6cb60f075d56a9205a79ba95ebb))
+* **clay:** smaller FAB-popover and draggable FAB position ([fda4a0f](https://github.com/chadbyte/clay/commit/fda4a0f225b482b10f7b01594143b5a66c98e1e5))
+* **clay:** standalone phablet-style home chat panel and hide Clay from sidebar ([b99dd18](https://github.com/chadbyte/clay/commit/b99dd181f96e830f99859c3855a2cb05dedac80e)), closes [#home-hub](https://github.com/chadbyte/clay/issues/home-hub)
+* **clay:** turn home chat into a persistent FAB-popover ([a55b246](https://github.com/chadbyte/clay/commit/a55b246e342f2f4b12d304d79d77e73a901c43d4)), closes [#clay-fab](https://github.com/chadbyte/clay/issues/clay-fab) [#clay-popover](https://github.com/chadbyte/clay/issues/clay-popover) [#home-hub](https://github.com/chadbyte/clay/issues/home-hub)
+
+# [2.38.0-beta.7](https://github.com/chadbyte/clay/compare/v2.38.0-beta.6...v2.38.0-beta.7) (2026-05-16)
+
+
+### Bug Fixes
+
+* **ask-user:** keep question text with the answer so the model recognizes it ([e6fd603](https://github.com/chadbyte/clay/commit/e6fd6035440ef2e76849bb8248eaaf787034a671))
+
+# [2.38.0-beta.6](https://github.com/chadbyte/clay/compare/v2.38.0-beta.5...v2.38.0-beta.6) (2026-05-08)
+
+
+### Bug Fixes
+
+* **clay:** forward home_clay_* messages to the server-level handler ([a5f789a](https://github.com/chadbyte/clay/commit/a5f789ac9a569c8777506cdad835e56840b4c9c4))
+
+# [2.38.0-beta.5](https://github.com/chadbyte/clay/compare/v2.38.0-beta.4...v2.38.0-beta.5) (2026-05-07)
+
+
+### Features
+
+* **clay:** smaller FAB-popover and draggable FAB position ([fda4a0f](https://github.com/chadbyte/clay/commit/fda4a0f225b482b10f7b01594143b5a66c98e1e5))
+
+# [2.38.0-beta.4](https://github.com/chadbyte/clay/compare/v2.38.0-beta.3...v2.38.0-beta.4) (2026-05-07)
+
+
+### Features
+
+* **clay:** turn home chat into a persistent FAB-popover ([a55b246](https://github.com/chadbyte/clay/commit/a55b246e342f2f4b12d304d79d77e73a901c43d4)), closes [#clay-fab](https://github.com/chadbyte/clay/issues/clay-fab) [#clay-popover](https://github.com/chadbyte/clay/issues/clay-popover) [#home-hub](https://github.com/chadbyte/clay/issues/home-hub)
+
+# [2.38.0-beta.3](https://github.com/chadbyte/clay/compare/v2.38.0-beta.2...v2.38.0-beta.3) (2026-05-07)
+
+
+### Features
+
+* **clay:** standalone phablet-style home chat panel and hide Clay from sidebar ([b99dd18](https://github.com/chadbyte/clay/commit/b99dd181f96e830f99859c3855a2cb05dedac80e)), closes [#home-hub](https://github.com/chadbyte/clay/issues/home-hub)
+
+# [2.38.0-beta.2](https://github.com/chadbyte/clay/compare/v2.38.0-beta.1...v2.38.0-beta.2) (2026-05-07)
+
+
+### Bug Fixes
+
+* **clay:** use Clay app icon for Clay avatar instead of Ally asset ([48a4337](https://github.com/chadbyte/clay/commit/48a4337f60e5bf16d39ed8887e73065fdd1bc68a))
+
+# [2.38.0-beta.1](https://github.com/chadbyte/clay/compare/v2.37.0...v2.38.0-beta.1) (2026-05-07)
+
+
+### Features
+
+* **clay:** introduce Clay host agent and split Home into Clay chat + widgets ([d6081ae](https://github.com/chadbyte/clay/commit/d6081ae504a4a6cb60f075d56a9205a79ba95ebb))
+
+# [2.37.0](https://github.com/chadbyte/clay/compare/v2.36.1...v2.37.0) (2026-05-07)
+
+
+### Bug Fixes
+
+* **context:** show correct model name and 1M window for [1m] beta models ([f145c9f](https://github.com/chadbyte/clay/commit/f145c9f7b2af97f5567232ebc588357b0fe763e2))
+* **model:** resolve shorthand model names against vendor model list ([d8d11c6](https://github.com/chadbyte/clay/commit/d8d11c6ff229dad1fa806f1c90ae290cd4c8d721))
+* **pin:** allow forced PIN change without re-entering temp PIN, add logout ([fb04677](https://github.com/chadbyte/clay/commit/fb04677024df95349c61cf117dff3abd96f4b516))
+* **pin:** mirror login PIN UI on temp PIN setup overlay ([c2af16d](https://github.com/chadbyte/clay/commit/c2af16da37f46144beabae5d44dffbbd662184af))
+* **pin:** show focus indicator and reliable digit capture on temp PIN setup ([77e6b88](https://github.com/chadbyte/clay/commit/77e6b88dfd07b85785a2edcd2b74792bac53bfeb))
+* **pin:** unify forced-PIN-change UI through main app overlay ([a5f37dc](https://github.com/chadbyte/clay/commit/a5f37dcd326c05c5be045b8260fb19f550925b85))
+* **rewind:** expose rewindFiles on worker QueryHandle ([a684fa8](https://github.com/chadbyte/clay/commit/a684fa8bfa32cf02897727741b40ce1be3033ddb))
+* **scroll:** respect user scroll-up during streaming response ([c440820](https://github.com/chadbyte/clay/commit/c440820b92bbd7709228b1aac0881f0a63a73a80))
+* **ui:** clear pre-thinking dots on more turn events and add 90s safety timeout ([5d91bc2](https://github.com/chadbyte/clay/commit/5d91bc2ec43c823c1844323870c7175049212abc))
+* **ui:** show vendor avatar next to inline activity dots ([c8f2de6](https://github.com/chadbyte/clay/commit/c8f2de6ba5383fc47d6ea84bc244c6d000d727c8))
+
+
+### Features
+
+* **sdk:** bump claude-agent-sdk to 0.2.132 and set Options.title at creation ([f46b06d](https://github.com/chadbyte/clay/commit/f46b06dc73d13f2cfc846bf5788d2ae896582e66)), closes [#45](https://github.com/chadbyte/clay/issues/45)
+
+
+### Performance Improvements
+
+* **resume:** batch syntax highlight, compact dead-session todos, lower initial page ([182c6ca](https://github.com/chadbyte/clay/commit/182c6cacae1d7fd73fae6734f8e3fd1f09038c2a)), closes [#342](https://github.com/chadbyte/clay/issues/342) [#345](https://github.com/chadbyte/clay/issues/345)
+
+# [2.37.0-beta.2](https://github.com/chadbyte/clay/compare/v2.37.0-beta.1...v2.37.0-beta.2) (2026-05-07)
+
+
+### Bug Fixes
+
+* **scroll:** respect user scroll-up during streaming response ([c440820](https://github.com/chadbyte/clay/commit/c440820b92bbd7709228b1aac0881f0a63a73a80))
+
+# [2.37.0-beta.1](https://github.com/chadbyte/clay/compare/v2.36.2-beta.9...v2.37.0-beta.1) (2026-05-07)
+
+
+### Features
+
+* **sdk:** bump claude-agent-sdk to 0.2.132 and set Options.title at creation ([f46b06d](https://github.com/chadbyte/clay/commit/f46b06dc73d13f2cfc846bf5788d2ae896582e66)), closes [#45](https://github.com/chadbyte/clay/issues/45)
+
+## [2.36.2-beta.9](https://github.com/chadbyte/clay/compare/v2.36.2-beta.8...v2.36.2-beta.9) (2026-05-07)
+
+
+### Bug Fixes
+
+* **ui:** show vendor avatar next to inline activity dots ([c8f2de6](https://github.com/chadbyte/clay/commit/c8f2de6ba5383fc47d6ea84bc244c6d000d727c8))
+
+## [2.36.2-beta.8](https://github.com/chadbyte/clay/compare/v2.36.2-beta.7...v2.36.2-beta.8) (2026-05-07)
+
+
+### Bug Fixes
+
+* **ui:** clear pre-thinking dots on more turn events and add 90s safety timeout ([5d91bc2](https://github.com/chadbyte/clay/commit/5d91bc2ec43c823c1844323870c7175049212abc))
+
+## [2.36.2-beta.7](https://github.com/chadbyte/clay/compare/v2.36.2-beta.6...v2.36.2-beta.7) (2026-05-05)
+
+
+### Bug Fixes
+
+* **rewind:** expose rewindFiles on worker QueryHandle ([a684fa8](https://github.com/chadbyte/clay/commit/a684fa8bfa32cf02897727741b40ce1be3033ddb))
+
+## [2.36.2-beta.6](https://github.com/chadbyte/clay/compare/v2.36.2-beta.5...v2.36.2-beta.6) (2026-05-05)
+
+
+### Bug Fixes
+
+* **pin:** unify forced-PIN-change UI through main app overlay ([a5f37dc](https://github.com/chadbyte/clay/commit/a5f37dcd326c05c5be045b8260fb19f550925b85))
+
+## [2.36.2-beta.5](https://github.com/chadbyte/clay/compare/v2.36.2-beta.4...v2.36.2-beta.5) (2026-05-05)
+
+
+### Bug Fixes
+
+* **pin:** allow forced PIN change without re-entering temp PIN, add logout ([fb04677](https://github.com/chadbyte/clay/commit/fb04677024df95349c61cf117dff3abd96f4b516))
+
+## [2.36.2-beta.4](https://github.com/chadbyte/clay/compare/v2.36.2-beta.3...v2.36.2-beta.4) (2026-05-05)
+
+
+### Bug Fixes
+
+* **pin:** mirror login PIN UI on temp PIN setup overlay ([c2af16d](https://github.com/chadbyte/clay/commit/c2af16da37f46144beabae5d44dffbbd662184af))
+
+## [2.36.2-beta.3](https://github.com/chadbyte/clay/compare/v2.36.2-beta.2...v2.36.2-beta.3) (2026-05-05)
+
+
+### Bug Fixes
+
+* **pin:** show focus indicator and reliable digit capture on temp PIN setup ([77e6b88](https://github.com/chadbyte/clay/commit/77e6b88dfd07b85785a2edcd2b74792bac53bfeb))
+
+## [2.36.2-beta.2](https://github.com/chadbyte/clay/compare/v2.36.2-beta.1...v2.36.2-beta.2) (2026-05-03)
+
+
+### Bug Fixes
+
+* **context:** show correct model name and 1M window for [1m] beta models ([f145c9f](https://github.com/chadbyte/clay/commit/f145c9f7b2af97f5567232ebc588357b0fe763e2))
+* **model:** resolve shorthand model names against vendor model list ([d8d11c6](https://github.com/chadbyte/clay/commit/d8d11c6ff229dad1fa806f1c90ae290cd4c8d721))
+
+## [2.36.2-beta.1](https://github.com/chadbyte/clay/compare/v2.36.1...v2.36.2-beta.1) (2026-05-03)
+
+
+### Performance Improvements
+
+* **resume:** batch syntax highlight, compact dead-session todos, lower initial page ([182c6ca](https://github.com/chadbyte/clay/commit/182c6cacae1d7fd73fae6734f8e3fd1f09038c2a)), closes [#342](https://github.com/chadbyte/clay/issues/342) [#345](https://github.com/chadbyte/clay/issues/345)
+
+## [2.36.1](https://github.com/chadbyte/clay/compare/v2.36.0...v2.36.1) (2026-05-03)
+
+
+### Bug Fixes
+
+* **app-messages:** drop stray agent-picker import and case blocks ([edea532](https://github.com/chadbyte/clay/commit/edea532324cd237c47ccc371befc05ba1201e264)), closes [chadbyte/clay#342](https://github.com/chadbyte/clay/issues/342)
+* **email:** allow full email entry for all providers ([0adf66a](https://github.com/chadbyte/clay/commit/0adf66a01610f18c147baee99708828b9e58b9c2))
+* **input:** gate stop branch on live processing state; never send ghost suggestion on stop click ([6722ef5](https://github.com/chadbyte/clay/commit/6722ef5d0c1c9e2a0218526e36743bcf2c754d34)), closes [#337](https://github.com/chadbyte/clay/issues/337)
+* preserve model selection on browser refresh ([5313879](https://github.com/chadbyte/clay/commit/5313879e9e74c4e346a7629d60c400697ed9d8b4))
+* **scroll:** pin viewport to bottom on resume so deferred layout can't strand user mid-conversation ([34ffc1a](https://github.com/chadbyte/clay/commit/34ffc1a07f9dc602b387bd23bcd3bc80cda11575)), closes [#messages](https://github.com/chadbyte/clay/issues/messages)
+* **sdk:** use session vendor adapter for auto title generation ([d476ef1](https://github.com/chadbyte/clay/commit/d476ef1e0004b27648921c0764b99de9c01a4575)), closes [#344](https://github.com/chadbyte/clay/issues/344)
+
+## [2.36.1-beta.5](https://github.com/chadbyte/clay/compare/v2.36.1-beta.4...v2.36.1-beta.5) (2026-05-03)
+
+
+### Bug Fixes
+
+* **email:** allow full email entry for all providers ([0adf66a](https://github.com/chadbyte/clay/commit/0adf66a01610f18c147baee99708828b9e58b9c2))
+
+## [2.36.1-beta.4](https://github.com/chadbyte/clay/compare/v2.36.1-beta.3...v2.36.1-beta.4) (2026-05-03)
+
+
+### Bug Fixes
+
+* **sdk:** use session vendor adapter for auto title generation ([d476ef1](https://github.com/chadbyte/clay/commit/d476ef1e0004b27648921c0764b99de9c01a4575)), closes [#344](https://github.com/chadbyte/clay/issues/344)
+
+## [2.36.1-beta.3](https://github.com/chadbyte/clay/compare/v2.36.1-beta.2...v2.36.1-beta.3) (2026-04-29)
+
+
+### Bug Fixes
+
+* **input:** gate stop branch on live processing state; never send ghost suggestion on stop click ([6722ef5](https://github.com/chadbyte/clay/commit/6722ef5d0c1c9e2a0218526e36743bcf2c754d34)), closes [#337](https://github.com/chadbyte/clay/issues/337)
+
+## [2.36.1-beta.2](https://github.com/chadbyte/clay/compare/v2.36.1-beta.1...v2.36.1-beta.2) (2026-04-29)
+
+
+### Bug Fixes
+
+* preserve model selection on browser refresh ([5313879](https://github.com/chadbyte/clay/commit/5313879e9e74c4e346a7629d60c400697ed9d8b4))
+
+## [2.36.1-beta.1](https://github.com/chadbyte/clay/compare/v2.36.0...v2.36.1-beta.1) (2026-04-29)
+
+
+### Bug Fixes
+
+* **app-messages:** drop stray agent-picker import and case blocks ([edea532](https://github.com/chadbyte/clay/commit/edea532324cd237c47ccc371befc05ba1201e264)), closes [chadbyte/clay#342](https://github.com/chadbyte/clay/issues/342)
+* **scroll:** pin viewport to bottom on resume so deferred layout can't strand user mid-conversation ([34ffc1a](https://github.com/chadbyte/clay/commit/34ffc1a07f9dc602b387bd23bcd3bc80cda11575)), closes [#messages](https://github.com/chadbyte/clay/issues/messages)
+
+# [2.36.0](https://github.com/chadbyte/clay/compare/v2.35.1...v2.36.0) (2026-04-27)
+
+
+### Bug Fixes
+
+* **yoke:** resolve per-user Claude binary in worker for OS-level multi-user mode ([df35864](https://github.com/chadbyte/clay/commit/df35864ad99a5d43babc6978dd08104f51bbccfb))
+
+
+### Features
+
+* **mention:** add plain Claude/Codex mentions and fix mobile chip flow ([d68c693](https://github.com/chadbyte/clay/commit/d68c693d72cf7098032a1de961a7330d8921b2eb))
+* **mention:** support user-to-user [@mentions](https://github.com/mentions) with notifications and push ([618e508](https://github.com/chadbyte/clay/commit/618e508866973b4bb59885abd370c6b74b9d74e2))
+
+# [2.36.0-beta.2](https://github.com/chadbyte/clay/compare/v2.36.0-beta.1...v2.36.0-beta.2) (2026-04-27)
+
+
+### Bug Fixes
+
+* **yoke:** resolve per-user Claude binary in worker for OS-level multi-user mode ([df35864](https://github.com/chadbyte/clay/commit/df35864ad99a5d43babc6978dd08104f51bbccfb))
+
+# [2.36.0-beta.1](https://github.com/chadbyte/clay/compare/v2.35.1...v2.36.0-beta.1) (2026-04-26)
+
+
+### Features
+
+* **mention:** add plain Claude/Codex mentions and fix mobile chip flow ([d68c693](https://github.com/chadbyte/clay/commit/d68c693d72cf7098032a1de961a7330d8921b2eb))
+* **mention:** support user-to-user [@mentions](https://github.com/mentions) with notifications and push ([618e508](https://github.com/chadbyte/clay/commit/618e508866973b4bb59885abd370c6b74b9d74e2))
+
+## [2.35.1](https://github.com/chadbyte/clay/compare/v2.35.0...v2.35.1) (2026-04-25)
+
+
+### Bug Fixes
+
+* **mates:** widen mention context to 32KB byte budget instead of per-turn 500-char truncation ([78fb881](https://github.com/chadbyte/clay/commit/78fb8819edcb1cfcee3a9fbbe6f032a3e81f323c))
+
+## [2.35.1-beta.1](https://github.com/chadbyte/clay/compare/v2.35.0...v2.35.1-beta.1) (2026-04-25)
+
+
+### Bug Fixes
+
+* **mates:** widen mention context to 32KB byte budget instead of per-turn 500-char truncation ([78fb881](https://github.com/chadbyte/clay/commit/78fb8819edcb1cfcee3a9fbbe6f032a3e81f323c))
+
+# [2.35.0](https://github.com/chadbyte/clay/compare/v2.34.0...v2.35.0) (2026-04-25)
+
+
+### Bug Fixes
+
+* **input:** prevent ghost-text suggestion from swallowing pasted content on Enter ([a657a09](https://github.com/chadbyte/clay/commit/a657a091a0d6557f94651e4a0c4e5797a6ac3ce9))
+* **mates:** expose set/getMatesEnabled through users module ([4dc55ed](https://github.com/chadbyte/clay/commit/4dc55ed507c63d7fed94d6d6675ea1304e12f30f))
+* **mates:** hide Ask Mate button in chat input when Mates is disabled ([d2ff010](https://github.com/chadbyte/clay/commit/d2ff0102c2ce0a1e2915d22de0d2473971efb88a)), closes [#ask-mate-btn](https://github.com/chadbyte/clay/issues/ask-mate-btn)
+* **mates:** persist deletedBuiltinKeys in single-user mode ([3986088](https://github.com/chadbyte/clay/commit/3986088f4bf79181095799e39d59253e09726e86))
+* **mates:** preserve other-user UI when Mates is disabled in multi-user ([fd31753](https://github.com/chadbyte/clay/commit/fd31753dc5a73d09dd7a0e8550bbb38c163ede1e)), closes [#icon-strip-mate-section](https://github.com/chadbyte/clay/issues/icon-strip-mate-section)
+* **mates:** show CTA icon and reframe promo around long-term memory ([2aaa340](https://github.com/chadbyte/clay/commit/2aaa3407fc6f60e4ba9e4c2ee585928c785435b4))
+* **mates:** stop skill-install modal from firing on every reconnect ([183e50e](https://github.com/chadbyte/clay/commit/183e50e8386607ceb380b73e03b7de551414ac7f)), closes [#1](https://github.com/chadbyte/clay/issues/1)
+* **mates:** suppress @-mention dropdown when Mates is disabled ([83b4c95](https://github.com/chadbyte/clay/commit/83b4c9564435cbd76d35e6a828566e95fcdc3efd))
+* **messages:** stop vendor flapping under high-latency connections ([d15afbe](https://github.com/chadbyte/clay/commit/d15afbea8d37ce51b25b57a54e2459034d9a1c55)), closes [hi#latency](https://github.com/hi/issues/latency)
+* normalize model ids across session switching ([dae5344](https://github.com/chadbyte/clay/commit/dae5344ed34fbfbb3d0553a9dfa06f4014006872))
+* preserve session vendor on reconnect ([5b061ae](https://github.com/chadbyte/clay/commit/5b061ae16c6b06fca3db5ecd18c047fd38f508b6))
+* **settings:** persist single-user preference writes ([7fb2dd5](https://github.com/chadbyte/clay/commit/7fb2dd54d520eb4dcb8bcb7b4d89b2aceeb3e360))
+* **sidebar:** render worktree icon when set ([43292ab](https://github.com/chadbyte/clay/commit/43292ab6f63598a0c30ce9479ddc798809dd1517))
+* **skills:** make outdated-skill prompt skippable instead of silently ignored ([b612a91](https://github.com/chadbyte/clay/commit/b612a915592f00f356935560e5418d239c45985a))
+
+
+### Features
+
+* **mates:** add Open User Settings button to disabled-Mates picker ([20585ad](https://github.com/chadbyte/clay/commit/20585ad4c30b42f78d345884ba81d14db4f1553f))
+* **mates:** redesign disabled-picker as discovery promo with marquee ([528cbf8](https://github.com/chadbyte/clay/commit/528cbf8ca7bccb3617f3c636f5c9a6f228a48504))
+* **settings:** add per-user Mates UI toggle in User Settings ([d766e10](https://github.com/chadbyte/clay/commit/d766e10d4bbe86ea9f272ca0f83facc609cf9fda)), closes [#341](https://github.com/chadbyte/clay/issues/341) [#325](https://github.com/chadbyte/clay/issues/325)
+
+# [2.35.0-beta.2](https://github.com/chadbyte/clay/compare/v2.35.0-beta.1...v2.35.0-beta.2) (2026-04-25)
+
+
+### Bug Fixes
+
+* **settings:** persist single-user preference writes ([7fb2dd5](https://github.com/chadbyte/clay/commit/7fb2dd54d520eb4dcb8bcb7b4d89b2aceeb3e360))
+
+# [2.35.0-beta.1](https://github.com/chadbyte/clay/compare/v2.34.1-beta.4...v2.35.0-beta.1) (2026-04-25)
+
+
+### Bug Fixes
+
+* **mates:** expose set/getMatesEnabled through users module ([4dc55ed](https://github.com/chadbyte/clay/commit/4dc55ed507c63d7fed94d6d6675ea1304e12f30f))
+* **mates:** hide Ask Mate button in chat input when Mates is disabled ([d2ff010](https://github.com/chadbyte/clay/commit/d2ff0102c2ce0a1e2915d22de0d2473971efb88a)), closes [#ask-mate-btn](https://github.com/chadbyte/clay/issues/ask-mate-btn)
+* **mates:** preserve other-user UI when Mates is disabled in multi-user ([fd31753](https://github.com/chadbyte/clay/commit/fd31753dc5a73d09dd7a0e8550bbb38c163ede1e)), closes [#icon-strip-mate-section](https://github.com/chadbyte/clay/issues/icon-strip-mate-section)
+* **mates:** show CTA icon and reframe promo around long-term memory ([2aaa340](https://github.com/chadbyte/clay/commit/2aaa3407fc6f60e4ba9e4c2ee585928c785435b4))
+* **mates:** suppress @-mention dropdown when Mates is disabled ([83b4c95](https://github.com/chadbyte/clay/commit/83b4c9564435cbd76d35e6a828566e95fcdc3efd))
+
+
+### Features
+
+* **mates:** add Open User Settings button to disabled-Mates picker ([20585ad](https://github.com/chadbyte/clay/commit/20585ad4c30b42f78d345884ba81d14db4f1553f))
+* **mates:** redesign disabled-picker as discovery promo with marquee ([528cbf8](https://github.com/chadbyte/clay/commit/528cbf8ca7bccb3617f3c636f5c9a6f228a48504))
+* **settings:** add per-user Mates UI toggle in User Settings ([d766e10](https://github.com/chadbyte/clay/commit/d766e10d4bbe86ea9f272ca0f83facc609cf9fda)), closes [#341](https://github.com/chadbyte/clay/issues/341) [#325](https://github.com/chadbyte/clay/issues/325)
+
+## [2.34.1-beta.4](https://github.com/chadbyte/clay/compare/v2.34.1-beta.3...v2.34.1-beta.4) (2026-04-24)
+
+
+### Bug Fixes
+
+* **messages:** stop vendor flapping under high-latency connections ([d15afbe](https://github.com/chadbyte/clay/commit/d15afbea8d37ce51b25b57a54e2459034d9a1c55)), closes [hi#latency](https://github.com/hi/issues/latency)
+* **skills:** make outdated-skill prompt skippable instead of silently ignored ([b612a91](https://github.com/chadbyte/clay/commit/b612a915592f00f356935560e5418d239c45985a))
+
+## [2.34.1-beta.3](https://github.com/chadbyte/clay/compare/v2.34.1-beta.2...v2.34.1-beta.3) (2026-04-24)
+
+
+### Bug Fixes
+
+* **mates:** stop skill-install modal from firing on every reconnect ([183e50e](https://github.com/chadbyte/clay/commit/183e50e8386607ceb380b73e03b7de551414ac7f)), closes [#1](https://github.com/chadbyte/clay/issues/1)
+
+## [2.34.1-beta.2](https://github.com/chadbyte/clay/compare/v2.34.1-beta.1...v2.34.1-beta.2) (2026-04-24)
+
+
+### Bug Fixes
+
+* **input:** prevent ghost-text suggestion from swallowing pasted content on Enter ([a657a09](https://github.com/chadbyte/clay/commit/a657a091a0d6557f94651e4a0c4e5797a6ac3ce9))
+* **mates:** persist deletedBuiltinKeys in single-user mode ([3986088](https://github.com/chadbyte/clay/commit/3986088f4bf79181095799e39d59253e09726e86))
+
+## [2.34.1-beta.1](https://github.com/chadbyte/clay/compare/v2.34.0...v2.34.1-beta.1) (2026-04-24)
+
+
+### Bug Fixes
+
+* normalize model ids across session switching ([dae5344](https://github.com/chadbyte/clay/commit/dae5344ed34fbfbb3d0553a9dfa06f4014006872))
+* preserve session vendor on reconnect ([5b061ae](https://github.com/chadbyte/clay/commit/5b061ae16c6b06fca3db5ecd18c047fd38f508b6))
+* **sidebar:** render worktree icon when set ([43292ab](https://github.com/chadbyte/clay/commit/43292ab6f63598a0c30ce9479ddc798809dd1517))
+
+# [2.34.0](https://github.com/chadbyte/clay/compare/v2.33.1...v2.34.0) (2026-04-24)
+
+
+### Bug Fixes
+
+* **adapter:** forward per-loop settings to SDK query options ([#335](https://github.com/chadbyte/clay/issues/335)) ([6fd740f](https://github.com/chadbyte/clay/commit/6fd740f02317b95015da68f07627846ee70e26a4))
+* **claude:** correct worker ipv4 preload path ([fbc70b2](https://github.com/chadbyte/clay/commit/fbc70b2f30c56f5fb14bbd478e68d3f0d7330d02))
+* **claude:** restore worker queries in os user mode ([ac09780](https://github.com/chadbyte/clay/commit/ac09780acd8648cb9fcc109601782b866ebfc838))
+* **claude:** sanitize worker ipc payloads ([6867c79](https://github.com/chadbyte/clay/commit/6867c79eb3a94bdf483a5c65fc692c63d0df89f4))
+* **codex:** preserve content array when prepending system prompt ([eae322c](https://github.com/chadbyte/clay/commit/eae322c6b3fe145225bf4c7b4a23fcc6ab1fe77f))
+* render codex plans as plan variants ([5e2a4e9](https://github.com/chadbyte/clay/commit/5e2a4e9b2e7c10b830c9d4ad7c3d5aa3424cc485))
+* **sdk-bridge:** clear acceptEditsAfterStart in all permission-mode paths ([750055e](https://github.com/chadbyte/clay/commit/750055ea10bad83b16bd9cc8a5ad114b9c6c3e3e))
+* **sdk-bridge:** prevent cross-vendor model leak across sessions ([1f62af8](https://github.com/chadbyte/clay/commit/1f62af822c52506fd1d091b33a62d05063663fd1))
+* **search:** return all query occurrences per assistant turn ([21b0081](https://github.com/chadbyte/clay/commit/21b008111369abac9b28d2cac9577ee2b66f0ada))
+* **security:** harden shell command execution ([a2540c2](https://github.com/chadbyte/clay/commit/a2540c24f0ec634c6eb26ee314478a21fc6a0562)), closes [#334](https://github.com/chadbyte/clay/issues/334)
+* **sw:** bump cache version to evict stale connection-lost notification ([c91c6ff](https://github.com/chadbyte/clay/commit/c91c6ff60d5cd2dfe107ece213af9ae7e31f96b9))
+* **ui:** hide expand affordance for empty thinking blocks ([35bc428](https://github.com/chadbyte/clay/commit/35bc4282c79a09ad7673300bb0cc4c941deceb9c))
+* **ui:** restore notification contrast in light mode ([c51f870](https://github.com/chadbyte/clay/commit/c51f87016ad68dab0135a35d371754bdd2c86b72))
+* **yoke:** support third-party provider auth modes ([185b6d1](https://github.com/chadbyte/clay/commit/185b6d15080660dcf88d6e5d563c137f7be3aa90)), closes [#331](https://github.com/chadbyte/clay/issues/331)
+
+
+### Features
+
+* **mates:** add Mate SQLite datastore and inspector ([24bf2f9](https://github.com/chadbyte/clay/commit/24bf2f978f096b497272011b2c53e2e56ba76921))
+* **mates:** replace autonomy step with vendor choice in wizard ([f8b4f34](https://github.com/chadbyte/clay/commit/f8b4f3471ffb265ccff5e2d8b45217825683e39e))
+* refine session favorites sidebar ([3bc6bb8](https://github.com/chadbyte/clay/commit/3bc6bb898d3651524a1fdfcadd2dfe8e1a48fd75))
+* **sidebar:** two-click arm to delete session and polish presence layout ([af66342](https://github.com/chadbyte/clay/commit/af66342fcdbcff3a38fea4419fc5f9ddcc1a5a63))
+* **tools:** render codex patch diffs with filename header and split toggle ([1c6ebe2](https://github.com/chadbyte/clay/commit/1c6ebe2f3240fe3f986562e2a80d3325c0f755bd))
+
+
+### Performance Improvements
+
+* **os-users:** reduce project switch overhead ([96fd254](https://github.com/chadbyte/clay/commit/96fd2540f4e5217fa52240bdd74cbfddf5ce6865))
+* **project:** defer owner acl work until query start ([9887a1f](https://github.com/chadbyte/clay/commit/9887a1f9e1870cebef87d9dfec3abb6beab1fd46))
+* **yoke:** cache checkInstalled result at module scope ([1ba9bff](https://github.com/chadbyte/clay/commit/1ba9bff1a8c31e54329b311f472ad4aadd24a7de))
+* **yoke:** defer adapter warmup to first websocket connection ([26ede6e](https://github.com/chadbyte/clay/commit/26ede6e7847f123ec848142452b70df24ea9718e))
+
+# [2.34.0-beta.10](https://github.com/chadbyte/clay/compare/v2.34.0-beta.9...v2.34.0-beta.10) (2026-04-24)
+
+
+### Bug Fixes
+
+* **codex:** preserve content array when prepending system prompt ([eae322c](https://github.com/chadbyte/clay/commit/eae322c6b3fe145225bf4c7b4a23fcc6ab1fe77f))
+* **sw:** bump cache version to evict stale connection-lost notification ([c91c6ff](https://github.com/chadbyte/clay/commit/c91c6ff60d5cd2dfe107ece213af9ae7e31f96b9))
+
+
+### Features
+
+* refine session favorites sidebar ([3bc6bb8](https://github.com/chadbyte/clay/commit/3bc6bb898d3651524a1fdfcadd2dfe8e1a48fd75))
+* **sidebar:** two-click arm to delete session and polish presence layout ([af66342](https://github.com/chadbyte/clay/commit/af66342fcdbcff3a38fea4419fc5f9ddcc1a5a63))
+* **tools:** render codex patch diffs with filename header and split toggle ([1c6ebe2](https://github.com/chadbyte/clay/commit/1c6ebe2f3240fe3f986562e2a80d3325c0f755bd))
+
+# [2.34.0-beta.9](https://github.com/chadbyte/clay/compare/v2.34.0-beta.8...v2.34.0-beta.9) (2026-04-23)
+
+
+### Performance Improvements
+
+* **project:** defer owner acl work until query start ([9887a1f](https://github.com/chadbyte/clay/commit/9887a1f9e1870cebef87d9dfec3abb6beab1fd46))
+
+# [2.34.0-beta.8](https://github.com/chadbyte/clay/compare/v2.34.0-beta.7...v2.34.0-beta.8) (2026-04-23)
+
+
+### Performance Improvements
+
+* **os-users:** reduce project switch overhead ([96fd254](https://github.com/chadbyte/clay/commit/96fd2540f4e5217fa52240bdd74cbfddf5ce6865))
+
+# [2.34.0-beta.7](https://github.com/chadbyte/clay/compare/v2.34.0-beta.6...v2.34.0-beta.7) (2026-04-23)
+
+
+### Bug Fixes
+
+* **claude:** correct worker ipv4 preload path ([fbc70b2](https://github.com/chadbyte/clay/commit/fbc70b2f30c56f5fb14bbd478e68d3f0d7330d02))
+
+# [2.34.0-beta.6](https://github.com/chadbyte/clay/compare/v2.34.0-beta.5...v2.34.0-beta.6) (2026-04-23)
+
+
+### Bug Fixes
+
+* **claude:** sanitize worker ipc payloads ([6867c79](https://github.com/chadbyte/clay/commit/6867c79eb3a94bdf483a5c65fc692c63d0df89f4))
+
+# [2.34.0-beta.5](https://github.com/chadbyte/clay/compare/v2.34.0-beta.4...v2.34.0-beta.5) (2026-04-23)
+
+
+### Bug Fixes
+
+* **claude:** restore worker queries in os user mode ([ac09780](https://github.com/chadbyte/clay/commit/ac09780acd8648cb9fcc109601782b866ebfc838))
+
+# [2.34.0-beta.4](https://github.com/chadbyte/clay/compare/v2.34.0-beta.3...v2.34.0-beta.4) (2026-04-23)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** prevent cross-vendor model leak across sessions ([1f62af8](https://github.com/chadbyte/clay/commit/1f62af822c52506fd1d091b33a62d05063663fd1))
+* **search:** return all query occurrences per assistant turn ([21b0081](https://github.com/chadbyte/clay/commit/21b008111369abac9b28d2cac9577ee2b66f0ada))
+* **ui:** hide expand affordance for empty thinking blocks ([35bc428](https://github.com/chadbyte/clay/commit/35bc4282c79a09ad7673300bb0cc4c941deceb9c))
+
+
+### Features
+
+* **mates:** replace autonomy step with vendor choice in wizard ([f8b4f34](https://github.com/chadbyte/clay/commit/f8b4f3471ffb265ccff5e2d8b45217825683e39e))
+
+
+### Performance Improvements
+
+* **yoke:** cache checkInstalled result at module scope ([1ba9bff](https://github.com/chadbyte/clay/commit/1ba9bff1a8c31e54329b311f472ad4aadd24a7de))
+* **yoke:** defer adapter warmup to first websocket connection ([26ede6e](https://github.com/chadbyte/clay/commit/26ede6e7847f123ec848142452b70df24ea9718e))
+
+# [2.34.0-beta.3](https://github.com/chadbyte/clay/compare/v2.34.0-beta.2...v2.34.0-beta.3) (2026-04-23)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** clear acceptEditsAfterStart in all permission-mode paths ([750055e](https://github.com/chadbyte/clay/commit/750055ea10bad83b16bd9cc8a5ad114b9c6c3e3e))
+* **yoke:** support third-party provider auth modes ([185b6d1](https://github.com/chadbyte/clay/commit/185b6d15080660dcf88d6e5d563c137f7be3aa90)), closes [#331](https://github.com/chadbyte/clay/issues/331)
+
+# [2.34.0-beta.2](https://github.com/chadbyte/clay/compare/v2.34.0-beta.1...v2.34.0-beta.2) (2026-04-23)
+
+
+### Bug Fixes
+
+* **adapter:** forward per-loop settings to SDK query options ([#335](https://github.com/chadbyte/clay/issues/335)) ([6fd740f](https://github.com/chadbyte/clay/commit/6fd740f02317b95015da68f07627846ee70e26a4))
+
+# [2.34.0-beta.1](https://github.com/chadbyte/clay/compare/v2.33.1...v2.34.0-beta.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* render codex plans as plan variants ([5e2a4e9](https://github.com/chadbyte/clay/commit/5e2a4e9b2e7c10b830c9d4ad7c3d5aa3424cc485))
+* **security:** harden shell command execution ([a2540c2](https://github.com/chadbyte/clay/commit/a2540c24f0ec634c6eb26ee314478a21fc6a0562)), closes [#334](https://github.com/chadbyte/clay/issues/334)
+* **ui:** restore notification contrast in light mode ([c51f870](https://github.com/chadbyte/clay/commit/c51f87016ad68dab0135a35d371754bdd2c86b72))
+
+
+### Features
+
+* **mates:** add Mate SQLite datastore and inspector ([24bf2f9](https://github.com/chadbyte/clay/commit/24bf2f978f096b497272011b2c53e2e56ba76921))
+
+## [2.33.1](https://github.com/chadbyte/clay/compare/v2.33.0...v2.33.1) (2026-04-22)
+
+
+### Bug Fixes
+
+* **auth:** preserve vendor selection and auth flow ([38d2b9a](https://github.com/chadbyte/clay/commit/38d2b9a7110226412eab2f8839289127003b0400))
+* **settings:** refine user settings layout ([9a060e1](https://github.com/chadbyte/clay/commit/9a060e16445d18f8491ad4d34bbef3c37396e617))
+* **title:** generate session titles after two turns ([4aaeade](https://github.com/chadbyte/clay/commit/4aaeade50bf457962c3e4fe94be3c20c826c859b))
+* **ui:** refine notification banner styling ([ae443b5](https://github.com/chadbyte/clay/commit/ae443b5442b3acffdddab49b0779711b5b7cc7fd))
+* **ui:** remove connection lost notifications ([d10d734](https://github.com/chadbyte/clay/commit/d10d7347c0be2b36878d29f99af19773e02d70da))
+* **ui:** style user island theme toggle ([fc58f3b](https://github.com/chadbyte/clay/commit/fc58f3be2c28fc3dbc66851dcee6ceabf430b00a))
+* **ui:** use clay icon for empty notifications ([743d5ad](https://github.com/chadbyte/clay/commit/743d5ad55b66203c895430541b8005c6d35dddd2))
+* **yoke:** resolve codex linux auth path ([cc94558](https://github.com/chadbyte/clay/commit/cc945584cc19caf5027d9db82304c13a8f843113))
+
+## [2.33.1-beta.1](https://github.com/chadbyte/clay/compare/v2.33.0...v2.33.1-beta.1) (2026-04-22)
+
+
+### Bug Fixes
+
+* **auth:** preserve vendor selection and auth flow ([38d2b9a](https://github.com/chadbyte/clay/commit/38d2b9a7110226412eab2f8839289127003b0400))
+* **settings:** refine user settings layout ([9a060e1](https://github.com/chadbyte/clay/commit/9a060e16445d18f8491ad4d34bbef3c37396e617))
+* **title:** generate session titles after two turns ([4aaeade](https://github.com/chadbyte/clay/commit/4aaeade50bf457962c3e4fe94be3c20c826c859b))
+* **ui:** refine notification banner styling ([ae443b5](https://github.com/chadbyte/clay/commit/ae443b5442b3acffdddab49b0779711b5b7cc7fd))
+* **ui:** remove connection lost notifications ([d10d734](https://github.com/chadbyte/clay/commit/d10d7347c0be2b36878d29f99af19773e02d70da))
+* **ui:** style user island theme toggle ([fc58f3b](https://github.com/chadbyte/clay/commit/fc58f3be2c28fc3dbc66851dcee6ceabf430b00a))
+* **ui:** use clay icon for empty notifications ([743d5ad](https://github.com/chadbyte/clay/commit/743d5ad55b66203c895430541b8005c6d35dddd2))
+* **yoke:** resolve codex linux auth path ([cc94558](https://github.com/chadbyte/clay/commit/cc945584cc19caf5027d9db82304c13a8f843113))
+
+# [2.33.0](https://github.com/chadbyte/clay/compare/v2.32.0...v2.33.0) (2026-04-22)
+
+
+### Bug Fixes
+
+* **codex:** forward direct tool events to UI ([b25abe6](https://github.com/chadbyte/clay/commit/b25abe61a00ec52ed98fc4add36a92d44021d21c))
+* **codex:** initialize adapter after runtime login ([6703e95](https://github.com/chadbyte/clay/commit/6703e95ce69229642fbf11a1c95997765e8812bf))
+* **codex:** prefer device auth in login prompts ([b0bcd2b](https://github.com/chadbyte/clay/commit/b0bcd2b2308485b8b129669284869f12a9f61f25))
+* **codex:** preserve bash commands across approval ([9978465](https://github.com/chadbyte/clay/commit/9978465466cf62aa28e1d5d01b491d67510e0317))
+* **codex:** route requestUserInput through elicitation UI ([a261c76](https://github.com/chadbyte/clay/commit/a261c768900f1dc9f4cfed347f10b3487e10026f))
+* **codex:** surface file change diffs in UI ([f5585a8](https://github.com/chadbyte/clay/commit/f5585a86ec98a8840a42437e066e10e9473299ea))
+* **codex:** use app-server thread sandbox params ([b9569c9](https://github.com/chadbyte/clay/commit/b9569c99dfa4364418454e2dc24fe815c66d5b42))
+* **mcp:** gate clay-browser MCP on Chrome extension connection ([dd6ba2d](https://github.com/chadbyte/clay/commit/dd6ba2d8c501e6db551a28131c0bed48fe7e28da))
+* **mcp:** gate clay-email MCP on email capability being configured ([0497a92](https://github.com/chadbyte/clay/commit/0497a92034b0234749bb58c8eb7ca84cfb9614c0)), closes [#325](https://github.com/chadbyte/clay/issues/325)
+* **models:** send vendor-specific model lists ([f6df875](https://github.com/chadbyte/clay/commit/f6df8753499698617bd5ee9bf36a85799418168e))
+* open external links in new tab via marked renderer ([#326](https://github.com/chadbyte/clay/issues/326)) ([2011da9](https://github.com/chadbyte/clay/commit/2011da99dd7ed7d13b426884c234b078b8908648))
+* **rate-limit:** clear Claude schedule mode on vendor switch ([fa0df6d](https://github.com/chadbyte/clay/commit/fa0df6dbbaf289d4ed7f0b1cde81cb3807d07319))
+* **session,permissions:** trim migration titles + inherit bypassPermissions in scheduled tasks ([#328](https://github.com/chadbyte/clay/issues/328)) ([492d310](https://github.com/chadbyte/clay/commit/492d31031b5b1e12874075928ffb13e908293a62))
+* **ui,sdk-bridge:** 'codex --login' -> 'codex login' in loginCommand prompts ([#329](https://github.com/chadbyte/clay/issues/329)) ([2519403](https://github.com/chadbyte/clay/commit/2519403f77e9d75294d7c3db728702c377d6bef6)), closes [#327](https://github.com/chadbyte/clay/issues/327) [#327](https://github.com/chadbyte/clay/issues/327)
+* **ui:** clear stale models on vendor switch ([1862b9b](https://github.com/chadbyte/clay/commit/1862b9be543695bc5ab2d33498c6d5d481fe2e61))
+* **ui:** detect hunk-only patch diffs ([6ee5970](https://github.com/chadbyte/clay/commit/6ee5970e0a779fd4faffdb646482537fc299b21c))
+* **ui:** quiet the mate avatar overlay on the @ button ([e1b6b44](https://github.com/chadbyte/clay/commit/e1b6b446da10961a3421256b7fee6a7d9e117971)), closes [#325](https://github.com/chadbyte/clay/issues/325)
+* **ui:** show vendor icon on usage pill ([cff7a60](https://github.com/chadbyte/clay/commit/cff7a60fdda8e7f10f41098de6bbe890f5b91181))
+* **yoke:** use findCodexPath() instead of hardcoded darwin-arm64 path ([#330](https://github.com/chadbyte/clay/issues/330)) ([f2de390](https://github.com/chadbyte/clay/commit/f2de3900391596ab97efc3ae433d4e1af57906c7)), closes [#325](https://github.com/chadbyte/clay/issues/325) [#file-tree](https://github.com/chadbyte/clay/issues/file-tree) [#share-pill](https://github.com/chadbyte/clay/issues/share-pill) [#327](https://github.com/chadbyte/clay/issues/327)
+
+
+### Features
+
+* add session bookmarks ([54018d8](https://github.com/chadbyte/clay/commit/54018d867d8ee61a6b46ca631497083b558f01aa))
+* **codex:** surface compaction status in Clay UI ([dead00c](https://github.com/chadbyte/clay/commit/dead00c5266b212eb32594be6019600c393f06e5))
+* **codex:** surface plan updates in Clay UI ([b4d4f19](https://github.com/chadbyte/clay/commit/b4d4f196729c2e544e89096f0fd29c3ff0ebb267))
+* **codex:** surface prompt suggestions in Clay UI ([1d3d5a4](https://github.com/chadbyte/clay/commit/1d3d5a4dd408522e13b164211fa3c962b2acf186))
+* **filebrowser:** arrow-key navigation with auto-focus on open ([3362969](https://github.com/chadbyte/clay/commit/3362969f0d05a3c412ac6186480307b8f425503f))
+* improve session bookmark interactions ([8f862dc](https://github.com/chadbyte/clay/commit/8f862dc6a44285214ed7f7262c58a92153a8a064))
+* **notifications:** Clear-all pill on the banner stack ([928809c](https://github.com/chadbyte/clay/commit/928809c290a0bad507905f8b1873c11a7ae2c604))
+* refine session bookmark icon placement ([33dbf98](https://github.com/chadbyte/clay/commit/33dbf98ec594ebdb7e42b2bcbbe2e9abc03450ad))
+
+
+### Reverts
+
+* **main:** remove unrelated changes from [#330](https://github.com/chadbyte/clay/issues/330) ([5eadb24](https://github.com/chadbyte/clay/commit/5eadb24208a88cd612dff3e0f948b6a2ed205465))
+
+# [2.33.0-beta.3](https://github.com/chadbyte/clay/compare/v2.33.0-beta.2...v2.33.0-beta.3) (2026-04-22)
+
+
+### Bug Fixes
+
+* **codex:** forward direct tool events to UI ([b25abe6](https://github.com/chadbyte/clay/commit/b25abe61a00ec52ed98fc4add36a92d44021d21c))
+* **codex:** initialize adapter after runtime login ([6703e95](https://github.com/chadbyte/clay/commit/6703e95ce69229642fbf11a1c95997765e8812bf))
+* **codex:** preserve bash commands across approval ([9978465](https://github.com/chadbyte/clay/commit/9978465466cf62aa28e1d5d01b491d67510e0317))
+* **codex:** route requestUserInput through elicitation UI ([a261c76](https://github.com/chadbyte/clay/commit/a261c768900f1dc9f4cfed347f10b3487e10026f))
+* **codex:** surface file change diffs in UI ([f5585a8](https://github.com/chadbyte/clay/commit/f5585a86ec98a8840a42437e066e10e9473299ea))
+* **codex:** use app-server thread sandbox params ([b9569c9](https://github.com/chadbyte/clay/commit/b9569c99dfa4364418454e2dc24fe815c66d5b42))
+* **models:** send vendor-specific model lists ([f6df875](https://github.com/chadbyte/clay/commit/f6df8753499698617bd5ee9bf36a85799418168e))
+* **rate-limit:** clear Claude schedule mode on vendor switch ([fa0df6d](https://github.com/chadbyte/clay/commit/fa0df6dbbaf289d4ed7f0b1cde81cb3807d07319))
+* **ui:** clear stale models on vendor switch ([1862b9b](https://github.com/chadbyte/clay/commit/1862b9be543695bc5ab2d33498c6d5d481fe2e61))
+* **ui:** detect hunk-only patch diffs ([6ee5970](https://github.com/chadbyte/clay/commit/6ee5970e0a779fd4faffdb646482537fc299b21c))
+* **ui:** show vendor icon on usage pill ([cff7a60](https://github.com/chadbyte/clay/commit/cff7a60fdda8e7f10f41098de6bbe890f5b91181))
+
+
+### Features
+
+* add session bookmarks ([54018d8](https://github.com/chadbyte/clay/commit/54018d867d8ee61a6b46ca631497083b558f01aa))
+* **codex:** surface compaction status in Clay UI ([dead00c](https://github.com/chadbyte/clay/commit/dead00c5266b212eb32594be6019600c393f06e5))
+* **codex:** surface plan updates in Clay UI ([b4d4f19](https://github.com/chadbyte/clay/commit/b4d4f196729c2e544e89096f0fd29c3ff0ebb267))
+* **codex:** surface prompt suggestions in Clay UI ([1d3d5a4](https://github.com/chadbyte/clay/commit/1d3d5a4dd408522e13b164211fa3c962b2acf186))
+* improve session bookmark interactions ([8f862dc](https://github.com/chadbyte/clay/commit/8f862dc6a44285214ed7f7262c58a92153a8a064))
+* refine session bookmark icon placement ([33dbf98](https://github.com/chadbyte/clay/commit/33dbf98ec594ebdb7e42b2bcbbe2e9abc03450ad))
+
+# [2.33.0-beta.2](https://github.com/chadbyte/clay/compare/v2.33.0-beta.1...v2.33.0-beta.2) (2026-04-22)
+
+
+### Bug Fixes
+
+* **codex:** prefer device auth in login prompts ([b0bcd2b](https://github.com/chadbyte/clay/commit/b0bcd2b2308485b8b129669284869f12a9f61f25))
+
+# [2.33.0-beta.1](https://github.com/chadbyte/clay/compare/v2.32.1-beta.2...v2.33.0-beta.1) (2026-04-22)
+
+
+### Bug Fixes
+
+* **mcp:** gate clay-browser MCP on Chrome extension connection ([dd6ba2d](https://github.com/chadbyte/clay/commit/dd6ba2d8c501e6db551a28131c0bed48fe7e28da))
+* **mcp:** gate clay-email MCP on email capability being configured ([0497a92](https://github.com/chadbyte/clay/commit/0497a92034b0234749bb58c8eb7ca84cfb9614c0)), closes [#325](https://github.com/chadbyte/clay/issues/325)
+* **ui:** quiet the mate avatar overlay on the @ button ([e1b6b44](https://github.com/chadbyte/clay/commit/e1b6b446da10961a3421256b7fee6a7d9e117971)), closes [#325](https://github.com/chadbyte/clay/issues/325)
+
+
+### Features
+
+* **filebrowser:** arrow-key navigation with auto-focus on open ([3362969](https://github.com/chadbyte/clay/commit/3362969f0d05a3c412ac6186480307b8f425503f))
+* **notifications:** Clear-all pill on the banner stack ([928809c](https://github.com/chadbyte/clay/commit/928809c290a0bad507905f8b1873c11a7ae2c604))
+
+
+### Reverts
+
+* **main:** remove unrelated changes from [#330](https://github.com/chadbyte/clay/issues/330) ([5eadb24](https://github.com/chadbyte/clay/commit/5eadb24208a88cd612dff3e0f948b6a2ed205465))
+
+## [2.32.1-beta.2](https://github.com/chadbyte/clay/compare/v2.32.1-beta.1...v2.32.1-beta.2) (2026-04-22)
+
+
+### Bug Fixes
+
+* **session,permissions:** trim migration titles + inherit bypassPermissions in scheduled tasks ([#328](https://github.com/chadbyte/clay/issues/328)) ([492d310](https://github.com/chadbyte/clay/commit/492d31031b5b1e12874075928ffb13e908293a62))
+* **yoke:** use findCodexPath() instead of hardcoded darwin-arm64 path ([#330](https://github.com/chadbyte/clay/issues/330)) ([f2de390](https://github.com/chadbyte/clay/commit/f2de3900391596ab97efc3ae433d4e1af57906c7)), closes [#325](https://github.com/chadbyte/clay/issues/325) [#file-tree](https://github.com/chadbyte/clay/issues/file-tree) [#share-pill](https://github.com/chadbyte/clay/issues/share-pill) [#327](https://github.com/chadbyte/clay/issues/327)
+
+## [2.32.1-beta.1](https://github.com/chadbyte/clay/compare/v2.32.0...v2.32.1-beta.1) (2026-04-22)
+
+
+### Bug Fixes
+
+* open external links in new tab via marked renderer ([#326](https://github.com/chadbyte/clay/issues/326)) ([2011da9](https://github.com/chadbyte/clay/commit/2011da99dd7ed7d13b426884c234b078b8908648))
+* **ui,sdk-bridge:** use `codex login --device-auth` in loginCommand prompts ([#329](https://github.com/chadbyte/clay/issues/329)) ([2519403](https://github.com/chadbyte/clay/commit/2519403f77e9d75294d7c3db728702c377d6bef6)), closes [#327](https://github.com/chadbyte/clay/issues/327) [#327](https://github.com/chadbyte/clay/issues/327)
+
+# [2.32.0](https://github.com/chadbyte/clay/compare/v2.31.0...v2.32.0) (2026-04-20)
+
+
+### Bug Fixes
+
+* **codex:** abort ends iterator immediately like Claude pattern ([87af5f0](https://github.com/chadbyte/clay/commit/87af5f0f7047cdcf2646cc5f93950200ae078abd))
+* **codex:** allow turn/completed through after abort ([3b1d864](https://github.com/chadbyte/clay/commit/3b1d8643fc8e1cffb96577197a62da7c39314994))
+* **codex:** clear typing indicator on abort and prevent duplicate message text ([1411807](https://github.com/chadbyte/clay/commit/1411807f6d73be811ff9506b8e91c8057b01441d))
+* **codex:** correct skills/list perCwdExtraUserRoots format ([3480f3c](https://github.com/chadbyte/clay/commit/3480f3c5d7c66834b252e0f3ec064c14598de62d))
+* **codex:** filter events by threadId to prevent session crosstalk ([b27b495](https://github.com/chadbyte/clay/commit/b27b495710195fe10ed48d5d1e22e1169964feef))
+* **codex:** listen for abortController signal to trigger handle.abort ([e978352](https://github.com/chadbyte/clay/commit/e97835207b8dc045f820f3bbcfa3ca410e746a7b))
+* **codex:** proper abort handling with turn/completed flow ([68b3c13](https://github.com/chadbyte/clay/commit/68b3c1394a15df6a1eec550862c2b68822fc131f))
+* **codex:** route MCP approval through canUseTool instead of auto-accept ([34d6501](https://github.com/chadbyte/clay/commit/34d650144beb7141e0d9ae5b8f5b35b595e8293a))
+* **codex:** send turn/interrupt as request instead of notification ([a9240f3](https://github.com/chadbyte/clay/commit/a9240f348737265fc18ee036b1087534a6667ec2))
+* **codex:** show interrupted message and reset UI on abort ([6cade75](https://github.com/chadbyte/clay/commit/6cade75607bc37787c43e81096084d51dd349f1f))
+* **codex:** wrap command/file approval response in decision object ([ad6a5f5](https://github.com/chadbyte/clay/commit/ad6a5f5e07131769faceff781343e7e848502ed6))
+* **debate:** pass mate vendor to createMentionSession calls ([2558314](https://github.com/chadbyte/clay/commit/255831419ec011dbee9e7535424669c9bfa9b3f9))
+* improve codex defaults and mate notification flows ([939dcea](https://github.com/chadbyte/clay/commit/939dcea863236af3e1b72d2d5c6a073ef8d5ce84))
+* **input:** keep send button fixed and collapse vendor labels earlier ([1dd7a36](https://github.com/chadbyte/clay/commit/1dd7a367b6f1e07b922bef8ca41245a29ef4c8cd))
+* **input:** let context picker escape attach-wrap overflow ([0177849](https://github.com/chadbyte/clay/commit/0177849d726e856cbe5193bcb2e2b804df9f4e62)), closes [#attach-wrap](https://github.com/chadbyte/clay/issues/attach-wrap)
+* **markdown:** normalize smart quotes before parsing ([33b272b](https://github.com/chadbyte/clay/commit/33b272b17ec5343ba95099aa34cd2d9483671a17))
+* **mates:** delta-based DM digests to prevent content loss past 6k chars ([466b67d](https://github.com/chadbyte/clay/commit/466b67daa3c958376815313fd52f48bc0d6a7d84)), closes [#282](https://github.com/chadbyte/clay/issues/282)
+* **mates:** restore mention indicator across view switches and DOM rebuilds ([4ee0eb8](https://github.com/chadbyte/clay/commit/4ee0eb81f1875f9d11c9c9399350d48f3d85eedb)), closes [#308](https://github.com/chadbyte/clay/issues/308)
+* **mcp:** cache extension state and resend on WS reconnect ([9035de3](https://github.com/chadbyte/clay/commit/9035de39c44cb03e56a156a954483e6952ba7403))
+* **mcp:** global bridge endpoint, tool cache refresh, codex 0.121.0 ([b3d125c](https://github.com/chadbyte/clay/commit/b3d125c76101ab93c2e43e2f2d25cffc6c12e228))
+* **mention:** use mate's vendor adapter for mention sessions ([04e657e](https://github.com/chadbyte/clay/commit/04e657e2a81279cabfe9de392d0212ae5cce54af))
+* **notifications:** resolve mate DM navigation from notifications ([08ad961](https://github.com/chadbyte/clay/commit/08ad9610e94524c39f50d508b08c59295d5be5c4))
+* **scroll:** scroll to bottom when returning to app after backgrounding ([#324](https://github.com/chadbyte/clay/issues/324)) ([70a6751](https://github.com/chadbyte/clay/commit/70a675120189f22f591b097c9238348a472e6101))
+* **sdk:** preserve mid-session model change across warmup cycles ([420ad34](https://github.com/chadbyte/clay/commit/420ad340140d129bab11e3c8d1068667610b640d)), closes [#321](https://github.com/chadbyte/clay/issues/321)
+* send done before interrupted message and use vendor name ([3639c85](https://github.com/chadbyte/clay/commit/3639c85f7c817206b84d9aa96141f38f46734390))
+* send info before done so typing indicator clears properly ([9b07ce8](https://github.com/chadbyte/clay/commit/9b07ce8154a80f3bd568c9c90acbb077e7367a8a))
+* send status+thinking_stop before done to clear typing indicator ([c194274](https://github.com/chadbyte/clay/commit/c194274a3dd63e442f8ae2845f2a2aefe2dab140))
+* **session:** include vendor in session_switched on reconnect ([5714dc6](https://github.com/chadbyte/clay/commit/5714dc6e069ecaa8f4559f273b14903a91f4016a))
+* **session:** reset vendor to claude when switching to non-vendor session ([6491ac0](https://github.com/chadbyte/clay/commit/6491ac031e17d0370b333eedecbbb9f02dfdf3a7))
+* **session:** resolve sm reference error in switchSession ([6cf21bf](https://github.com/chadbyte/clay/commit/6cf21bfe2921cf8ab1c42db9672a554113d6d8bf))
+* set taskStopRequested on stop message for proper abort handling ([bd77eb5](https://github.com/chadbyte/clay/commit/bd77eb51db2be424787c58bc04679aaa1f814a87))
+* **ui:** remove orphan closing brace in sidebar-mates mate context menu ([b4a56eb](https://github.com/chadbyte/clay/commit/b4a56eb6265030acd7517224b37440722fd583f5))
+* **ui:** remove undefined dismissOnboarding call in sticky-notes ([7ddac57](https://github.com/chadbyte/clay/commit/7ddac576130d1e9a1a2525041b5db2587b0620b8))
+* **ui:** replace bare ws and dmTargetUser refs with proper accessors ([b944731](https://github.com/chadbyte/clay/commit/b944731f7e3813c8e105dac9cc99d8743db74b6d))
+* **ui:** show vendor name in permission requests instead of hardcoded Claude Code ([c697f86](https://github.com/chadbyte/clay/commit/c697f8628596eb9dd0ff7f48949b475414acebf3))
+* **ui:** skip addRewindButton when vendor capability is false ([7425947](https://github.com/chadbyte/clay/commit/742594746cd04fd63a365314cb9f56ad2fdf8fc1))
+* **ui:** suppress update banner re-show within 1 hour of dismiss ([f23488d](https://github.com/chadbyte/clay/commit/f23488df1b69e9527a94f4c21615e165c0eb2787))
+* **ui:** use getWsRef for fork button click handler ([632b16a](https://github.com/chadbyte/clay/commit/632b16a8a0966d439d3a37310f44140126cf6ba1))
+* **ui:** use vendor-specific avatar in permission requests ([055f986](https://github.com/chadbyte/clay/commit/055f986feb4804a40150ae9d5ba8fb8e46c60143))
+* use correct interrupted message text ([61dda55](https://github.com/chadbyte/clay/commit/61dda551dc5d7d266edf0658a8cceb0725fedb33))
+* vendor-specific interrupted message (Claude vs Codex) ([fc8e7de](https://github.com/chadbyte/clay/commit/fc8e7de6dcf8319e0f0b7caa6d641b731eb80bc6))
+* **yoke:** convert mention session stream loop to yokeType events ([7bb1757](https://github.com/chadbyte/clay/commit/7bb175743bdcae867ba0248f280e154be55552b9))
+* **yoke:** remove hardcoded API key from Gemini adapter, add debug logging ([b6e624e](https://github.com/chadbyte/clay/commit/b6e624ebc7e6bb32c56ea55315343d5f1754bed0))
+* **yoke:** resolve claude binary via which for non-standard installs ([7985abf](https://github.com/chadbyte/clay/commit/7985abffff5abd7bc2018b73fa1c2669dcc8835f))
+
+
+### Features
+
+* **codex:** add context usage bar and rate limit display ([1810fa4](https://github.com/chadbyte/clay/commit/1810fa486d3b2ce77036c0be96c7cdc28c89d48f))
+* **codex:** add fork and rewind support via app-server API ([fd16e47](https://github.com/chadbyte/clay/commit/fd16e47fe575b1d1837a90126f18d31fd0774f07))
+* **codex:** migrate to app-server protocol with MCP approval support ([58350b4](https://github.com/chadbyte/clay/commit/58350b433653b22c266bf467ad49661d925102d6))
+* **codex:** recognize Claude skills via \$<skill-name> references ([689a04e](https://github.com/chadbyte/clay/commit/689a04e599aad5dc02ff6b8849fc023b0c535308))
+* **codex:** vendor-specific slash commands ([ae62fd2](https://github.com/chadbyte/clay/commit/ae62fd295070a9871da0b8a622d5e96af5b58f65))
+* **filebrowser:** add window-style titlebar and file search ([5d25c8a](https://github.com/chadbyte/clay/commit/5d25c8a528efe5e21bb2a94c4fc10903f6302c36))
+* **input:** add rotating mate avatar overlay on @ button ([b8a6c40](https://github.com/chadbyte/clay/commit/b8a6c40ff4aec18a79d177b61acacb69e373e341))
+* **input:** mobile unified bottom sheet for attach, image, and context sources ([f55bb45](https://github.com/chadbyte/clay/commit/f55bb456f0969225eca5d8adc91d7fadfb89e916))
+* **input:** replace prompt suggestion chips with ghost text pattern ([0753833](https://github.com/chadbyte/clay/commit/0753833bd96e433b40dbed4a084d546766e6e327))
+* **mates:** add per-mate vendor selection and vendor badge on strip ([108708a](https://github.com/chadbyte/clay/commit/108708a431ac3edf6d07837862125ee4b329d4c3))
+* **mates:** persist vendor, vendor badges in mention menu, and UI polish ([10907a6](https://github.com/chadbyte/clay/commit/10907a66cd4e9110ebf5b0f3d03cee402da3ae2b))
+* **mcp:** enable MCP tool support in Codex sessions via stdio bridge ([45f3d17](https://github.com/chadbyte/clay/commit/45f3d171e8d52f8d409ec143573c66e1924695be))
+* **notifications:** add mention response notifications with mate avatar ([04efe57](https://github.com/chadbyte/clay/commit/04efe57d2959c2cc914ec317302584d9bd6ba95c))
+* **session:** auto-generate session title via SDK after 3 turns ([022f07e](https://github.com/chadbyte/clay/commit/022f07e5ccdbc04d7c29a4f3897e3717168de1a8))
+* **session:** send vendor capabilities to client, hide rewind for Codex ([dfbf77d](https://github.com/chadbyte/clay/commit/dfbf77da1fc46dc8fed3a7d7dc9cbf9e9dc08664))
+* **ui:** restore terminal toggle button in top bar ([1bdd6fd](https://github.com/chadbyte/clay/commit/1bdd6fdb17a91beeb94c0e0cc11ab99432d7f40b))
+* **ui:** richer context tooltip and hourly update push ([b7adcdd](https://github.com/chadbyte/clay/commit/b7adcdd462ee19837f17bf3d39a9d9556a2ae543))
+* **vendor:** allow vendor selection before auth, login flow on send ([fa29580](https://github.com/chadbyte/clay/commit/fa2958061607cfb0339278f2624ba865f854a9f2))
+* **yoke:** add Codex adapter fixes, cross-vendor instruction injection, and vendor UI ([60ec23d](https://github.com/chadbyte/clay/commit/60ec23d54dee9e6cd7491d7fd3513f6240ce7fba))
+* **yoke:** add Codex adapter, restore Claude as default ([483dd28](https://github.com/chadbyte/clay/commit/483dd28a0d56b1277f121c9a61598302a629c9dc))
+* **yoke:** add Gemini adapter (Phase 4a) ([068bd2a](https://github.com/chadbyte/clay/commit/068bd2a78e43831271aef2d288497038969cebc6))
+* **yoke:** add multi-vendor adapter map, vendor toggle UI, and per-session vendor binding ([8b37ce2](https://github.com/chadbyte/clay/commit/8b37ce28e5f38dd10de349edf666716b9356142b))
+* **yoke:** add vendor-specific config panel, fix model switching, and polish UI ([72246c4](https://github.com/chadbyte/clay/commit/72246c4fb6188fb732597cf08699f80398be6770))
+* **yoke:** Gemini adapter working in Clay ([48164d0](https://github.com/chadbyte/clay/commit/48164d0322b2a67abb3ca88fa2d6b4cc12c1be26))
+* **yoke:** merge YOKE adapter abstraction layer ([49ebc2c](https://github.com/chadbyte/clay/commit/49ebc2c7602d4b20ff4375181a96545490d57943))
+
+
+### Performance Improvements
+
+* **skills:** cache skill update checks with 5-minute TTL ([9370407](https://github.com/chadbyte/clay/commit/93704074f36d459d8e464bf78e9434f0f81a7f2a))
+* **yoke:** cache Codex adapter init and reduce warmup log noise ([edddca5](https://github.com/chadbyte/clay/commit/edddca5fc0886ee6a3312c9e25f85003f10a55d8))
+
+# [2.32.0-beta.11](https://github.com/chadbyte/clay/compare/v2.32.0-beta.10...v2.32.0-beta.11) (2026-04-20)
+
+
+### Bug Fixes
+
+* **scroll:** scroll to bottom when returning to app after backgrounding ([#324](https://github.com/chadbyte/clay/issues/324)) ([70a6751](https://github.com/chadbyte/clay/commit/70a675120189f22f591b097c9238348a472e6101))
+
+# [2.32.0-beta.10](https://github.com/chadbyte/clay/compare/v2.32.0-beta.9...v2.32.0-beta.10) (2026-04-20)
+
+
+### Bug Fixes
+
+* **input:** let context picker escape attach-wrap overflow ([0177849](https://github.com/chadbyte/clay/commit/0177849d726e856cbe5193bcb2e2b804df9f4e62)), closes [#attach-wrap](https://github.com/chadbyte/clay/issues/attach-wrap)
+
+# [2.32.0-beta.9](https://github.com/chadbyte/clay/compare/v2.32.0-beta.8...v2.32.0-beta.9) (2026-04-20)
+
+
+### Bug Fixes
+
+* **input:** keep send button fixed and collapse vendor labels earlier ([1dd7a36](https://github.com/chadbyte/clay/commit/1dd7a367b6f1e07b922bef8ca41245a29ef4c8cd))
+
+# [2.32.0-beta.8](https://github.com/chadbyte/clay/compare/v2.32.0-beta.7...v2.32.0-beta.8) (2026-04-20)
+
+
+### Bug Fixes
+
+* **codex:** correct skills/list perCwdExtraUserRoots format ([3480f3c](https://github.com/chadbyte/clay/commit/3480f3c5d7c66834b252e0f3ec064c14598de62d))
+* **codex:** wrap command/file approval response in decision object ([ad6a5f5](https://github.com/chadbyte/clay/commit/ad6a5f5e07131769faceff781343e7e848502ed6))
+* improve codex defaults and mate notification flows ([939dcea](https://github.com/chadbyte/clay/commit/939dcea863236af3e1b72d2d5c6a073ef8d5ce84))
+* **notifications:** resolve mate DM navigation from notifications ([08ad961](https://github.com/chadbyte/clay/commit/08ad9610e94524c39f50d508b08c59295d5be5c4))
+
+
+### Features
+
+* **codex:** recognize Claude skills via \$<skill-name> references ([689a04e](https://github.com/chadbyte/clay/commit/689a04e599aad5dc02ff6b8849fc023b0c535308))
+* **codex:** vendor-specific slash commands ([ae62fd2](https://github.com/chadbyte/clay/commit/ae62fd295070a9871da0b8a622d5e96af5b58f65))
+* **input:** mobile unified bottom sheet for attach, image, and context sources ([f55bb45](https://github.com/chadbyte/clay/commit/f55bb456f0969225eca5d8adc91d7fadfb89e916))
+* **notifications:** add mention response notifications with mate avatar ([04efe57](https://github.com/chadbyte/clay/commit/04efe57d2959c2cc914ec317302584d9bd6ba95c))
+* **ui:** restore terminal toggle button in top bar ([1bdd6fd](https://github.com/chadbyte/clay/commit/1bdd6fdb17a91beeb94c0e0cc11ab99432d7f40b))
+* **ui:** richer context tooltip and hourly update push ([b7adcdd](https://github.com/chadbyte/clay/commit/b7adcdd462ee19837f17bf3d39a9d9556a2ae543))
+
+# [2.32.0-beta.7](https://github.com/chadbyte/clay/compare/v2.32.0-beta.6...v2.32.0-beta.7) (2026-04-19)
+
+
+### Bug Fixes
+
+* **yoke:** resolve claude binary via which for non-standard installs ([7985abf](https://github.com/chadbyte/clay/commit/7985abffff5abd7bc2018b73fa1c2669dcc8835f))
+
+# [2.32.0-beta.6](https://github.com/chadbyte/clay/compare/v2.32.0-beta.5...v2.32.0-beta.6) (2026-04-18)
+
+
+### Bug Fixes
+
+* **mates:** delta-based DM digests to prevent content loss past 6k chars ([466b67d](https://github.com/chadbyte/clay/commit/466b67daa3c958376815313fd52f48bc0d6a7d84)), closes [#282](https://github.com/chadbyte/clay/issues/282)
+* **mates:** restore mention indicator across view switches and DOM rebuilds ([4ee0eb8](https://github.com/chadbyte/clay/commit/4ee0eb81f1875f9d11c9c9399350d48f3d85eedb)), closes [#308](https://github.com/chadbyte/clay/issues/308)
+
+# [2.32.0-beta.5](https://github.com/chadbyte/clay/compare/v2.32.0-beta.4...v2.32.0-beta.5) (2026-04-18)
+
+
+### Bug Fixes
+
+* **sdk:** preserve mid-session model change across warmup cycles ([420ad34](https://github.com/chadbyte/clay/commit/420ad340140d129bab11e3c8d1068667610b640d)), closes [#321](https://github.com/chadbyte/clay/issues/321)
+
+# [2.32.0-beta.4](https://github.com/chadbyte/clay/compare/v2.32.0-beta.3...v2.32.0-beta.4) (2026-04-18)
+
+
+### Bug Fixes
+
+* **debate:** pass mate vendor to createMentionSession calls ([2558314](https://github.com/chadbyte/clay/commit/255831419ec011dbee9e7535424669c9bfa9b3f9))
+* **markdown:** normalize smart quotes before parsing ([33b272b](https://github.com/chadbyte/clay/commit/33b272b17ec5343ba95099aa34cd2d9483671a17))
+* **mention:** use mate's vendor adapter for mention sessions ([04e657e](https://github.com/chadbyte/clay/commit/04e657e2a81279cabfe9de392d0212ae5cce54af))
+
+# [2.32.0-beta.3](https://github.com/chadbyte/clay/compare/v2.32.0-beta.2...v2.32.0-beta.3) (2026-04-18)
+
+
+### Bug Fixes
+
+* **ui:** replace bare ws and dmTargetUser refs with proper accessors ([b944731](https://github.com/chadbyte/clay/commit/b944731f7e3813c8e105dac9cc99d8743db74b6d))
+
+
+### Features
+
+* **session:** auto-generate session title via SDK after 3 turns ([022f07e](https://github.com/chadbyte/clay/commit/022f07e5ccdbc04d7c29a4f3897e3717168de1a8))
+
+# [2.32.0-beta.2](https://github.com/chadbyte/clay/compare/v2.32.0-beta.1...v2.32.0-beta.2) (2026-04-18)
+
+
+### Bug Fixes
+
+* **ui:** suppress update banner re-show within 1 hour of dismiss ([f23488d](https://github.com/chadbyte/clay/commit/f23488df1b69e9527a94f4c21615e165c0eb2787))
+
+# [2.32.0-beta.1](https://github.com/chadbyte/clay/compare/v2.31.0...v2.32.0-beta.1) (2026-04-18)
+
+
+### Bug Fixes
+
+* **codex:** abort ends iterator immediately like Claude pattern ([87af5f0](https://github.com/chadbyte/clay/commit/87af5f0f7047cdcf2646cc5f93950200ae078abd))
+* **codex:** allow turn/completed through after abort ([3b1d864](https://github.com/chadbyte/clay/commit/3b1d8643fc8e1cffb96577197a62da7c39314994))
+* **codex:** clear typing indicator on abort and prevent duplicate message text ([1411807](https://github.com/chadbyte/clay/commit/1411807f6d73be811ff9506b8e91c8057b01441d))
+* **codex:** filter events by threadId to prevent session crosstalk ([b27b495](https://github.com/chadbyte/clay/commit/b27b495710195fe10ed48d5d1e22e1169964feef))
+* **codex:** listen for abortController signal to trigger handle.abort ([e978352](https://github.com/chadbyte/clay/commit/e97835207b8dc045f820f3bbcfa3ca410e746a7b))
+* **codex:** proper abort handling with turn/completed flow ([68b3c13](https://github.com/chadbyte/clay/commit/68b3c1394a15df6a1eec550862c2b68822fc131f))
+* **codex:** route MCP approval through canUseTool instead of auto-accept ([34d6501](https://github.com/chadbyte/clay/commit/34d650144beb7141e0d9ae5b8f5b35b595e8293a))
+* **codex:** send turn/interrupt as request instead of notification ([a9240f3](https://github.com/chadbyte/clay/commit/a9240f348737265fc18ee036b1087534a6667ec2))
+* **codex:** show interrupted message and reset UI on abort ([6cade75](https://github.com/chadbyte/clay/commit/6cade75607bc37787c43e81096084d51dd349f1f))
+* **mcp:** cache extension state and resend on WS reconnect ([9035de3](https://github.com/chadbyte/clay/commit/9035de39c44cb03e56a156a954483e6952ba7403))
+* **mcp:** global bridge endpoint, tool cache refresh, codex 0.121.0 ([b3d125c](https://github.com/chadbyte/clay/commit/b3d125c76101ab93c2e43e2f2d25cffc6c12e228))
+* send done before interrupted message and use vendor name ([3639c85](https://github.com/chadbyte/clay/commit/3639c85f7c817206b84d9aa96141f38f46734390))
+* send info before done so typing indicator clears properly ([9b07ce8](https://github.com/chadbyte/clay/commit/9b07ce8154a80f3bd568c9c90acbb077e7367a8a))
+* send status+thinking_stop before done to clear typing indicator ([c194274](https://github.com/chadbyte/clay/commit/c194274a3dd63e442f8ae2845f2a2aefe2dab140))
+* **session:** include vendor in session_switched on reconnect ([5714dc6](https://github.com/chadbyte/clay/commit/5714dc6e069ecaa8f4559f273b14903a91f4016a))
+* **session:** reset vendor to claude when switching to non-vendor session ([6491ac0](https://github.com/chadbyte/clay/commit/6491ac031e17d0370b333eedecbbb9f02dfdf3a7))
+* **session:** resolve sm reference error in switchSession ([6cf21bf](https://github.com/chadbyte/clay/commit/6cf21bfe2921cf8ab1c42db9672a554113d6d8bf))
+* set taskStopRequested on stop message for proper abort handling ([bd77eb5](https://github.com/chadbyte/clay/commit/bd77eb51db2be424787c58bc04679aaa1f814a87))
+* **ui:** remove orphan closing brace in sidebar-mates mate context menu ([b4a56eb](https://github.com/chadbyte/clay/commit/b4a56eb6265030acd7517224b37440722fd583f5))
+* **ui:** remove undefined dismissOnboarding call in sticky-notes ([7ddac57](https://github.com/chadbyte/clay/commit/7ddac576130d1e9a1a2525041b5db2587b0620b8))
+* **ui:** show vendor name in permission requests instead of hardcoded Claude Code ([c697f86](https://github.com/chadbyte/clay/commit/c697f8628596eb9dd0ff7f48949b475414acebf3))
+* **ui:** skip addRewindButton when vendor capability is false ([7425947](https://github.com/chadbyte/clay/commit/742594746cd04fd63a365314cb9f56ad2fdf8fc1))
+* **ui:** use getWsRef for fork button click handler ([632b16a](https://github.com/chadbyte/clay/commit/632b16a8a0966d439d3a37310f44140126cf6ba1))
+* **ui:** use vendor-specific avatar in permission requests ([055f986](https://github.com/chadbyte/clay/commit/055f986feb4804a40150ae9d5ba8fb8e46c60143))
+* use correct interrupted message text ([61dda55](https://github.com/chadbyte/clay/commit/61dda551dc5d7d266edf0658a8cceb0725fedb33))
+* vendor-specific interrupted message (Claude vs Codex) ([fc8e7de](https://github.com/chadbyte/clay/commit/fc8e7de6dcf8319e0f0b7caa6d641b731eb80bc6))
+* **yoke:** convert mention session stream loop to yokeType events ([7bb1757](https://github.com/chadbyte/clay/commit/7bb175743bdcae867ba0248f280e154be55552b9))
+* **yoke:** remove hardcoded API key from Gemini adapter, add debug logging ([b6e624e](https://github.com/chadbyte/clay/commit/b6e624ebc7e6bb32c56ea55315343d5f1754bed0))
+
+
+### Features
+
+* **codex:** add context usage bar and rate limit display ([1810fa4](https://github.com/chadbyte/clay/commit/1810fa486d3b2ce77036c0be96c7cdc28c89d48f))
+* **codex:** add fork and rewind support via app-server API ([fd16e47](https://github.com/chadbyte/clay/commit/fd16e47fe575b1d1837a90126f18d31fd0774f07))
+* **codex:** migrate to app-server protocol with MCP approval support ([58350b4](https://github.com/chadbyte/clay/commit/58350b433653b22c266bf467ad49661d925102d6))
+* **filebrowser:** add window-style titlebar and file search ([5d25c8a](https://github.com/chadbyte/clay/commit/5d25c8a528efe5e21bb2a94c4fc10903f6302c36))
+* **input:** add rotating mate avatar overlay on @ button ([b8a6c40](https://github.com/chadbyte/clay/commit/b8a6c40ff4aec18a79d177b61acacb69e373e341))
+* **input:** replace prompt suggestion chips with ghost text pattern ([0753833](https://github.com/chadbyte/clay/commit/0753833bd96e433b40dbed4a084d546766e6e327))
+* **mates:** add per-mate vendor selection and vendor badge on strip ([108708a](https://github.com/chadbyte/clay/commit/108708a431ac3edf6d07837862125ee4b329d4c3))
+* **mates:** persist vendor, vendor badges in mention menu, and UI polish ([10907a6](https://github.com/chadbyte/clay/commit/10907a66cd4e9110ebf5b0f3d03cee402da3ae2b))
+* **mcp:** enable MCP tool support in Codex sessions via stdio bridge ([45f3d17](https://github.com/chadbyte/clay/commit/45f3d171e8d52f8d409ec143573c66e1924695be))
+* **session:** send vendor capabilities to client, hide rewind for Codex ([dfbf77d](https://github.com/chadbyte/clay/commit/dfbf77da1fc46dc8fed3a7d7dc9cbf9e9dc08664))
+* **vendor:** allow vendor selection before auth, login flow on send ([fa29580](https://github.com/chadbyte/clay/commit/fa2958061607cfb0339278f2624ba865f854a9f2))
+* **yoke:** add Codex adapter fixes, cross-vendor instruction injection, and vendor UI ([60ec23d](https://github.com/chadbyte/clay/commit/60ec23d54dee9e6cd7491d7fd3513f6240ce7fba))
+* **yoke:** add Codex adapter, restore Claude as default ([483dd28](https://github.com/chadbyte/clay/commit/483dd28a0d56b1277f121c9a61598302a629c9dc))
+* **yoke:** add Gemini adapter (Phase 4a) ([068bd2a](https://github.com/chadbyte/clay/commit/068bd2a78e43831271aef2d288497038969cebc6))
+* **yoke:** add multi-vendor adapter map, vendor toggle UI, and per-session vendor binding ([8b37ce2](https://github.com/chadbyte/clay/commit/8b37ce28e5f38dd10de349edf666716b9356142b))
+* **yoke:** add vendor-specific config panel, fix model switching, and polish UI ([72246c4](https://github.com/chadbyte/clay/commit/72246c4fb6188fb732597cf08699f80398be6770))
+* **yoke:** Gemini adapter working in Clay ([48164d0](https://github.com/chadbyte/clay/commit/48164d0322b2a67abb3ca88fa2d6b4cc12c1be26))
+* **yoke:** merge YOKE adapter abstraction layer ([49ebc2c](https://github.com/chadbyte/clay/commit/49ebc2c7602d4b20ff4375181a96545490d57943))
+
+
+### Performance Improvements
+
+* **skills:** cache skill update checks with 5-minute TTL ([9370407](https://github.com/chadbyte/clay/commit/93704074f36d459d8e464bf78e9434f0f81a7f2a))
+* **yoke:** cache Codex adapter init and reduce warmup log noise ([edddca5](https://github.com/chadbyte/clay/commit/edddca5fc0886ee6a3312c9e25f85003f10a55d8))
+
+# [2.31.0](https://github.com/chadbyte/clay/compare/v2.30.0...v2.31.0) (2026-04-17)
+
+
+### Bug Fixes
+
+* **browser:** use extension WebSocket for tab context requests ([19b909e](https://github.com/chadbyte/clay/commit/19b909e9fd4fef0f617e3ef18e421aac0245386b))
+* **email:** resolve MCP tool account lookup for per-session context ([9aaa7fd](https://github.com/chadbyte/clay/commit/9aaa7fd515a2f3dbe8bd71ac470ed383c7e5246b))
+* **email:** resolve userId dynamically in MCP tool deps ([e2cd5dc](https://github.com/chadbyte/clay/commit/e2cd5dc5d3ecbdf751c4a6908be396c88befa75a))
+* **ui:** prevent notification banner title overflow ([04e65e2](https://github.com/chadbyte/clay/commit/04e65e28f28296825ab5b911739bf128530a6764))
+
+
+### Features
+
+* **email:** add clay_move_email tool for folder/label management ([26e8d84](https://github.com/chadbyte/clay/commit/26e8d84c76a4c175dcc9a5dde4fdfa2e8b352c6a))
+* **email:** add email integration with IMAP/SMTP and SDK tools ([e80dde8](https://github.com/chadbyte/clay/commit/e80dde8c98a8e92bdf9deb705c3b9e68e9532f6c))
+* **file-browser:** add distinct panel styling, transitions, and drag-to-input ([2147c48](https://github.com/chadbyte/clay/commit/2147c480f12485460abe36c8fccdb9e2e6e36137))
+* **sdk:** upgrade to 0.2.112, implement P1 items ([ea72066](https://github.com/chadbyte/clay/commit/ea72066d4a0355f6a602435e2596bdb72b5bc6d8))
+* **ui:** add mate sidebar resize handle and sync widths ([ce9f2c8](https://github.com/chadbyte/clay/commit/ce9f2c8457885db005cba0e8c1187f262d56fb35))
+
+# [2.31.0-beta.1](https://github.com/chadbyte/clay/compare/v2.30.0...v2.31.0-beta.1) (2026-04-17)
+
+
+### Bug Fixes
+
+* **browser:** use extension WebSocket for tab context requests ([19b909e](https://github.com/chadbyte/clay/commit/19b909e9fd4fef0f617e3ef18e421aac0245386b))
+* **email:** resolve MCP tool account lookup for per-session context ([9aaa7fd](https://github.com/chadbyte/clay/commit/9aaa7fd515a2f3dbe8bd71ac470ed383c7e5246b))
+* **email:** resolve userId dynamically in MCP tool deps ([e2cd5dc](https://github.com/chadbyte/clay/commit/e2cd5dc5d3ecbdf751c4a6908be396c88befa75a))
+* **ui:** prevent notification banner title overflow ([04e65e2](https://github.com/chadbyte/clay/commit/04e65e28f28296825ab5b911739bf128530a6764))
+
+
+### Features
+
+* **email:** add clay_move_email tool for folder/label management ([26e8d84](https://github.com/chadbyte/clay/commit/26e8d84c76a4c175dcc9a5dde4fdfa2e8b352c6a))
+* **email:** add email integration with IMAP/SMTP and SDK tools ([e80dde8](https://github.com/chadbyte/clay/commit/e80dde8c98a8e92bdf9deb705c3b9e68e9532f6c))
+* **file-browser:** add distinct panel styling, transitions, and drag-to-input ([2147c48](https://github.com/chadbyte/clay/commit/2147c480f12485460abe36c8fccdb9e2e6e36137))
+* **sdk:** upgrade to 0.2.112, implement P1 items ([ea72066](https://github.com/chadbyte/clay/commit/ea72066d4a0355f6a602435e2596bdb72b5bc6d8))
+* **ui:** add mate sidebar resize handle and sync widths ([ce9f2c8](https://github.com/chadbyte/clay/commit/ce9f2c8457885db005cba0e8c1187f262d56fb35))
+
+# [2.30.0](https://github.com/chadbyte/clay/compare/v2.29.5...v2.30.0) (2026-04-16)
+
+
+### Bug Fixes
+
+* **dm:** allow DM and mate chat in single-user mode ([75c34e6](https://github.com/chadbyte/clay/commit/75c34e655b9bd79d020fc19b9741910e210f39c8))
+* **projects:** pass IGNORED_DIRS and onCreateWorktree to attachSessions ([3aaa062](https://github.com/chadbyte/clay/commit/3aaa0625d34d9c0e1dfa406005a3e07903034000))
+
+
+### Features
+
+* **ui:** allow icon change for worktree projects in icon strip ([46a8f00](https://github.com/chadbyte/clay/commit/46a8f00ee5c351cb44354ac21db42258ac48d48b))
+
+# [2.30.0-beta.2](https://github.com/chadbyte/clay/compare/v2.30.0-beta.1...v2.30.0-beta.2) (2026-04-16)
+
+
+### Bug Fixes
+
+* **projects:** pass IGNORED_DIRS and onCreateWorktree to attachSessions ([3aaa062](https://github.com/chadbyte/clay/commit/3aaa0625d34d9c0e1dfa406005a3e07903034000))
+
+# [2.30.0-beta.1](https://github.com/chadbyte/clay/compare/v2.29.6-beta.1...v2.30.0-beta.1) (2026-04-16)
+
+
+### Features
+
+* **ui:** allow icon change for worktree projects in icon strip ([46a8f00](https://github.com/chadbyte/clay/commit/46a8f00ee5c351cb44354ac21db42258ac48d48b))
+
+## [2.29.6-beta.1](https://github.com/chadbyte/clay/compare/v2.29.5...v2.29.6-beta.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **dm:** allow DM and mate chat in single-user mode ([75c34e6](https://github.com/chadbyte/clay/commit/75c34e655b9bd79d020fc19b9741910e210f39c8))
+
+## [2.29.5](https://github.com/chadbyte/clay/compare/v2.29.4...v2.29.5) (2026-04-16)
+
+
+### Bug Fixes
+
+* **mcp:** queue extension messages until WS is ready and clean up on disconnect ([f150f78](https://github.com/chadbyte/clay/commit/f150f7840624adfaba30af0960d07088130c4e44)), closes [hi#latency](https://github.com/hi/issues/latency)
+* **ui:** show all mates in strip for single-user mode ([71c5978](https://github.com/chadbyte/clay/commit/71c5978589c982cd2952c788d3787bcf6449a55b))
+
+
+### Performance Improvements
+
+* **ui:** add fingerprint guard to renderUserStrip ([808bf65](https://github.com/chadbyte/clay/commit/808bf656b53d72ec6cd0b1a1a5a8cab0bcf7bbee))
+
+## [2.29.5-beta.3](https://github.com/chadbyte/clay/compare/v2.29.5-beta.2...v2.29.5-beta.3) (2026-04-16)
+
+
+### Bug Fixes
+
+* **ui:** show all mates in strip for single-user mode ([71c5978](https://github.com/chadbyte/clay/commit/71c5978589c982cd2952c788d3787bcf6449a55b))
+
+## [2.29.5-beta.2](https://github.com/chadbyte/clay/compare/v2.29.5-beta.1...v2.29.5-beta.2) (2026-04-16)
+
+
+### Performance Improvements
+
+* **ui:** add fingerprint guard to renderUserStrip ([808bf65](https://github.com/chadbyte/clay/commit/808bf656b53d72ec6cd0b1a1a5a8cab0bcf7bbee))
+
+## [2.29.5-beta.1](https://github.com/chadbyte/clay/compare/v2.29.4...v2.29.5-beta.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **mcp:** queue extension messages until WS is ready and clean up on disconnect ([f150f78](https://github.com/chadbyte/clay/commit/f150f7840624adfaba30af0960d07088130c4e44)), closes [hi#latency](https://github.com/hi/issues/latency)
+
+## [2.29.4](https://github.com/chadbyte/clay/compare/v2.29.3...v2.29.4) (2026-04-16)
+
+
+### Bug Fixes
+
+* **terminal:** dispose WebGL addon before xterm to prevent _isDisposed error ([811a95c](https://github.com/chadbyte/clay/commit/811a95cef10ed1b740066f0e401e9eb1c473e9f9))
+* **ui:** clear stale connected/processing dots from inactive project icons ([32e8215](https://github.com/chadbyte/clay/commit/32e8215cf2c8f815a7ee7382437f57ef06368134))
+
+
+### Performance Improvements
+
+* **ui:** skip redundant re-renders in updateProjectList ([435f1f9](https://github.com/chadbyte/clay/commit/435f1f971e5131b011bb8a9088f16eb78d6f552c))
+
+
+### Reverts
+
+* **ui:** remove icon strip DOM rebuild optimization and stale dot clearing ([c60a5a9](https://github.com/chadbyte/clay/commit/c60a5a987590020643fcc974c0cbc38fa98ad323))
+
+## [2.29.4-beta.3](https://github.com/chadbyte/clay/compare/v2.29.4-beta.2...v2.29.4-beta.3) (2026-04-16)
+
+
+### Performance Improvements
+
+* **ui:** skip redundant re-renders in updateProjectList ([435f1f9](https://github.com/chadbyte/clay/commit/435f1f971e5131b011bb8a9088f16eb78d6f552c))
+
+
+### Reverts
+
+* **ui:** remove icon strip DOM rebuild optimization and stale dot clearing ([c60a5a9](https://github.com/chadbyte/clay/commit/c60a5a987590020643fcc974c0cbc38fa98ad323))
+
+## [2.29.4-beta.2](https://github.com/chadbyte/clay/compare/v2.29.4-beta.1...v2.29.4-beta.2) (2026-04-16)
+
+
+### Bug Fixes
+
+* **ui:** clear stale connected/processing dots from inactive project icons ([32e8215](https://github.com/chadbyte/clay/commit/32e8215cf2c8f815a7ee7382437f57ef06368134))
+
+## [2.29.4-beta.1](https://github.com/chadbyte/clay/compare/v2.29.3...v2.29.4-beta.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* **terminal:** dispose WebGL addon before xterm to prevent _isDisposed error ([811a95c](https://github.com/chadbyte/clay/commit/811a95cef10ed1b740066f0e401e9eb1c473e9f9))
+
+## [2.29.3](https://github.com/chadbyte/clay/compare/v2.29.2...v2.29.3) (2026-04-16)
+
+
+### Performance Improvements
+
+* **ui:** avoid full icon strip DOM rebuild on project switch and DM messages ([7b9fd37](https://github.com/chadbyte/clay/commit/7b9fd3719a8460cc28f1a7ad4ecef54d929b4741))
+
+## [2.29.3-beta.1](https://github.com/chadbyte/clay/compare/v2.29.2...v2.29.3-beta.1) (2026-04-15)
+
+
+### Performance Improvements
+
+* **ui:** avoid full icon strip DOM rebuild on project switch and DM messages ([7b9fd37](https://github.com/chadbyte/clay/commit/7b9fd3719a8460cc28f1a7ad4ecef54d929b4741))
+
+## [2.29.2](https://github.com/chadbyte/clay/compare/v2.29.1...v2.29.2) (2026-04-15)
+
+
+### Bug Fixes
+
+* **clone:** set user HOME env and pre-create target directory for multi-user clone ([d3a9cdd](https://github.com/chadbyte/clay/commit/d3a9cddfe96d4c25ebab402cea751a0b00841095))
+
+## [2.29.2-beta.1](https://github.com/chadbyte/clay/compare/v2.29.1...v2.29.2-beta.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **clone:** set user HOME env and pre-create target directory for multi-user clone ([d3a9cdd](https://github.com/chadbyte/clay/commit/d3a9cddfe96d4c25ebab402cea751a0b00841095))
+
+## [2.29.1](https://github.com/chadbyte/clay/compare/v2.29.0...v2.29.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **sdk:** resolve circular reference error when sending MCP servers to worker via IPC ([067a85e](https://github.com/chadbyte/clay/commit/067a85e4b7167ad897bdeb2111fef61df578b934))
+
+## [2.29.1-beta.1](https://github.com/chadbyte/clay/compare/v2.29.0...v2.29.1-beta.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **sdk:** resolve circular reference error when sending MCP servers to worker via IPC ([067a85e](https://github.com/chadbyte/clay/commit/067a85e4b7167ad897bdeb2111fef61df578b934))
+
+# [2.29.0](https://github.com/chadbyte/clay/compare/v2.28.0...v2.29.0) (2026-04-15)
+
+
+### Bug Fixes
+
+* **clone:** pre-create target directory with user ownership before git clone in multi-user mode ([89d51a0](https://github.com/chadbyte/clay/commit/89d51a0ead71146044a6af4f28c3e5ccbee7963a))
+
+
+### Features
+
+* **multi-user:** add path restrictions and ownership lock for home directory projects ([34e2607](https://github.com/chadbyte/clay/commit/34e260726208eb221d9e735ddacd09a702016fc7))
+
+# [2.29.0-beta.1](https://github.com/chadbyte/clay/compare/v2.28.0...v2.29.0-beta.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **clone:** pre-create target directory with user ownership before git clone in multi-user mode ([89d51a0](https://github.com/chadbyte/clay/commit/89d51a0ead71146044a6af4f28c3e5ccbee7963a))
+
+
+### Features
+
+* **multi-user:** add path restrictions and ownership lock for home directory projects ([34e2607](https://github.com/chadbyte/clay/commit/34e260726208eb221d9e735ddacd09a702016fc7))
+
+# [2.28.0](https://github.com/chadbyte/clay/compare/v2.27.1...v2.28.0) (2026-04-15)
+
+
+### Bug Fixes
+
+* **browser:** use shared mutable browserState object ([9520f7b](https://github.com/chadbyte/clay/commit/9520f7b983e09ac3cc926ff81ff6bf14b2edc2b9))
+* **mates:** support single-user mode by synthesizing default userId ([66d3759](https://github.com/chadbyte/clay/commit/66d37596fede13f914ce616bca6e88e2c78a75be)), closes [#315](https://github.com/chadbyte/clay/issues/315)
+* **mcp-ui:** minor wording tweak in setup wizard step 2 ([240e285](https://github.com/chadbyte/clay/commit/240e285c19b9f9b8136bc7f45701aa0efaaa712a))
+* **mcp-ui:** optimistic toggle with cooldown to prevent revert ([5a3729e](https://github.com/chadbyte/clay/commit/5a3729ed4eeac39a22f967901fb11d6ab329b9f5))
+* **mcp-ui:** update step 3 guide to point to extension popup ([a97d1e2](https://github.com/chadbyte/clay/commit/a97d1e23ccb16b9f0216bb5dee7ec36db84ade44))
+* **mcp:** add display:none rule for hidden MCP modal ([e5b1066](https://github.com/chadbyte/clay/commit/e5b10663b57e7a8b49ba7f6684201c2cb2d5bafa))
+* **mcp:** add fixed positioning and z-index to MCP modal container ([afe8f8f](https://github.com/chadbyte/clay/commit/afe8f8f6251d7f70c465f03e3e9a88a6c9bff346)), closes [#mcp-modal](https://github.com/chadbyte/clay/issues/mcp-modal)
+* **mcp:** match extension message type and relay hostConnected ([937b87c](https://github.com/chadbyte/clay/commit/937b87c6d254232ca20769a67435c13df0c98edc))
+* **mcp:** match tool result type from extension relay ([6f8c2a3](https://github.com/chadbyte/clay/commit/6f8c2a367980be2b2bee97050e505ff2924ef804))
+* **mcp:** wire onGetProjectMcpServers and onSetProjectMcpServers ([f2678da](https://github.com/chadbyte/clay/commit/f2678da663bb89591dc441f23b0a254878b85181))
+* **native-host:** inject full PATH when spawning MCP processes ([eb6ca46](https://github.com/chadbyte/clay/commit/eb6ca466193a5c62d402e6c67693136dbe41a1d3))
+* **native-host:** spawn server process after adding to config ([e22f088](https://github.com/chadbyte/clay/commit/e22f088b12254c6958536680c9d58a5758241407))
+* **scheduler:** queue deferred triggers instead of dropping them ([a383926](https://github.com/chadbyte/clay/commit/a38392673b871d63d2649858badaed8db6f64029)), closes [#254](https://github.com/chadbyte/clay/issues/254)
+* **sdk:** disable hooks during warmup queries ([d2f6c7e](https://github.com/chadbyte/clay/commit/d2f6c7ecf0eac585346ebd5c9276606407181a9a)), closes [#316](https://github.com/chadbyte/clay/issues/316)
+
+
+### Features
+
+* **loop:** add Model tab to preview modal for pre-launch settings ([81089d8](https://github.com/chadbyte/clay/commit/81089d8229a0592e32597d190c120dfaae02cd66))
+* **loop:** support per-loop SDK settings overrides via LOOP.json ([159196a](https://github.com/chadbyte/clay/commit/159196a4cd6aa4356a46db51a9026a2687161a0a)), closes [#248](https://github.com/chadbyte/clay/issues/248)
+* **loop:** unlock coder session for interaction after loop finishes ([184a7a3](https://github.com/chadbyte/clay/commit/184a7a3fe8e8f3febffcad24a4ed33f0838d584c)), closes [#314](https://github.com/chadbyte/clay/issues/314)
+* **mcp-ui:** show extension install CTA when not connected ([c961c56](https://github.com/chadbyte/clay/commit/c961c561129e9d83be30d19c97379c4fa851d97e))
+* **mcp:** add local MCP process management for localhost clients ([43a0f1a](https://github.com/chadbyte/clay/commit/43a0f1a7583fb884bc19321406ab21382454929e))
+* **mcp:** add setup wizard and install-mcp endpoint ([60a1449](https://github.com/chadbyte/clay/commit/60a1449d9282d22e2bb6f950bf7597c6da78d779))
+* **mcp:** implement MCP bridge for remote MCP servers via Chrome Extension ([e6349f2](https://github.com/chadbyte/clay/commit/e6349f217608e7868ef7a6cf2e255947faf9fbe0))
+* **native-host:** add config CRUD and external config import ([e8a1537](https://github.com/chadbyte/clay/commit/e8a1537dc570b4935968c54de7b7844b0be0cbf2))
+* **native-host:** auto-start servers on startup ([5518c4e](https://github.com/chadbyte/clay/commit/5518c4e46a2b1ca6f5ebbd56695ee947b5284b2d))
+* **scheduler:** add inline editing for PROMPT.md and JUDGE.md ([261a955](https://github.com/chadbyte/clay/commit/261a955cb165cedb4cf8d864efa98f1f6ea47a4e)), closes [#313](https://github.com/chadbyte/clay/issues/313)
+
+# [2.28.0-beta.3](https://github.com/chadbyte/clay/compare/v2.28.0-beta.2...v2.28.0-beta.3) (2026-04-15)
+
+
+### Bug Fixes
+
+* **sdk:** disable hooks during warmup queries ([d2f6c7e](https://github.com/chadbyte/clay/commit/d2f6c7ecf0eac585346ebd5c9276606407181a9a)), closes [#316](https://github.com/chadbyte/clay/issues/316)
+
+# [2.28.0-beta.2](https://github.com/chadbyte/clay/compare/v2.28.0-beta.1...v2.28.0-beta.2) (2026-04-15)
+
+
+### Bug Fixes
+
+* **browser:** use shared mutable browserState object ([9520f7b](https://github.com/chadbyte/clay/commit/9520f7b983e09ac3cc926ff81ff6bf14b2edc2b9))
+* **mcp-ui:** minor wording tweak in setup wizard step 2 ([240e285](https://github.com/chadbyte/clay/commit/240e285c19b9f9b8136bc7f45701aa0efaaa712a))
+* **mcp-ui:** optimistic toggle with cooldown to prevent revert ([5a3729e](https://github.com/chadbyte/clay/commit/5a3729ed4eeac39a22f967901fb11d6ab329b9f5))
+* **mcp-ui:** update step 3 guide to point to extension popup ([a97d1e2](https://github.com/chadbyte/clay/commit/a97d1e23ccb16b9f0216bb5dee7ec36db84ade44))
+* **mcp:** add display:none rule for hidden MCP modal ([e5b1066](https://github.com/chadbyte/clay/commit/e5b10663b57e7a8b49ba7f6684201c2cb2d5bafa))
+* **mcp:** add fixed positioning and z-index to MCP modal container ([afe8f8f](https://github.com/chadbyte/clay/commit/afe8f8f6251d7f70c465f03e3e9a88a6c9bff346)), closes [#mcp-modal](https://github.com/chadbyte/clay/issues/mcp-modal)
+* **mcp:** match extension message type and relay hostConnected ([937b87c](https://github.com/chadbyte/clay/commit/937b87c6d254232ca20769a67435c13df0c98edc))
+* **mcp:** match tool result type from extension relay ([6f8c2a3](https://github.com/chadbyte/clay/commit/6f8c2a367980be2b2bee97050e505ff2924ef804))
+* **mcp:** wire onGetProjectMcpServers and onSetProjectMcpServers ([f2678da](https://github.com/chadbyte/clay/commit/f2678da663bb89591dc441f23b0a254878b85181))
+* **native-host:** inject full PATH when spawning MCP processes ([eb6ca46](https://github.com/chadbyte/clay/commit/eb6ca466193a5c62d402e6c67693136dbe41a1d3))
+* **native-host:** spawn server process after adding to config ([e22f088](https://github.com/chadbyte/clay/commit/e22f088b12254c6958536680c9d58a5758241407))
+
+
+### Features
+
+* **mcp-ui:** show extension install CTA when not connected ([c961c56](https://github.com/chadbyte/clay/commit/c961c561129e9d83be30d19c97379c4fa851d97e))
+* **mcp:** add local MCP process management for localhost clients ([43a0f1a](https://github.com/chadbyte/clay/commit/43a0f1a7583fb884bc19321406ab21382454929e))
+* **mcp:** add setup wizard and install-mcp endpoint ([60a1449](https://github.com/chadbyte/clay/commit/60a1449d9282d22e2bb6f950bf7597c6da78d779))
+* **mcp:** implement MCP bridge for remote MCP servers via Chrome Extension ([e6349f2](https://github.com/chadbyte/clay/commit/e6349f217608e7868ef7a6cf2e255947faf9fbe0))
+* **native-host:** add config CRUD and external config import ([e8a1537](https://github.com/chadbyte/clay/commit/e8a1537dc570b4935968c54de7b7844b0be0cbf2))
+* **native-host:** auto-start servers on startup ([5518c4e](https://github.com/chadbyte/clay/commit/5518c4e46a2b1ca6f5ebbd56695ee947b5284b2d))
+
+# [2.28.0-beta.1](https://github.com/chadbyte/clay/compare/v2.27.1...v2.28.0-beta.1) (2026-04-15)
+
+
+### Bug Fixes
+
+* **mates:** support single-user mode by synthesizing default userId ([66d3759](https://github.com/chadbyte/clay/commit/66d37596fede13f914ce616bca6e88e2c78a75be)), closes [#315](https://github.com/chadbyte/clay/issues/315)
+* **scheduler:** queue deferred triggers instead of dropping them ([a383926](https://github.com/chadbyte/clay/commit/a38392673b871d63d2649858badaed8db6f64029)), closes [#254](https://github.com/chadbyte/clay/issues/254)
+
+
+### Features
+
+* **loop:** add Model tab to preview modal for pre-launch settings ([81089d8](https://github.com/chadbyte/clay/commit/81089d8229a0592e32597d190c120dfaae02cd66))
+* **loop:** support per-loop SDK settings overrides via LOOP.json ([159196a](https://github.com/chadbyte/clay/commit/159196a4cd6aa4356a46db51a9026a2687161a0a)), closes [#248](https://github.com/chadbyte/clay/issues/248)
+* **loop:** unlock coder session for interaction after loop finishes ([184a7a3](https://github.com/chadbyte/clay/commit/184a7a3fe8e8f3febffcad24a4ed33f0838d584c)), closes [#314](https://github.com/chadbyte/clay/issues/314)
+* **scheduler:** add inline editing for PROMPT.md and JUDGE.md ([261a955](https://github.com/chadbyte/clay/commit/261a955cb165cedb4cf8d864efa98f1f6ea47a4e)), closes [#313](https://github.com/chadbyte/clay/issues/313)
+
+## [2.27.1](https://github.com/chadbyte/clay/compare/v2.27.0...v2.27.1) (2026-04-14)
+
+
+### Bug Fixes
+
+* **auth:** prevent PIN input clearing on re-entrant input events ([0392518](https://github.com/chadbyte/clay/commit/0392518a9bdf75696ba03d3b250a896717e11e40))
+
+## [2.27.1-beta.1](https://github.com/chadbyte/clay/compare/v2.27.0...v2.27.1-beta.1) (2026-04-14)
+
+
+### Bug Fixes
+
+* **auth:** prevent PIN input clearing on re-entrant input events ([0392518](https://github.com/chadbyte/clay/commit/0392518a9bdf75696ba03d3b250a896717e11e40))
+
+# [2.27.0](https://github.com/chadbyte/clay/compare/v2.26.0...v2.27.0) (2026-04-14)
+
+
+### Bug Fixes
+
+* **api:** restrict health endpoint details to authenticated requests ([08aa2b3](https://github.com/chadbyte/clay/commit/08aa2b39c7590d1d01212ea69a8761f36cdceab8))
+* **app:** add missing DM delegation stubs ([2f0a041](https://github.com/chadbyte/clay/commit/2f0a0412e05ed6b417fc4d97053f6fbeed8139cd))
+* **app:** add missing headerInfoBtn to initHeader context ([8d0a092](https://github.com/chadbyte/clay/commit/8d0a0926233ebf411266e5cc74ff7514302ec91f))
+* **app:** correct DM delegation stub signatures ([4fdf4e4](https://github.com/chadbyte/clay/commit/4fdf4e4fc9d2eab478dbd04d70008bfe629219c1))
+* **app:** inline requireClayRalph for scheduler context ([fd2c804](https://github.com/chadbyte/clay/commit/fd2c804622673a5ef61ca3bf47609b51e7e71059))
+* **chat:** add missing _ts to user messages and show dates in command palette ([0350110](https://github.com/chadbyte/clay/commit/0350110fb2ff0bad2f8b1a3043e2fd5235583273))
+* **client:** guard notification permission and fix loadingMore accessor ([6ce2f06](https://github.com/chadbyte/clay/commit/6ce2f06ae3350df1dbf22a6b91c793a07447b780))
+* **debate:** add mate avatars to brief review card ([3170394](https://github.com/chadbyte/clay/commit/3170394cfbf30ef4e6a5deebabcc0157fdad673a))
+* **debate:** persist debate_turn and debate_stream to session history ([2e323e8](https://github.com/chadbyte/clay/commit/2e323e84a6c1860f62b44ba299f72d4fb6d9bba2))
+* **debate:** prevent floor and conclude messages from routing to normal chat ([a49747d](https://github.com/chadbyte/clay/commit/a49747dbd1ef936bb49009e792bda4eb0bab60de))
+* **debate:** send brief_ready to setup session in quickStart flow ([9b93e5a](https://github.com/chadbyte/clay/commit/9b93e5ae4f747e83dc717ce8ce64783c60dfdeb4))
+* **debate:** share debate state with setup session in quickStart ([e142a77](https://github.com/chadbyte/clay/commit/e142a778fb6576344b9bcd332b3e1316f99382ec))
+* **debate:** show visual feedback when stop button is clicked ([75d91a1](https://github.com/chadbyte/clay/commit/75d91a1ef6354bbe7f1e727f37ac6f94c66cf43a))
+* **debate:** suppress interactive debate UI during history replay ([cd60178](https://github.com/chadbyte/clay/commit/cd601789d44243358d8d60b55102c66b2e289440))
+* **dm:** route same-mate mention as regular message in mate DM ([776468f](https://github.com/chadbyte/clay/commit/776468f6902bb1fd4ce0fbefce704d3595a03625))
+* **header:** use property setter for historyFrom instead of missing function ([a68575e](https://github.com/chadbyte/clay/commit/a68575e1075ea3893b806b7b3ab1c76ec2d544a6))
+* honor bypassPermissions mode in Clay canUseTool handlers ([c933ee7](https://github.com/chadbyte/clay/commit/c933ee7de67e87dd78dd1659356d31a9aa89e8d3))
+* **mobile:** add import session button to mobile chat sheet ([406f40d](https://github.com/chadbyte/clay/commit/406f40dfd87c2398c1bcdaf9480c1bff6f2dd081)), closes [#312](https://github.com/chadbyte/clay/issues/312)
+* pass getOsUserInfoForWs to project-user-message ctx ([ea2fc66](https://github.com/chadbyte/clay/commit/ea2fc66fed07d215212b79b233763764be13e876))
+* pass mcpServers to createMentionSession query options ([6c6ad09](https://github.com/chadbyte/clay/commit/6c6ad096cfd80d49662267d9d3374324c2326855))
+* pass ownerId on project create/add, filter mate project list by access ([397525d](https://github.com/chadbyte/clay/commit/397525d8b33a9ce95601f37c86cb41cc5405e8ca))
+* pass requestTabContext to project-user-message ctx ([c845ed8](https://github.com/chadbyte/clay/commit/c845ed896d410b84bf32325fb8eaedb2aa224c00))
+* reap idle in-process sessions to prevent Claude child process accumulation ([8090251](https://github.com/chadbyte/clay/commit/8090251fe0d2c12b39f0a20b9278ed7f32b7b097))
+* **sdk-bridge:** handle api_retry system events instead of showing red "unknown" text ([ade5385](https://github.com/chadbyte/clay/commit/ade5385ff0484796b5965ff7ed41ffbe14b0bcd5)), closes [#311](https://github.com/chadbyte/clay/issues/311)
+* use shared checkToolWhitelist in mention session canUseTool ([594c277](https://github.com/chadbyte/clay/commit/594c277d4479ba3dcd9e252c0009ded65b0bfe9b))
+
+
+### Features
+
+* **api:** add GET /api/health endpoint for monitoring ([103513d](https://github.com/chadbyte/clay/commit/103513d4ce9f127ce834ba374e59d99441cf7d96))
+* **loop:** redesign wizard with explicit mode selection and authorship toggles ([ccd9084](https://github.com/chadbyte/clay/commit/ccd9084b673a9015068bdd55657bbd14a0b1075b))
+* **notifications:** add notification center with banner system ([09b40cb](https://github.com/chadbyte/clay/commit/09b40cb2aa5b930f0c23f309ceafae0867ff2d6d))
+* **projects:** allow admin to add existing directory in multi-user mode ([7b31633](https://github.com/chadbyte/clay/commit/7b3163325b87e3a68233a6990d50cb427eaa35f4))
+* **ui:** show dates on chat messages and search results ([70bbeb2](https://github.com/chadbyte/clay/commit/70bbeb2c61fc9320b5560d6a648193a3fb9d71ae))
+
+
+### Performance Improvements
+
+* **ui:** skip redundant re-renders of mate icon strip and presence bars ([dd0cd2f](https://github.com/chadbyte/clay/commit/dd0cd2f2cab5517098f9b5cb70835dadbda410e7))
+
+# [2.27.0-beta.18](https://github.com/chadbyte/clay/compare/v2.27.0-beta.17...v2.27.0-beta.18) (2026-04-14)
+
+
+### Performance Improvements
+
+* **ui:** skip redundant re-renders of mate icon strip and presence bars ([dd0cd2f](https://github.com/chadbyte/clay/commit/dd0cd2f2cab5517098f9b5cb70835dadbda410e7))
+
+# [2.27.0-beta.17](https://github.com/chadbyte/clay/compare/v2.27.0-beta.16...v2.27.0-beta.17) (2026-04-14)
+
+
+### Bug Fixes
+
+* **chat:** add missing _ts to user messages and show dates in command palette ([0350110](https://github.com/chadbyte/clay/commit/0350110fb2ff0bad2f8b1a3043e2fd5235583273))
+
+
+### Features
+
+* **loop:** redesign wizard with explicit mode selection and authorship toggles ([ccd9084](https://github.com/chadbyte/clay/commit/ccd9084b673a9015068bdd55657bbd14a0b1075b))
+* **notifications:** add notification center with banner system ([09b40cb](https://github.com/chadbyte/clay/commit/09b40cb2aa5b930f0c23f309ceafae0867ff2d6d))
+* **ui:** show dates on chat messages and search results ([70bbeb2](https://github.com/chadbyte/clay/commit/70bbeb2c61fc9320b5560d6a648193a3fb9d71ae))
+
+# [2.27.0-beta.16](https://github.com/chadbyte/clay/compare/v2.27.0-beta.15...v2.27.0-beta.16) (2026-04-13)
+
+
+### Bug Fixes
+
+* **mobile:** add import session button to mobile chat sheet ([406f40d](https://github.com/chadbyte/clay/commit/406f40dfd87c2398c1bcdaf9480c1bff6f2dd081)), closes [#312](https://github.com/chadbyte/clay/issues/312)
+
+# [2.27.0-beta.15](https://github.com/chadbyte/clay/compare/v2.27.0-beta.14...v2.27.0-beta.15) (2026-04-12)
+
+
+### Bug Fixes
+
+* honor bypassPermissions mode in Clay canUseTool handlers ([c933ee7](https://github.com/chadbyte/clay/commit/c933ee7de67e87dd78dd1659356d31a9aa89e8d3))
+
+# [2.27.0-beta.14](https://github.com/chadbyte/clay/compare/v2.27.0-beta.13...v2.27.0-beta.14) (2026-04-12)
+
+
+### Bug Fixes
+
+* **client:** guard notification permission and fix loadingMore accessor ([6ce2f06](https://github.com/chadbyte/clay/commit/6ce2f06ae3350df1dbf22a6b91c793a07447b780))
+* **dm:** route same-mate mention as regular message in mate DM ([776468f](https://github.com/chadbyte/clay/commit/776468f6902bb1fd4ce0fbefce704d3595a03625))
+* **header:** use property setter for historyFrom instead of missing function ([a68575e](https://github.com/chadbyte/clay/commit/a68575e1075ea3893b806b7b3ab1c76ec2d544a6))
+* **sdk-bridge:** handle api_retry system events instead of showing red "unknown" text ([ade5385](https://github.com/chadbyte/clay/commit/ade5385ff0484796b5965ff7ed41ffbe14b0bcd5)), closes [#311](https://github.com/chadbyte/clay/issues/311)
+
+
+### Features
+
+* **projects:** allow admin to add existing directory in multi-user mode ([7b31633](https://github.com/chadbyte/clay/commit/7b3163325b87e3a68233a6990d50cb427eaa35f4))
+
+# [2.27.0-beta.13](https://github.com/chadbyte/clay/compare/v2.27.0-beta.12...v2.27.0-beta.13) (2026-04-11)
+
+
+### Bug Fixes
+
+* reap idle in-process sessions to prevent Claude child process accumulation ([8090251](https://github.com/chadbyte/clay/commit/8090251fe0d2c12b39f0a20b9278ed7f32b7b097))
+
+# [2.27.0-beta.12](https://github.com/chadbyte/clay/compare/v2.27.0-beta.11...v2.27.0-beta.12) (2026-04-10)
+
+
+### Bug Fixes
+
+* **app:** add missing DM delegation stubs ([2f0a041](https://github.com/chadbyte/clay/commit/2f0a0412e05ed6b417fc4d97053f6fbeed8139cd))
+* **app:** add missing headerInfoBtn to initHeader context ([8d0a092](https://github.com/chadbyte/clay/commit/8d0a0926233ebf411266e5cc74ff7514302ec91f))
+* **app:** correct DM delegation stub signatures ([4fdf4e4](https://github.com/chadbyte/clay/commit/4fdf4e4fc9d2eab478dbd04d70008bfe629219c1))
+* **app:** inline requireClayRalph for scheduler context ([fd2c804](https://github.com/chadbyte/clay/commit/fd2c804622673a5ef61ca3bf47609b51e7e71059))
+
+# [2.27.0-beta.11](https://github.com/chadbyte/clay/compare/v2.27.0-beta.10...v2.27.0-beta.11) (2026-04-10)
+
+
+### Bug Fixes
+
+* pass ownerId on project create/add, filter mate project list by access ([397525d](https://github.com/chadbyte/clay/commit/397525d8b33a9ce95601f37c86cb41cc5405e8ca))
+
+# [2.27.0-beta.10](https://github.com/chadbyte/clay/compare/v2.27.0-beta.9...v2.27.0-beta.10) (2026-04-10)
+
+
+### Bug Fixes
+
+* **debate:** show visual feedback when stop button is clicked ([75d91a1](https://github.com/chadbyte/clay/commit/75d91a1ef6354bbe7f1e727f37ac6f94c66cf43a))
+
+# [2.27.0-beta.9](https://github.com/chadbyte/clay/compare/v2.27.0-beta.8...v2.27.0-beta.9) (2026-04-10)
+
+
+### Bug Fixes
+
+* **debate:** persist debate_turn and debate_stream to session history ([2e323e8](https://github.com/chadbyte/clay/commit/2e323e84a6c1860f62b44ba299f72d4fb6d9bba2))
+
+# [2.27.0-beta.8](https://github.com/chadbyte/clay/compare/v2.27.0-beta.7...v2.27.0-beta.8) (2026-04-10)
+
+
+### Bug Fixes
+
+* **debate:** add mate avatars to brief review card ([3170394](https://github.com/chadbyte/clay/commit/3170394cfbf30ef4e6a5deebabcc0157fdad673a))
+* **debate:** share debate state with setup session in quickStart ([e142a77](https://github.com/chadbyte/clay/commit/e142a778fb6576344b9bcd332b3e1316f99382ec))
+
+# [2.27.0-beta.7](https://github.com/chadbyte/clay/compare/v2.27.0-beta.6...v2.27.0-beta.7) (2026-04-10)
+
+
+### Bug Fixes
+
+* **debate:** send brief_ready to setup session in quickStart flow ([9b93e5a](https://github.com/chadbyte/clay/commit/9b93e5ae4f747e83dc717ce8ce64783c60dfdeb4))
+
+# [2.27.0-beta.6](https://github.com/chadbyte/clay/compare/v2.27.0-beta.5...v2.27.0-beta.6) (2026-04-10)
+
+
+### Bug Fixes
+
+* use shared checkToolWhitelist in mention session canUseTool ([594c277](https://github.com/chadbyte/clay/commit/594c277d4479ba3dcd9e252c0009ded65b0bfe9b))
+
+# [2.27.0-beta.5](https://github.com/chadbyte/clay/compare/v2.27.0-beta.4...v2.27.0-beta.5) (2026-04-10)
+
+
+### Bug Fixes
+
+* **api:** restrict health endpoint details to authenticated requests ([08aa2b3](https://github.com/chadbyte/clay/commit/08aa2b39c7590d1d01212ea69a8761f36cdceab8))
+
+# [2.27.0-beta.4](https://github.com/chadbyte/clay/compare/v2.27.0-beta.3...v2.27.0-beta.4) (2026-04-10)
+
+
+### Bug Fixes
+
+* pass mcpServers to createMentionSession query options ([6c6ad09](https://github.com/chadbyte/clay/commit/6c6ad096cfd80d49662267d9d3374324c2326855))
+
+# [2.27.0-beta.3](https://github.com/chadbyte/clay/compare/v2.27.0-beta.2...v2.27.0-beta.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* pass requestTabContext to project-user-message ctx ([c845ed8](https://github.com/chadbyte/clay/commit/c845ed896d410b84bf32325fb8eaedb2aa224c00))
+
+# [2.27.0-beta.2](https://github.com/chadbyte/clay/compare/v2.27.0-beta.1...v2.27.0-beta.2) (2026-04-10)
+
+
+### Bug Fixes
+
+* pass getOsUserInfoForWs to project-user-message ctx ([ea2fc66](https://github.com/chadbyte/clay/commit/ea2fc66fed07d215212b79b233763764be13e876))
+
+# [2.27.0-beta.1](https://github.com/chadbyte/clay/compare/v2.26.1-beta.1...v2.27.0-beta.1) (2026-04-10)
+
+
+### Features
+
+* **api:** add GET /api/health endpoint for monitoring ([103513d](https://github.com/chadbyte/clay/commit/103513d4ce9f127ce834ba374e59d99441cf7d96))
+
+## [2.26.1-beta.1](https://github.com/chadbyte/clay/compare/v2.26.0...v2.26.1-beta.1) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** prevent floor and conclude messages from routing to normal chat ([a49747d](https://github.com/chadbyte/clay/commit/a49747dbd1ef936bb49009e792bda4eb0bab60de))
+* **debate:** suppress interactive debate UI during history replay ([cd60178](https://github.com/chadbyte/clay/commit/cd601789d44243358d8d60b55102c66b2e289440))
+
+# [2.26.0](https://github.com/chadbyte/clay/compare/v2.25.0...v2.26.0) (2026-04-09)
+
+
+### Bug Fixes
+
+* **auth:** default to private visibility in OS user mode ([7c271a2](https://github.com/chadbyte/clay/commit/7c271a20ec34300b4d86d60204712356e6dc2473))
+* **browser:** prevent redundant MCP calls for context source tabs ([bc88feb](https://github.com/chadbyte/clay/commit/bc88febafbbfbd3d76efe3a8a2c47b07897375b4))
+* **cli:** preserve ownerId and all config fields across daemon restarts ([a067478](https://github.com/chadbyte/clay/commit/a0674786d0b3a1a59d360b2ad26346c300f28f27))
+* **debate:** broadcast correct mate processing indicator during debate turns ([6d875f4](https://github.com/chadbyte/clay/commit/6d875f4be8a68c91a3e493c3533ce1f9ccf51f14))
+* **debate:** clear stale debate state on restart instead of restoring dead UI ([868a7e5](https://github.com/chadbyte/clay/commit/868a7e5365a533bda9d50e3f93f7ee4fbf486d9e))
+* **debate:** fix MCP proposal card rendering and debate start ([b99bcfd](https://github.com/chadbyte/clay/commit/b99bcfd89466b7ddc90b92fae7369f0c9134184c))
+* **debate:** hide export PDF button when debate is not active ([ffa28ca](https://github.com/chadbyte/clay/commit/ffa28caf4011e2d1bb7efd1b033b4c6404cb171f)), closes [#debate-pdf-btn](https://github.com/chadbyte/clay/issues/debate-pdf-btn)
+* **debate:** hide internal setup prompt from chat display ([c40e8d7](https://github.com/chadbyte/clay/commit/c40e8d706bd4778fc49527af9b1dfc5a7c821db5))
+* **debate:** prevent debate ended banner from persisting across sessions ([75802d6](https://github.com/chadbyte/clay/commit/75802d652da7462b08c49d94b4482d844cde8a6d))
+* **debate:** propagate ownerId to debate sessions and restore with correct userId ([fb85137](https://github.com/chadbyte/clay/commit/fb85137a8178759aa13d266714f928cecc11aae3))
+* **debate:** restore self-contained conclude bar to prevent normal chat routing ([ce24dbc](https://github.com/chadbyte/clay/commit/ce24dbc7d17650256e4733e5a2ecada2a80f2397))
+* **debate:** show bottom bar on mobile during live debate ([2623855](https://github.com/chadbyte/clay/commit/262385522f0d782ee0363aaa45ff4af094390b19))
+* **debate:** show review card for quickStart flow, share tool whitelist with mentions ([1cf1ccd](https://github.com/chadbyte/clay/commit/1cf1ccd2cba716135ae11a4533bf71553dea0dd1))
+* **mate:** sync avatar and profile in chat on mate_updated ([3335e72](https://github.com/chadbyte/clay/commit/3335e7210308e7006e65d10499b3da952ae67173))
+* **mention:** maintain chronological order when permission requests interrupt mention stream ([b48d9de](https://github.com/chadbyte/clay/commit/b48d9debcab26d1392ca51e9b051ec0a6d2d5229))
+* **mobile:** refresh mobile chat sheet when mate session list updates ([5530f0b](https://github.com/chadbyte/clay/commit/5530f0bba99e048a0cc4dbf24e050e038cc2748d))
+* **os-users:** enable systemd linger for clay users to create XDG_RUNTIME_DIR ([e4a824d](https://github.com/chadbyte/clay/commit/e4a824dd3afb564e87bc181b24dff14da75eb0ba))
+* **pdf:** strip all external SVG references to prevent tainted canvas ([6540405](https://github.com/chadbyte/clay/commit/6540405e963b469af92ca332c267b64e44d72f9d))
+* reduce auto-continue buffer from 3min to 1min after rate limit reset ([b48053b](https://github.com/chadbyte/clay/commit/b48053b8115cf21f19a1a4933ec45e0b191425b4))
+* **rewind:** harden rewind against race conditions ([502e904](https://github.com/chadbyte/clay/commit/502e904ae709babfce9a582c73bd4b5c74253df8))
+* **sdk-bridge:** add auto-continue to worker query_done handler ([b0ea29f](https://github.com/chadbyte/clay/commit/b0ea29ff5e33440606f627cb2f361b5a00e8b3ac))
+* **sdk-bridge:** harden auto-continue against rate limit event timing ([651019b](https://github.com/chadbyte/clay/commit/651019b34b90860996944e2d34a02ec66e59b942))
+* **sdk-bridge:** preserve rateLimitResetsAt for auto-continue scheduling ([7fe1b6a](https://github.com/chadbyte/clay/commit/7fe1b6a9fcf03c8787236af9b32c8eacfe4d0a41))
+* **sdk-bridge:** schedule auto-continue immediately on rate limit rejection ([a55055c](https://github.com/chadbyte/clay/commit/a55055c7492408863977f9a07faec154d717858f))
+* **session:** persist all sessions and show debates in conversation list ([cf0a935](https://github.com/chadbyte/clay/commit/cf0a9351427f1ede853e5881f337a3a5fc6570df))
+* **session:** revert auto-generated cliSessionId that broke new session queries ([4cb949e](https://github.com/chadbyte/clay/commit/4cb949eba1ecd3aa4045adc86853386fe68f4eed))
+* **sessions:** use atomic writes for session files ([30ea57c](https://github.com/chadbyte/clay/commit/30ea57c394c015bfd50b5ffa05e494f796238090))
+* show actual send time in scheduled message bubble instead of reset time ([0b13ce0](https://github.com/chadbyte/clay/commit/0b13ce0ce2e6ba6bacd02b201118fa6e063d9b85))
+* **sidebar:** render mates in user strip when no other human users exist ([#277](https://github.com/chadbyte/clay/issues/277)) ([b7a8980](https://github.com/chadbyte/clay/commit/b7a8980d4f67ac8e7478bb148bf75e57cdc71f90))
+* **terminal:** add WebGL renderer and fix overflow clipping ([2f2db6d](https://github.com/chadbyte/clay/commit/2f2db6d0054af5bf0bf4f7a8905b946264b4cec9))
+* **terminal:** load WebGL addon after xterm.open() ([56ce8b4](https://github.com/chadbyte/clay/commit/56ce8b4b92188c7afed2518d5537a041e418f5fc))
+* **terminal:** prevent observers from resizing PTY and causing escape flood ([f5b79fd](https://github.com/chadbyte/clay/commit/f5b79fd71da32c63ccb4edb73309eeae00610ca5))
+* **ui:** move suggestion chips inside input row ([#287](https://github.com/chadbyte/clay/issues/287)) ([9b01144](https://github.com/chadbyte/clay/commit/9b01144d22484d84613761d6386b2b8d47288606))
+* **ui:** resolve identity reference error in AskUserQuestion rendering ([ef8b915](https://github.com/chadbyte/clay/commit/ef8b915bd249c5bea383ab113686427d7cc22265))
+* **upload:** preserve Unicode/CJK characters in uploaded filenames ([#286](https://github.com/chadbyte/clay/issues/286)) ([b316b48](https://github.com/chadbyte/clay/commit/b316b48453725ab92756cca0fb9e5757f1d333cf))
+* **usage:** handle SDK restart causing negative cost delta ([15e5553](https://github.com/chadbyte/clay/commit/15e5553692998ff118d27b2d122abd9f5301ca15))
+* **usage:** stop overcounting session cost by 15x ([1b733f5](https://github.com/chadbyte/clay/commit/1b733f546ba172ca1ab1cec27b8429969cc87718))
+* **usage:** stop resetting cumulative cost tracker between turns ([2c5ea11](https://github.com/chadbyte/clay/commit/2c5ea117e7cbdd685da3ded3b599eeb16e322261))
+
+
+### Features
+
+* **browser:** add Browser MCP server and extension HTTP bridge ([cbf32f3](https://github.com/chadbyte/clay/commit/cbf32f315ba1ae67c375ccf4a16742f0faec8bf2))
+* **browser:** add tab context injection and context preview cards ([4009368](https://github.com/chadbyte/clay/commit/40093681696578976c95ab179a88c714888d8816))
+* **browser:** auto-approve watch/unwatch tab MCP tools ([155244e](https://github.com/chadbyte/clay/commit/155244e7c6a2a88863f2aeac148a074d63a541e8))
+* **browser:** switch to in-process MCP server and add watch/unwatch tools ([5322707](https://github.com/chadbyte/clay/commit/5322707fdee172680fd8f2d458ee37eac6136fa7))
+* Context Sources UI + Chat Project plan ([#284](https://github.com/chadbyte/clay/issues/284)) ([a4da2cf](https://github.com/chadbyte/clay/commit/a4da2cfbfd77ca614732b2a5f2c81f29e7e9bcf2))
+* **context-sources:** show extension setup prompt in browser tabs section ([2dee8c5](https://github.com/chadbyte/clay/commit/2dee8c51fae7fff2d83f1824baace7bf0ddee5df))
+* **context:** add rich context usage popover on header bar hover ([a59194c](https://github.com/chadbyte/clay/commit/a59194c662a8f660e6b2608517c29b8bfd875cf5))
+* **debate:** add propose_debate MCP tool for inline debate proposals ([0298972](https://github.com/chadbyte/clay/commit/0298972b68d74cd648175ef4cb73b19c23e1f8ec))
+* **debate:** convert debate modal to wizard with quick start flow ([e4dfa8b](https://github.com/chadbyte/clay/commit/e4dfa8b127b3722e35e6f57566ae0ba3c81bd924))
+* **debate:** rework hand raise, conclude, and floor modes ([4d10bf3](https://github.com/chadbyte/clay/commit/4d10bf38795263ba08beae77057461eb377e2f2d))
+* **extension:** add Chrome extension download and install UI in top bar ([c3a9869](https://github.com/chadbyte/clay/commit/c3a986918ba421fd82ee1a3abd4025dd9d968246))
+* **mates:** broadcast mention processing indicator and redesign mate avatars ([2f41e49](https://github.com/chadbyte/clay/commit/2f41e49fd06c7a55a6b0ccb82c6b4c8ed5b2be92)), closes [#283](https://github.com/chadbyte/clay/issues/283)
+* **mobile:** add all mate tools to mobile tools sheet ([bab0295](https://github.com/chadbyte/clay/commit/bab0295f909e312aeefa435da3a95ad3f5f50b48))
+* **sdk-bridge:** immediate continue on overage, scheduled on normal limit ([12fef73](https://github.com/chadbyte/clay/commit/12fef73d8b3d3b0b8830686708537057d83f12c1))
+* **ui:** group consecutive messages by minute and preserve timestamps ([2cf9a69](https://github.com/chadbyte/clay/commit/2cf9a694d5b8bff3432f0fb6a1038bf7e5f91f47))
+* **ui:** improve channel mode scheduled messages, input styling, and permission UX ([3dd7ab7](https://github.com/chadbyte/clay/commit/3dd7ab7eae09e7b40ad1a62d5e60f1342a691c79))
+* **ui:** move debate to conversations and fix mobile chat sheet ([189562f](https://github.com/chadbyte/clay/commit/189562f03ea2efe60bde9f1d9daf4f720fc223ad))
+* **ui:** replace thinking verb text with animated three dots ([235b3db](https://github.com/chadbyte/clay/commit/235b3dbad15725f94fc6fee1aa6a7d83fa2feb04))
+* **usage:** show per-turn cost delta alongside cumulative total ([e638891](https://github.com/chadbyte/clay/commit/e6388912096cf446322c143e601c0cdafa7fb4ba))
+
+# [2.26.0-beta.19](https://github.com/chadbyte/clay/compare/v2.26.0-beta.18...v2.26.0-beta.19) (2026-04-09)
+
+
+### Bug Fixes
+
+* **browser:** prevent redundant MCP calls for context source tabs ([bc88feb](https://github.com/chadbyte/clay/commit/bc88febafbbfbd3d76efe3a8a2c47b07897375b4))
+* **debate:** prevent debate ended banner from persisting across sessions ([75802d6](https://github.com/chadbyte/clay/commit/75802d652da7462b08c49d94b4482d844cde8a6d))
+* **terminal:** add WebGL renderer and fix overflow clipping ([2f2db6d](https://github.com/chadbyte/clay/commit/2f2db6d0054af5bf0bf4f7a8905b946264b4cec9))
+* **terminal:** load WebGL addon after xterm.open() ([56ce8b4](https://github.com/chadbyte/clay/commit/56ce8b4b92188c7afed2518d5537a041e418f5fc))
+
+# [2.26.0-beta.18](https://github.com/chadbyte/clay/compare/v2.26.0-beta.17...v2.26.0-beta.18) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** clear stale debate state on restart instead of restoring dead UI ([868a7e5](https://github.com/chadbyte/clay/commit/868a7e5365a533bda9d50e3f93f7ee4fbf486d9e))
+* **debate:** fix MCP proposal card rendering and debate start ([b99bcfd](https://github.com/chadbyte/clay/commit/b99bcfd89466b7ddc90b92fae7369f0c9134184c))
+* **debate:** show review card for quickStart flow, share tool whitelist with mentions ([1cf1ccd](https://github.com/chadbyte/clay/commit/1cf1ccd2cba716135ae11a4533bf71553dea0dd1))
+
+
+### Features
+
+* **debate:** add propose_debate MCP tool for inline debate proposals ([0298972](https://github.com/chadbyte/clay/commit/0298972b68d74cd648175ef4cb73b19c23e1f8ec))
+
+# [2.26.0-beta.17](https://github.com/chadbyte/clay/compare/v2.26.0-beta.16...v2.26.0-beta.17) (2026-04-09)
+
+
+### Bug Fixes
+
+* show actual send time in scheduled message bubble instead of reset time ([0b13ce0](https://github.com/chadbyte/clay/commit/0b13ce0ce2e6ba6bacd02b201118fa6e063d9b85))
+
+# [2.26.0-beta.16](https://github.com/chadbyte/clay/compare/v2.26.0-beta.15...v2.26.0-beta.16) (2026-04-09)
+
+
+### Bug Fixes
+
+* reduce auto-continue buffer from 3min to 1min after rate limit reset ([b48053b](https://github.com/chadbyte/clay/commit/b48053b8115cf21f19a1a4933ec45e0b191425b4))
+* **sdk-bridge:** schedule auto-continue immediately on rate limit rejection ([a55055c](https://github.com/chadbyte/clay/commit/a55055c7492408863977f9a07faec154d717858f))
+
+
+### Features
+
+* **sdk-bridge:** immediate continue on overage, scheduled on normal limit ([12fef73](https://github.com/chadbyte/clay/commit/12fef73d8b3d3b0b8830686708537057d83f12c1))
+
+# [2.26.0-beta.15](https://github.com/chadbyte/clay/compare/v2.26.0-beta.14...v2.26.0-beta.15) (2026-04-09)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** add auto-continue to worker query_done handler ([b0ea29f](https://github.com/chadbyte/clay/commit/b0ea29ff5e33440606f627cb2f361b5a00e8b3ac))
+
+# [2.26.0-beta.14](https://github.com/chadbyte/clay/compare/v2.26.0-beta.13...v2.26.0-beta.14) (2026-04-09)
+
+
+### Bug Fixes
+
+* **sdk-bridge:** preserve rateLimitResetsAt for auto-continue scheduling ([7fe1b6a](https://github.com/chadbyte/clay/commit/7fe1b6a9fcf03c8787236af9b32c8eacfe4d0a41))
+
+# [2.26.0-beta.13](https://github.com/chadbyte/clay/compare/v2.26.0-beta.12...v2.26.0-beta.13) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** restore self-contained conclude bar to prevent normal chat routing ([ce24dbc](https://github.com/chadbyte/clay/commit/ce24dbc7d17650256e4733e5a2ecada2a80f2397))
+* **session:** revert auto-generated cliSessionId that broke new session queries ([4cb949e](https://github.com/chadbyte/clay/commit/4cb949eba1ecd3aa4045adc86853386fe68f4eed))
+
+# [2.26.0-beta.12](https://github.com/chadbyte/clay/compare/v2.26.0-beta.11...v2.26.0-beta.12) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** show bottom bar on mobile during live debate ([2623855](https://github.com/chadbyte/clay/commit/262385522f0d782ee0363aaa45ff4af094390b19))
+
+# [2.26.0-beta.11](https://github.com/chadbyte/clay/compare/v2.26.0-beta.10...v2.26.0-beta.11) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** broadcast correct mate processing indicator during debate turns ([6d875f4](https://github.com/chadbyte/clay/commit/6d875f4be8a68c91a3e493c3533ce1f9ccf51f14))
+* **debate:** propagate ownerId to debate sessions and restore with correct userId ([fb85137](https://github.com/chadbyte/clay/commit/fb85137a8178759aa13d266714f928cecc11aae3))
+
+
+### Features
+
+* **context-sources:** show extension setup prompt in browser tabs section ([2dee8c5](https://github.com/chadbyte/clay/commit/2dee8c51fae7fff2d83f1824baace7bf0ddee5df))
+
+# [2.26.0-beta.10](https://github.com/chadbyte/clay/compare/v2.26.0-beta.9...v2.26.0-beta.10) (2026-04-09)
+
+
+### Bug Fixes
+
+* **debate:** hide export PDF button when debate is not active ([ffa28ca](https://github.com/chadbyte/clay/commit/ffa28caf4011e2d1bb7efd1b033b4c6404cb171f)), closes [#debate-pdf-btn](https://github.com/chadbyte/clay/issues/debate-pdf-btn)
+* **debate:** hide internal setup prompt from chat display ([c40e8d7](https://github.com/chadbyte/clay/commit/c40e8d706bd4778fc49527af9b1dfc5a7c821db5))
+* **mobile:** refresh mobile chat sheet when mate session list updates ([5530f0b](https://github.com/chadbyte/clay/commit/5530f0bba99e048a0cc4dbf24e050e038cc2748d))
+* **sdk-bridge:** harden auto-continue against rate limit event timing ([651019b](https://github.com/chadbyte/clay/commit/651019b34b90860996944e2d34a02ec66e59b942))
+* **session:** persist all sessions and show debates in conversation list ([cf0a935](https://github.com/chadbyte/clay/commit/cf0a9351427f1ede853e5881f337a3a5fc6570df))
+* **ui:** resolve identity reference error in AskUserQuestion rendering ([ef8b915](https://github.com/chadbyte/clay/commit/ef8b915bd249c5bea383ab113686427d7cc22265))
+
+
+### Features
+
+* **debate:** convert debate modal to wizard with quick start flow ([e4dfa8b](https://github.com/chadbyte/clay/commit/e4dfa8b127b3722e35e6f57566ae0ba3c81bd924))
+* **debate:** rework hand raise, conclude, and floor modes ([4d10bf3](https://github.com/chadbyte/clay/commit/4d10bf38795263ba08beae77057461eb377e2f2d))
+* **mates:** broadcast mention processing indicator and redesign mate avatars ([2f41e49](https://github.com/chadbyte/clay/commit/2f41e49fd06c7a55a6b0ccb82c6b4c8ed5b2be92)), closes [#283](https://github.com/chadbyte/clay/issues/283)
+* **ui:** group consecutive messages by minute and preserve timestamps ([2cf9a69](https://github.com/chadbyte/clay/commit/2cf9a694d5b8bff3432f0fb6a1038bf7e5f91f47))
+* **ui:** move debate to conversations and fix mobile chat sheet ([189562f](https://github.com/chadbyte/clay/commit/189562f03ea2efe60bde9f1d9daf4f720fc223ad))
+
+# [2.26.0-beta.9](https://github.com/chadbyte/clay/compare/v2.26.0-beta.8...v2.26.0-beta.9) (2026-04-08)
+
+
+### Bug Fixes
+
+* **auth:** default to private visibility in OS user mode ([7c271a2](https://github.com/chadbyte/clay/commit/7c271a20ec34300b4d86d60204712356e6dc2473))
+* **mention:** maintain chronological order when permission requests interrupt mention stream ([b48d9de](https://github.com/chadbyte/clay/commit/b48d9debcab26d1392ca51e9b051ec0a6d2d5229))
+
+
+### Features
+
+* **browser:** auto-approve watch/unwatch tab MCP tools ([155244e](https://github.com/chadbyte/clay/commit/155244e7c6a2a88863f2aeac148a074d63a541e8))
+* **ui:** improve channel mode scheduled messages, input styling, and permission UX ([3dd7ab7](https://github.com/chadbyte/clay/commit/3dd7ab7eae09e7b40ad1a62d5e60f1342a691c79))
+* **ui:** replace thinking verb text with animated three dots ([235b3db](https://github.com/chadbyte/clay/commit/235b3dbad15725f94fc6fee1aa6a7d83fa2feb04))
+
+# [2.26.0-beta.8](https://github.com/chadbyte/clay/compare/v2.26.0-beta.7...v2.26.0-beta.8) (2026-04-08)
+
+
+### Bug Fixes
+
+* **sidebar:** render mates in user strip when no other human users exist ([#277](https://github.com/chadbyte/clay/issues/277)) ([b7a8980](https://github.com/chadbyte/clay/commit/b7a8980d4f67ac8e7478bb148bf75e57cdc71f90))
+* **upload:** preserve Unicode/CJK characters in uploaded filenames ([#286](https://github.com/chadbyte/clay/issues/286)) ([b316b48](https://github.com/chadbyte/clay/commit/b316b48453725ab92756cca0fb9e5757f1d333cf))
+
+# [2.26.0-beta.7](https://github.com/chadbyte/clay/compare/v2.26.0-beta.6...v2.26.0-beta.7) (2026-04-08)
+
+
+### Bug Fixes
+
+* **ui:** move suggestion chips inside input row ([#287](https://github.com/chadbyte/clay/issues/287)) ([9b01144](https://github.com/chadbyte/clay/commit/9b01144d22484d84613761d6386b2b8d47288606))
+
+# [2.26.0-beta.6](https://github.com/chadbyte/clay/compare/v2.26.0-beta.5...v2.26.0-beta.6) (2026-04-08)
+
+
+### Features
+
+* **browser:** add Browser MCP server and extension HTTP bridge ([cbf32f3](https://github.com/chadbyte/clay/commit/cbf32f315ba1ae67c375ccf4a16742f0faec8bf2))
+* **browser:** add tab context injection and context preview cards ([4009368](https://github.com/chadbyte/clay/commit/40093681696578976c95ab179a88c714888d8816))
+* **browser:** switch to in-process MCP server and add watch/unwatch tools ([5322707](https://github.com/chadbyte/clay/commit/5322707fdee172680fd8f2d458ee37eac6136fa7))
+* **extension:** add Chrome extension download and install UI in top bar ([c3a9869](https://github.com/chadbyte/clay/commit/c3a986918ba421fd82ee1a3abd4025dd9d968246))
+
+# [2.26.0-beta.5](https://github.com/chadbyte/clay/compare/v2.26.0-beta.4...v2.26.0-beta.5) (2026-04-08)
+
+
+### Features
+
+* **context:** add rich context usage popover on header bar hover ([a59194c](https://github.com/chadbyte/clay/commit/a59194c662a8f660e6b2608517c29b8bfd875cf5))
+
+# [2.26.0-beta.4](https://github.com/chadbyte/clay/compare/v2.26.0-beta.3...v2.26.0-beta.4) (2026-04-08)
+
+
+### Features
+
+* Context Sources UI + Chat Project plan ([#284](https://github.com/chadbyte/clay/issues/284)) ([a4da2cf](https://github.com/chadbyte/clay/commit/a4da2cfbfd77ca614732b2a5f2c81f29e7e9bcf2))
+
+# [2.26.0-beta.3](https://github.com/chadbyte/clay/compare/v2.26.0-beta.2...v2.26.0-beta.3) (2026-04-08)
+
+
+### Bug Fixes
+
+* **mate:** sync avatar and profile in chat on mate_updated ([3335e72](https://github.com/chadbyte/clay/commit/3335e7210308e7006e65d10499b3da952ae67173))
+* **rewind:** harden rewind against race conditions ([502e904](https://github.com/chadbyte/clay/commit/502e904ae709babfce9a582c73bd4b5c74253df8))
+* **sessions:** use atomic writes for session files ([30ea57c](https://github.com/chadbyte/clay/commit/30ea57c394c015bfd50b5ffa05e494f796238090))
+* **usage:** handle SDK restart causing negative cost delta ([15e5553](https://github.com/chadbyte/clay/commit/15e5553692998ff118d27b2d122abd9f5301ca15))
+* **usage:** stop overcounting session cost by 15x ([1b733f5](https://github.com/chadbyte/clay/commit/1b733f546ba172ca1ab1cec27b8429969cc87718))
+* **usage:** stop resetting cumulative cost tracker between turns ([2c5ea11](https://github.com/chadbyte/clay/commit/2c5ea117e7cbdd685da3ded3b599eeb16e322261))
+
+
+### Features
+
+* **usage:** show per-turn cost delta alongside cumulative total ([e638891](https://github.com/chadbyte/clay/commit/e6388912096cf446322c143e601c0cdafa7fb4ba))
+
+# [2.26.0-beta.2](https://github.com/chadbyte/clay/compare/v2.26.0-beta.1...v2.26.0-beta.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* **cli:** preserve ownerId and all config fields across daemon restarts ([a067478](https://github.com/chadbyte/clay/commit/a0674786d0b3a1a59d360b2ad26346c300f28f27))
+* **os-users:** enable systemd linger for clay users to create XDG_RUNTIME_DIR ([e4a824d](https://github.com/chadbyte/clay/commit/e4a824dd3afb564e87bc181b24dff14da75eb0ba))
+* **terminal:** prevent observers from resizing PTY and causing escape flood ([f5b79fd](https://github.com/chadbyte/clay/commit/f5b79fd71da32c63ccb4edb73309eeae00610ca5))
+
+# [2.26.0-beta.1](https://github.com/chadbyte/clay/compare/v2.25.1-beta.1...v2.26.0-beta.1) (2026-04-07)
+
+
+### Features
+
+* **mobile:** add all mate tools to mobile tools sheet ([bab0295](https://github.com/chadbyte/clay/commit/bab0295f909e312aeefa435da3a95ad3f5f50b48))
+
+## [2.25.1-beta.1](https://github.com/chadbyte/clay/compare/v2.25.0...v2.25.1-beta.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* **pdf:** strip all external SVG references to prevent tainted canvas ([6540405](https://github.com/chadbyte/clay/commit/6540405e963b469af92ca332c267b64e44d72f9d))
+
+# [2.25.0](https://github.com/chadbyte/clay/compare/v2.24.4...v2.25.0) (2026-04-07)
+
+
+### Bug Fixes
+
+* **files:** allow cross-project file access in OS user mode via ACL ([4104410](https://github.com/chadbyte/clay/commit/410441000b8133f318ec0998e01b75f675e22492))
+* **mates:** use --bg instead of undefined --bg-primary for dark mode ([de61303](https://github.com/chadbyte/clay/commit/de61303f2ebbee3ab8defd5c042c1ef1153341b7)), closes [#fff](https://github.com/chadbyte/clay/issues/fff)
+* **pdf:** add font loading timeout and tainted canvas fallback ([fd5c4bb](https://github.com/chadbyte/clay/commit/fd5c4bb51102a53825694809f2bc738650c642ba))
+* **pwa:** use absolute path for manifest and update deprecated meta tag ([1c76d2d](https://github.com/chadbyte/clay/commit/1c76d2dec745bc00e56687233f08ab050eec3081))
+* **worker:** force-kill worker after abort timeout during subagent ([1a57ab7](https://github.com/chadbyte/clay/commit/1a57ab711092174650489c0c6c9177148f5747f3))
+
+
+### Features
+
+* **chat:** add sender attribution to user messages in multi-user sessions ([46a63fa](https://github.com/chadbyte/clay/commit/46a63fa1463e491bd1621599d8fa496fc60801c8))
+* **dm:** add push notifications for incoming DM messages ([69bcb5f](https://github.com/chadbyte/clay/commit/69bcb5f23f4f04abe94298ee10d7d87fe3259e6a))
+
+# [2.25.0-beta.2](https://github.com/chadbyte/clay/compare/v2.25.0-beta.1...v2.25.0-beta.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* **pdf:** add font loading timeout and tainted canvas fallback ([fd5c4bb](https://github.com/chadbyte/clay/commit/fd5c4bb51102a53825694809f2bc738650c642ba))
+* **pwa:** use absolute path for manifest and update deprecated meta tag ([1c76d2d](https://github.com/chadbyte/clay/commit/1c76d2dec745bc00e56687233f08ab050eec3081))
+
+# [2.25.0-beta.1](https://github.com/chadbyte/clay/compare/v2.24.4...v2.25.0-beta.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* **files:** allow cross-project file access in OS user mode via ACL ([4104410](https://github.com/chadbyte/clay/commit/410441000b8133f318ec0998e01b75f675e22492))
+* **mates:** use --bg instead of undefined --bg-primary for dark mode ([de61303](https://github.com/chadbyte/clay/commit/de61303f2ebbee3ab8defd5c042c1ef1153341b7)), closes [#fff](https://github.com/chadbyte/clay/issues/fff)
+* **worker:** force-kill worker after abort timeout during subagent ([1a57ab7](https://github.com/chadbyte/clay/commit/1a57ab711092174650489c0c6c9177148f5747f3))
+
+
+### Features
+
+* **chat:** add sender attribution to user messages in multi-user sessions ([46a63fa](https://github.com/chadbyte/clay/commit/46a63fa1463e491bd1621599d8fa496fc60801c8))
+* **dm:** add push notifications for incoming DM messages ([69bcb5f](https://github.com/chadbyte/clay/commit/69bcb5f23f4f04abe94298ee10d7d87fe3259e6a))
+
+## [2.24.4](https://github.com/chadbyte/clay/compare/v2.24.3...v2.24.4) (2026-04-07)
+
+
+### Bug Fixes
+
+* **home-hub:** exclude mate projects from projects list ([b47b256](https://github.com/chadbyte/clay/commit/b47b25667e2bb1c5f24360c664b09e8512d29ce2))
+
+## [2.24.4-beta.1](https://github.com/chadbyte/clay/compare/v2.24.3...v2.24.4-beta.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* **home-hub:** exclude mate projects from projects list ([b47b256](https://github.com/chadbyte/clay/commit/b47b25667e2bb1c5f24360c664b09e8512d29ce2))
+
+## [2.24.3](https://github.com/chadbyte/clay/compare/v2.24.2...v2.24.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* add chat layout toggle to mobile settings sheet ([8c8cc8c](https://github.com/chadbyte/clay/commit/8c8cc8c9bd4f7d699a2b6dc2229d2293cb5b840f))
+* apply defaultMode to currentPermissionMode on connect, not after first query ([af2c226](https://github.com/chadbyte/clay/commit/af2c226a92e766e54325e4a0cfc6918b6b706cfe))
+* apply defaultModel to currentModel on connect, not after first query ([cdb668b](https://github.com/chadbyte/clay/commit/cdb668b4925e4731b86d342eeb66e6f1fe1197e6)), closes [#271](https://github.com/chadbyte/clay/issues/271)
+* **config:** initialize currentModel from savedDefaultModel on connect ([25dce40](https://github.com/chadbyte/clay/commit/25dce4098757685ade3ad7278a7dcae1c58bd027)), closes [#271](https://github.com/chadbyte/clay/issues/271)
+* **hooks:** surface hook failure errors in UI instead of silent blank ([c5ea03c](https://github.com/chadbyte/clay/commit/c5ea03cd8b37796a8700ea865757d994446b3b52)), closes [#270](https://github.com/chadbyte/clay/issues/270)
+* remove skeleton placeholders from icon-strip-users at startup ([1773bd5](https://github.com/chadbyte/clay/commit/1773bd591e99114992de44038c3a9d5072c4d02a)), closes [#272](https://github.com/chadbyte/clay/issues/272)
+* **ui:** clear icon strip skeleton loaders in single-user mode ([59ec81d](https://github.com/chadbyte/clay/commit/59ec81d7fd3ba74005465e737a797bccf474c4e7)), closes [#272](https://github.com/chadbyte/clay/issues/272)
+* **ui:** move unread badge to rightmost position in session list ([0e96888](https://github.com/chadbyte/clay/commit/0e9688891b5b312dfd00f257f0a412a3b94f3ab2))
+* use /bin/sh as POSIX fallback shell instead of /bin/zsh ([95a25a0](https://github.com/chadbyte/clay/commit/95a25a04c13f097070cf98f81e7e46fd0c6772d5))
+
+## [2.24.3-beta.5](https://github.com/chadbyte/clay/compare/v2.24.3-beta.4...v2.24.3-beta.5) (2026-04-07)
+
+
+### Bug Fixes
+
+* use /bin/sh as POSIX fallback shell instead of /bin/zsh ([95a25a0](https://github.com/chadbyte/clay/commit/95a25a04c13f097070cf98f81e7e46fd0c6772d5))
+
+## [2.24.3-beta.4](https://github.com/chadbyte/clay/compare/v2.24.3-beta.3...v2.24.3-beta.4) (2026-04-07)
+
+
+### Bug Fixes
+
+* add chat layout toggle to mobile settings sheet ([8c8cc8c](https://github.com/chadbyte/clay/commit/8c8cc8c9bd4f7d699a2b6dc2229d2293cb5b840f))
+* apply defaultMode to currentPermissionMode on connect, not after first query ([af2c226](https://github.com/chadbyte/clay/commit/af2c226a92e766e54325e4a0cfc6918b6b706cfe))
+* apply defaultModel to currentModel on connect, not after first query ([cdb668b](https://github.com/chadbyte/clay/commit/cdb668b4925e4731b86d342eeb66e6f1fe1197e6)), closes [#271](https://github.com/chadbyte/clay/issues/271)
+
+## [2.24.3-beta.3](https://github.com/chadbyte/clay/compare/v2.24.3-beta.2...v2.24.3-beta.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* remove skeleton placeholders from icon-strip-users at startup ([1773bd5](https://github.com/chadbyte/clay/commit/1773bd591e99114992de44038c3a9d5072c4d02a)), closes [#272](https://github.com/chadbyte/clay/issues/272)
+
+## [2.24.3-beta.2](https://github.com/chadbyte/clay/compare/v2.24.3-beta.1...v2.24.3-beta.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* **config:** initialize currentModel from savedDefaultModel on connect ([25dce40](https://github.com/chadbyte/clay/commit/25dce4098757685ade3ad7278a7dcae1c58bd027)), closes [#271](https://github.com/chadbyte/clay/issues/271)
+* **ui:** clear icon strip skeleton loaders in single-user mode ([59ec81d](https://github.com/chadbyte/clay/commit/59ec81d7fd3ba74005465e737a797bccf474c4e7)), closes [#272](https://github.com/chadbyte/clay/issues/272)
+* **ui:** move unread badge to rightmost position in session list ([0e96888](https://github.com/chadbyte/clay/commit/0e9688891b5b312dfd00f257f0a412a3b94f3ab2))
+
+## [2.24.3-beta.1](https://github.com/chadbyte/clay/compare/v2.24.2...v2.24.3-beta.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* **hooks:** surface hook failure errors in UI instead of silent blank ([c5ea03c](https://github.com/chadbyte/clay/commit/c5ea03cd8b37796a8700ea865757d994446b3b52)), closes [#270](https://github.com/chadbyte/clay/issues/270)
+
+## [2.24.2](https://github.com/chadbyte/clay/compare/v2.24.1...v2.24.2) (2026-04-06)
+
+
+### Bug Fixes
+
+* close SDK query instance to reap orphaned claude child processes ([#269](https://github.com/chadbyte/clay/issues/269)) ([56abc1b](https://github.com/chadbyte/clay/commit/56abc1bfa6afb58c80edf30424b8fae976c96ee1))
+
+## [2.24.2-beta.1](https://github.com/chadbyte/clay/compare/v2.24.1...v2.24.2-beta.1) (2026-04-06)
+
+
+### Bug Fixes
+
+* close SDK query instance to reap orphaned claude child processes ([#269](https://github.com/chadbyte/clay/issues/269)) ([56abc1b](https://github.com/chadbyte/clay/commit/56abc1bfa6afb58c80edf30424b8fae976c96ee1))
+
+## [2.24.1](https://github.com/chadbyte/clay/compare/v2.24.0...v2.24.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* **ui:** correct bubble mode user alignment and show hover icons in channel mode ([8cbde9c](https://github.com/chadbyte/clay/commit/8cbde9ce0e1427383c5fcddffad972463a675323))
+
+## [2.24.1-beta.1](https://github.com/chadbyte/clay/compare/v2.24.0...v2.24.1-beta.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* **ui:** correct bubble mode user alignment and show hover icons in channel mode ([8cbde9c](https://github.com/chadbyte/clay/commit/8cbde9ce0e1427383c5fcddffad972463a675323))
+
+# [2.24.0](https://github.com/chadbyte/clay/compare/v2.23.1...v2.24.0) (2026-04-05)
+
+
+### Bug Fixes
+
+* **mate:** load team memory summaries for globalSearch mates regardless of digest count ([535023a](https://github.com/chadbyte/clay/commit/535023a912c224d26aae5799972bd436ffaa695c))
+* **os-user:** force IPv4 on CLI subprocess by patching tls.connect ([c10c965](https://github.com/chadbyte/clay/commit/c10c965947e72c0bb988d2c8bb493d0ff0e30111))
+* **os-user:** resolve cold start latency caused by IPv6 timeout in SDK CLI subprocess ([6eb5e9e](https://github.com/chadbyte/clay/commit/6eb5e9eb9eb968d9e17828600c03ae15be619ebc))
+* **permissions:** set 644 on uploaded files and chown to session owner ([3b9ebe8](https://github.com/chadbyte/clay/commit/3b9ebe81cb0593c8061077a9a59a2522f996678f))
+* **search:** support Cmd+F search in debate sessions ([3990138](https://github.com/chadbyte/clay/commit/399013884778758f5b230dbfaa48590b51aa2c5f))
+* **ui:** force bubble layout on mobile regardless of user setting ([0493a54](https://github.com/chadbyte/clay/commit/0493a54f8943745498399625f257d325e36fcf2e))
+
+
+### Features
+
+* **debate:** add PDF export with avatar support ([d224d51](https://github.com/chadbyte/clay/commit/d224d51ed0542beabbfc3278b79afd07e7119d2c))
+* **mate:** add cross-project search, user observations, and profile synthesis ([39777a9](https://github.com/chadbyte/clay/commit/39777a9fdc338d9ad08b59d8a9b430b79b36b531))
+* **mention:** keep mention chip sticky after sending message ([5ba688a](https://github.com/chadbyte/clay/commit/5ba688a97ab1824860ed39df010864ad5b631564))
+* **ui:** add Ask Mate button with rainbow gradient and improve mention menu ([c5f2ecc](https://github.com/chadbyte/clay/commit/c5f2eccdeb3980f00aef31291867596311dd4d69))
+* **ui:** add Bubble/Channel layout switcher in Appearance settings ([169f889](https://github.com/chadbyte/clay/commit/169f8899012737d87cf4003f94a5861908cf4a09))
+* **ui:** add Claude Code mascot avatar for Channel layout ([e05264d](https://github.com/chadbyte/clay/commit/e05264d40c46427a9f866f75f6444d038bae8bf4))
+* **ui:** add copy button to paste modal and refresh button to file viewer ([113cc82](https://github.com/chadbyte/clay/commit/113cc827823473f0f22518960d47b13e7a724081))
+* **ui:** add one-time mate onboarding modal with server persistence ([e990f14](https://github.com/chadbyte/clay/commit/e990f1450458250e772512f36f7b51bb4cff3f27))
+* **ui:** add skeleton placeholders during initial server loading ([b7523f7](https://github.com/chadbyte/clay/commit/b7523f70a9a6f1289f6431817dc9fa8decd82db1))
+* **ui:** reorganize project menus, add Ask Mate button, polish Appearance settings ([a8dfc66](https://github.com/chadbyte/clay/commit/a8dfc662642312eccf4cb30bda4da6b7e1d5b515))
+
+# [2.24.0-beta.1](https://github.com/chadbyte/clay/compare/v2.23.2-beta.1...v2.24.0-beta.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* **mate:** load team memory summaries for globalSearch mates regardless of digest count ([535023a](https://github.com/chadbyte/clay/commit/535023a912c224d26aae5799972bd436ffaa695c))
+* **os-user:** force IPv4 on CLI subprocess by patching tls.connect ([c10c965](https://github.com/chadbyte/clay/commit/c10c965947e72c0bb988d2c8bb493d0ff0e30111))
+* **permissions:** set 644 on uploaded files and chown to session owner ([3b9ebe8](https://github.com/chadbyte/clay/commit/3b9ebe81cb0593c8061077a9a59a2522f996678f))
+* **search:** support Cmd+F search in debate sessions ([3990138](https://github.com/chadbyte/clay/commit/399013884778758f5b230dbfaa48590b51aa2c5f))
+* **ui:** force bubble layout on mobile regardless of user setting ([0493a54](https://github.com/chadbyte/clay/commit/0493a54f8943745498399625f257d325e36fcf2e))
+
+
+### Features
+
+* **debate:** add PDF export with avatar support ([d224d51](https://github.com/chadbyte/clay/commit/d224d51ed0542beabbfc3278b79afd07e7119d2c))
+* **mate:** add cross-project search, user observations, and profile synthesis ([39777a9](https://github.com/chadbyte/clay/commit/39777a9fdc338d9ad08b59d8a9b430b79b36b531))
+* **mention:** keep mention chip sticky after sending message ([5ba688a](https://github.com/chadbyte/clay/commit/5ba688a97ab1824860ed39df010864ad5b631564))
+* **ui:** add Ask Mate button with rainbow gradient and improve mention menu ([c5f2ecc](https://github.com/chadbyte/clay/commit/c5f2eccdeb3980f00aef31291867596311dd4d69))
+* **ui:** add Bubble/Channel layout switcher in Appearance settings ([169f889](https://github.com/chadbyte/clay/commit/169f8899012737d87cf4003f94a5861908cf4a09))
+* **ui:** add Claude Code mascot avatar for Channel layout ([e05264d](https://github.com/chadbyte/clay/commit/e05264d40c46427a9f866f75f6444d038bae8bf4))
+* **ui:** add copy button to paste modal and refresh button to file viewer ([113cc82](https://github.com/chadbyte/clay/commit/113cc827823473f0f22518960d47b13e7a724081))
+* **ui:** add one-time mate onboarding modal with server persistence ([e990f14](https://github.com/chadbyte/clay/commit/e990f1450458250e772512f36f7b51bb4cff3f27))
+* **ui:** add skeleton placeholders during initial server loading ([b7523f7](https://github.com/chadbyte/clay/commit/b7523f70a9a6f1289f6431817dc9fa8decd82db1))
+* **ui:** reorganize project menus, add Ask Mate button, polish Appearance settings ([a8dfc66](https://github.com/chadbyte/clay/commit/a8dfc662642312eccf4cb30bda4da6b7e1d5b515))
+
+## [2.23.2-beta.1](https://github.com/chadbyte/clay/compare/v2.23.1...v2.23.2-beta.1) (2026-04-05)
+
+
+### Bug Fixes
+
+* **os-user:** resolve cold start latency caused by IPv6 timeout in SDK CLI subprocess ([6eb5e9e](https://github.com/chadbyte/clay/commit/6eb5e9eb9eb968d9e17828600c03ae15be619ebc))
+
+## [2.23.1](https://github.com/chadbyte/clay/compare/v2.23.0...v2.23.1) (2026-04-04)
+
+
+### Bug Fixes
+
+* **debate:** only show preparing indicator for quick debate, not standard setup ([41cc0fd](https://github.com/chadbyte/clay/commit/41cc0fdfec41b6eeeb1964f03f39460070554cb7))
+* **os-user:** fix session loss on stop by fixing dir ownership and reusing workers ([19057ff](https://github.com/chadbyte/clay/commit/19057ff6051ff826a44b716fe6b372c4d3491fbd))
+* prevent session history loss after stop in OS multi-user mode ([53a52af](https://github.com/chadbyte/clay/commit/53a52af570a0e3a2bc0aeab5d141afef96328ded))
+* set HOME and npm_config_cache env for skill-install child process ([a596076](https://github.com/chadbyte/clay/commit/a596076812099039684f1e284bd67217e20658ea))
+* **ui:** show loading indicator during debate preparing phase ([7e7e6e7](https://github.com/chadbyte/clay/commit/7e7e6e7782aed861985f46fd4ac22f93080cb04e))
+
+## [2.23.1-beta.2](https://github.com/chadbyte/clay/compare/v2.23.1-beta.1...v2.23.1-beta.2) (2026-04-04)
+
+
+### Bug Fixes
+
+* **debate:** only show preparing indicator for quick debate, not standard setup ([41cc0fd](https://github.com/chadbyte/clay/commit/41cc0fdfec41b6eeeb1964f03f39460070554cb7))
+* **os-user:** fix session loss on stop by fixing dir ownership and reusing workers ([19057ff](https://github.com/chadbyte/clay/commit/19057ff6051ff826a44b716fe6b372c4d3491fbd))
+
+## [2.23.1-beta.1](https://github.com/chadbyte/clay/compare/v2.23.0...v2.23.1-beta.1) (2026-04-04)
+
+
+### Bug Fixes
+
+* prevent session history loss after stop in OS multi-user mode ([53a52af](https://github.com/chadbyte/clay/commit/53a52af570a0e3a2bc0aeab5d141afef96328ded))
+* set HOME and npm_config_cache env for skill-install child process ([a596076](https://github.com/chadbyte/clay/commit/a596076812099039684f1e284bd67217e20658ea))
+* **ui:** show loading indicator during debate preparing phase ([7e7e6e7](https://github.com/chadbyte/clay/commit/7e7e6e7782aed861985f46fd4ac22f93080cb04e))
+
+# [2.23.0](https://github.com/chadbyte/clay/compare/v2.22.2...v2.23.0) (2026-04-04)
+
+
+### Bug Fixes
+
+* **config:** preserve all daemon.json settings on restart ([ec32a7b](https://github.com/chadbyte/clay/commit/ec32a7bc63d104b223fbdb7742b6cc11070698fe)), closes [#259](https://github.com/chadbyte/clay/issues/259)
+* isolate user process env from root daemon's process.env ([deda551](https://github.com/chadbyte/clay/commit/deda551143bc21ed79143fc27daab5999024af37))
+* **mates:** close file viewer and terminal when switching to mate DM ([e9b928a](https://github.com/chadbyte/clay/commit/e9b928aa8d2c03bd5ecd55a598c91f849bfbe79f))
+* **mates:** disable context menu for primary mates ([b94c528](https://github.com/chadbyte/clay/commit/b94c52828ae33c4333fee29cb9fd0c0f90a54313))
+* **mates:** fix command whitelist splitting on quoted pipe characters ([2fe0c38](https://github.com/chadbyte/clay/commit/2fe0c384153bdd3d6579df861fc8496f2a629df6))
+* **mates:** hide mate projects from admin Project Access list ([b35429a](https://github.com/chadbyte/clay/commit/b35429a7d21204228bac87d427cde510585ee585))
+* **mates:** hide memory panel when switching between mates ([c432ab9](https://github.com/chadbyte/clay/commit/c432ab9322e235eec9152d6732b7c86d66b42f9d))
+* **mates:** limit auto-favorite to core 3 built-in mates ([e4cfa90](https://github.com/chadbyte/clay/commit/e4cfa90784545d490831fb4c420e9f7ad45d102d))
+* **mates:** prevent circular mate DM restore loops ([bf227bc](https://github.com/chadbyte/clay/commit/bf227bcc010ed5014c40cd0ebfed1eff00409ec2))
+* **mates:** prevent identity wipe with atomic enforce and backup system ([e173087](https://github.com/chadbyte/clay/commit/e17308785c5e4fdf34fd8f70f75adbe7b81f2103))
+* **mates:** prevent infinite warning loop for identity-less mates ([9083425](https://github.com/chadbyte/clay/commit/90834250aa27e06f920b4004b644e60ccc019c28))
+* **mates:** restore dynamic project registry injection ([a1a5e8d](https://github.com/chadbyte/clay/commit/a1a5e8d2b4229c3e30d6805e8cb0b8a99a6aee4d))
+* **mates:** stabilize mate DM UI during project switching ([dffead0](https://github.com/chadbyte/clay/commit/dffead01b210d737aa5382d7848526653a0d65c2))
+* **os-users:** fix fsAsUser crash on Node.js v22 due to TypeScript eval parsing ([28715bd](https://github.com/chadbyte/clay/commit/28715bd276189befda3fa658cda938a32802e049))
+* **permissions:** default fileBrowser permission to true ([565a78a](https://github.com/chadbyte/clay/commit/565a78a3da8d2cdc77e330ddb403bd81de0eee85))
+* **profile:** show saved name instead of placeholder in user island ([4ee9197](https://github.com/chadbyte/clay/commit/4ee919789aa0dc39e01b35e0c076001c62e60c5e)), closes [#260](https://github.com/chadbyte/clay/issues/260)
+* **terminal:** use user's default shell instead of hardcoded bash ([722129c](https://github.com/chadbyte/clay/commit/722129c212f0a5489407823a4499a82e145c1835))
+* **ui:** auto-switch to schedule mode on rate limit rejection ([3a5546d](https://github.com/chadbyte/clay/commit/3a5546dd9d8b522ffc0d4f1e6123a78b0ad4be1f))
+* **ui:** clear debate UI on session switch ([95b2cd4](https://github.com/chadbyte/clay/commit/95b2cd4cb2185a87b56fdcf644d44ca50c442b07))
+* **ui:** clear debate-info-float panel bar on session switch ([18a7656](https://github.com/chadbyte/clay/commit/18a76567196224ddbcb5831040b3a9e2d517c490)), closes [#debate-info-float](https://github.com/chadbyte/clay/issues/debate-info-float)
+* **ui:** increase rate limit schedule buffer from 3s to 3min ([f945852](https://github.com/chadbyte/clay/commit/f9458528f245074fd33c82c5a91744bb02a96a82))
+* **ui:** remove debate bottom bar when debate ends or session replays ([828804b](https://github.com/chadbyte/clay/commit/828804b630ec8b04096d1d76efd2c57711977b9c))
+* **ui:** reset debate state on session switch ([c098d02](https://github.com/chadbyte/clay/commit/c098d02045dbc90ea14052610550fad16069ef05))
+
+
+### Features
+
+* **debate:** support natural debate proposals from DM conversations ([59879d8](https://github.com/chadbyte/clay/commit/59879d81ce32ba7d492664486773e1ced09e10da))
+* **mates:** add dust particle effect on mate removal ([88cd210](https://github.com/chadbyte/clay/commit/88cd210c9b7b822d9827c3473ef2e064eee93dd5))
+* **mates:** add global search for Ally across all mates' sessions ([962f435](https://github.com/chadbyte/clay/commit/962f4350f50626c684fe21bb82916c1189d5fdbf))
+* **mates:** add session delete via right-click context menu ([27e3a58](https://github.com/chadbyte/clay/commit/27e3a5830fb9ac323e96016faaba7bad5df87d29))
+* **mates:** auto-sync primary mates with latest definition on startup ([97eb52b](https://github.com/chadbyte/clay/commit/97eb52b4fe367d707833521865e958599dcab8a3))
+* **mates:** dynamic capabilities injection and primary mate UI ([abed902](https://github.com/chadbyte/clay/commit/abed902515d2c5d9b5df624f5ef9ac39615548e4))
+* **mates:** establish Ally as code-managed primary mate ([e3144e9](https://github.com/chadbyte/clay/commit/e3144e94c8f8237006298d633374828cc37eae45))
+* **mates:** inject project registry into mate CLAUDE.md ([646c411](https://github.com/chadbyte/clay/commit/646c4117d7b9aca4d7aa0ccd1736aa9882585df4))
+* **mates:** inject team memory summaries into Ally's context ([b255aad](https://github.com/chadbyte/clay/commit/b255aad135631cc629bd25046b995ea6dc670e84))
+* **mates:** replace static team section with dynamic roster ([8c10685](https://github.com/chadbyte/clay/commit/8c1068547c5af2a2ac214bf3627e3e3a53e359ae))
+* **permissions:** auto-approve read-only tools and safe bash for all sessions ([3401390](https://github.com/chadbyte/clay/commit/340139009adb2fcda52a95554e865e966826674d))
+* **search:** add multi-language tokenization support ([8a1e8c0](https://github.com/chadbyte/clay/commit/8a1e8c0db9f2bb073a4532f8781aba14534bf961))
+* **search:** add unified BM25 search for session history and Cmd+K ([44ee0a8](https://github.com/chadbyte/clay/commit/44ee0a811b2c4d7bbcdfcb2c04685d062d517600))
+* **ui:** add right-click context menu to project session items ([9efb61b](https://github.com/chadbyte/clay/commit/9efb61be9b11fe63f64fead50da54578ee0cc156))
+
+# [2.23.0-beta.8](https://github.com/chadbyte/clay/compare/v2.23.0-beta.7...v2.23.0-beta.8) (2026-04-04)
+
+
+### Bug Fixes
+
+* **os-users:** fix fsAsUser crash on Node.js v22 due to TypeScript eval parsing ([28715bd](https://github.com/chadbyte/clay/commit/28715bd276189befda3fa658cda938a32802e049))
+* **ui:** clear debate-info-float panel bar on session switch ([18a7656](https://github.com/chadbyte/clay/commit/18a76567196224ddbcb5831040b3a9e2d517c490)), closes [#debate-info-float](https://github.com/chadbyte/clay/issues/debate-info-float)
+* **ui:** reset debate state on session switch ([c098d02](https://github.com/chadbyte/clay/commit/c098d02045dbc90ea14052610550fad16069ef05))
+
+# [2.23.0-beta.7](https://github.com/chadbyte/clay/compare/v2.23.0-beta.6...v2.23.0-beta.7) (2026-04-04)
+
+
+### Bug Fixes
+
+* **mates:** disable context menu for primary mates ([b94c528](https://github.com/chadbyte/clay/commit/b94c52828ae33c4333fee29cb9fd0c0f90a54313))
+* **mates:** fix command whitelist splitting on quoted pipe characters ([2fe0c38](https://github.com/chadbyte/clay/commit/2fe0c384153bdd3d6579df861fc8496f2a629df6))
+* **mates:** hide memory panel when switching between mates ([c432ab9](https://github.com/chadbyte/clay/commit/c432ab9322e235eec9152d6732b7c86d66b42f9d))
+* **mates:** prevent infinite warning loop for identity-less mates ([9083425](https://github.com/chadbyte/clay/commit/90834250aa27e06f920b4004b644e60ccc019c28))
+* **mates:** restore dynamic project registry injection ([a1a5e8d](https://github.com/chadbyte/clay/commit/a1a5e8d2b4229c3e30d6805e8cb0b8a99a6aee4d))
+* **permissions:** default fileBrowser permission to true ([565a78a](https://github.com/chadbyte/clay/commit/565a78a3da8d2cdc77e330ddb403bd81de0eee85))
+* **terminal:** use user's default shell instead of hardcoded bash ([722129c](https://github.com/chadbyte/clay/commit/722129c212f0a5489407823a4499a82e145c1835))
+* **ui:** auto-switch to schedule mode on rate limit rejection ([3a5546d](https://github.com/chadbyte/clay/commit/3a5546dd9d8b522ffc0d4f1e6123a78b0ad4be1f))
+* **ui:** clear debate UI on session switch ([95b2cd4](https://github.com/chadbyte/clay/commit/95b2cd4cb2185a87b56fdcf644d44ca50c442b07))
+* **ui:** increase rate limit schedule buffer from 3s to 3min ([f945852](https://github.com/chadbyte/clay/commit/f9458528f245074fd33c82c5a91744bb02a96a82))
+* **ui:** remove debate bottom bar when debate ends or session replays ([828804b](https://github.com/chadbyte/clay/commit/828804b630ec8b04096d1d76efd2c57711977b9c))
+
+
+### Features
+
+* **mates:** add session delete via right-click context menu ([27e3a58](https://github.com/chadbyte/clay/commit/27e3a5830fb9ac323e96016faaba7bad5df87d29))
+* **mates:** auto-sync primary mates with latest definition on startup ([97eb52b](https://github.com/chadbyte/clay/commit/97eb52b4fe367d707833521865e958599dcab8a3))
+* **mates:** dynamic capabilities injection and primary mate UI ([abed902](https://github.com/chadbyte/clay/commit/abed902515d2c5d9b5df624f5ef9ac39615548e4))
+* **mates:** establish Ally as code-managed primary mate ([e3144e9](https://github.com/chadbyte/clay/commit/e3144e94c8f8237006298d633374828cc37eae45))
+* **mates:** inject team memory summaries into Ally's context ([b255aad](https://github.com/chadbyte/clay/commit/b255aad135631cc629bd25046b995ea6dc670e84))
+* **permissions:** auto-approve read-only tools and safe bash for all sessions ([3401390](https://github.com/chadbyte/clay/commit/340139009adb2fcda52a95554e865e966826674d))
+* **ui:** add right-click context menu to project session items ([9efb61b](https://github.com/chadbyte/clay/commit/9efb61be9b11fe63f64fead50da54578ee0cc156))
+
+# [2.23.0-beta.6](https://github.com/chadbyte/clay/compare/v2.23.0-beta.5...v2.23.0-beta.6) (2026-04-04)
+
+
+### Bug Fixes
+
+* **mates:** prevent identity wipe with atomic enforce and backup system ([e173087](https://github.com/chadbyte/clay/commit/e17308785c5e4fdf34fd8f70f75adbe7b81f2103))
+
+
+### Features
+
+* **mates:** add global search for Ally across all mates' sessions ([962f435](https://github.com/chadbyte/clay/commit/962f4350f50626c684fe21bb82916c1189d5fdbf))
+* **mates:** replace static team section with dynamic roster ([8c10685](https://github.com/chadbyte/clay/commit/8c1068547c5af2a2ac214bf3627e3e3a53e359ae))
+* **search:** add multi-language tokenization support ([8a1e8c0](https://github.com/chadbyte/clay/commit/8a1e8c0db9f2bb073a4532f8781aba14534bf961))
+* **search:** add unified BM25 search for session history and Cmd+K ([44ee0a8](https://github.com/chadbyte/clay/commit/44ee0a811b2c4d7bbcdfcb2c04685d062d517600))
+
+# [2.23.0-beta.5](https://github.com/chadbyte/clay/compare/v2.23.0-beta.4...v2.23.0-beta.5) (2026-04-03)
+
+
+### Bug Fixes
+
+* **mates:** stabilize mate DM UI during project switching ([dffead0](https://github.com/chadbyte/clay/commit/dffead01b210d737aa5382d7848526653a0d65c2))
+
+# [2.23.0-beta.4](https://github.com/chadbyte/clay/compare/v2.23.0-beta.3...v2.23.0-beta.4) (2026-04-03)
+
+
+### Bug Fixes
+
+* **config:** preserve all daemon.json settings on restart ([ec32a7b](https://github.com/chadbyte/clay/commit/ec32a7bc63d104b223fbdb7742b6cc11070698fe)), closes [#259](https://github.com/chadbyte/clay/issues/259)
+* **profile:** show saved name instead of placeholder in user island ([4ee9197](https://github.com/chadbyte/clay/commit/4ee919789aa0dc39e01b35e0c076001c62e60c5e)), closes [#260](https://github.com/chadbyte/clay/issues/260)
+
+# [2.23.0-beta.3](https://github.com/chadbyte/clay/compare/v2.23.0-beta.2...v2.23.0-beta.3) (2026-04-03)
+
+
+### Bug Fixes
+
+* **mates:** prevent circular mate DM restore loops ([bf227bc](https://github.com/chadbyte/clay/commit/bf227bcc010ed5014c40cd0ebfed1eff00409ec2))
+
+# [2.23.0-beta.2](https://github.com/chadbyte/clay/compare/v2.23.0-beta.1...v2.23.0-beta.2) (2026-04-03)
+
+
+### Bug Fixes
+
+* **mates:** hide mate projects from admin Project Access list ([b35429a](https://github.com/chadbyte/clay/commit/b35429a7d21204228bac87d427cde510585ee585))
+
+# [2.23.0-beta.1](https://github.com/chadbyte/clay/compare/v2.22.3-beta.1...v2.23.0-beta.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* **mates:** close file viewer and terminal when switching to mate DM ([e9b928a](https://github.com/chadbyte/clay/commit/e9b928aa8d2c03bd5ecd55a598c91f849bfbe79f))
+* **mates:** limit auto-favorite to core 3 built-in mates ([e4cfa90](https://github.com/chadbyte/clay/commit/e4cfa90784545d490831fb4c420e9f7ad45d102d))
+
+
+### Features
+
+* **debate:** support natural debate proposals from DM conversations ([59879d8](https://github.com/chadbyte/clay/commit/59879d81ce32ba7d492664486773e1ced09e10da))
+* **mates:** add dust particle effect on mate removal ([88cd210](https://github.com/chadbyte/clay/commit/88cd210c9b7b822d9827c3473ef2e064eee93dd5))
+* **mates:** inject project registry into mate CLAUDE.md ([646c411](https://github.com/chadbyte/clay/commit/646c4117d7b9aca4d7aa0ccd1736aa9882585df4))
+
+## [2.22.3-beta.1](https://github.com/chadbyte/clay/compare/v2.22.2...v2.22.3-beta.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* isolate user process env from root daemon's process.env ([deda551](https://github.com/chadbyte/clay/commit/deda551143bc21ed79143fc27daab5999024af37))
+
+## [2.22.2](https://github.com/chadbyte/clay/compare/v2.22.1...v2.22.2) (2026-04-03)
+
+
+### Bug Fixes
+
+* close server port before spawning new daemon on restart ([c058c86](https://github.com/chadbyte/clay/commit/c058c86ce51fe37ef4a466def9a5b8267024ebff))
+
+## [2.22.2-beta.1](https://github.com/chadbyte/clay/compare/v2.22.1...v2.22.2-beta.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* close server port before spawning new daemon on restart ([c058c86](https://github.com/chadbyte/clay/commit/c058c86ce51fe37ef4a466def9a5b8267024ebff))
+
+## [2.22.1](https://github.com/chadbyte/clay/compare/v2.22.0...v2.22.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* **os-users:** narrow session-not-found detection to prevent false positives ([88926d8](https://github.com/chadbyte/clay/commit/88926d8f22dd6bdf8ff8d353c3e8aa52f06002bf))
+
+## [2.22.1-beta.1](https://github.com/chadbyte/clay/compare/v2.22.0...v2.22.1-beta.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* **os-users:** narrow session-not-found detection to prevent false positives ([88926d8](https://github.com/chadbyte/clay/commit/88926d8f22dd6bdf8ff8d353c3e8aa52f06002bf))
+
+# [2.22.0](https://github.com/chadbyte/clay/compare/v2.21.0...v2.22.0) (2026-04-03)
+
+
+### Bug Fixes
+
+* block auto-update in headless mode and restrict update UI to admins ([1b276f6](https://github.com/chadbyte/clay/commit/1b276f6e4dc03a23124b2533668f9b025e9ced7c)), closes [#258](https://github.com/chadbyte/clay/issues/258)
+* **input:** enable send button when attachments are added during processing ([8b0e09f](https://github.com/chadbyte/clay/commit/8b0e09f2e8429a53e97292711bc5b8169bde35dc))
+* remove mkcert -CAROOT exec from daemon startup ([e627873](https://github.com/chadbyte/clay/commit/e627873d81f68e693bbb95841795e9c73e91f8cd)), closes [#258](https://github.com/chadbyte/clay/issues/258)
+* **ui:** hide update banner on reconnect after successful update ([1d8eb03](https://github.com/chadbyte/clay/commit/1d8eb03d1f11944f150bdda7426d074c43f360cb))
+
+
+### Features
+
+* **mates:** improve memory digestion with richer context and lower gate threshold ([c4dad96](https://github.com/chadbyte/clay/commit/c4dad96a4c7b3c0be807286a1ef9889877d9c060))
+* **mates:** replace Scout and Sage with 5 perspective mates ([5e4cf70](https://github.com/chadbyte/clay/commit/5e4cf70a65eba2f5eefe1a7fab62abf33e665ff1))
+* **projects:** allow project owners to manage access and visibility ([12dbb38](https://github.com/chadbyte/clay/commit/12dbb384dcb7c63f17f115e1fcc26ce5b424bd57))
+
+# [2.22.0-beta.4](https://github.com/chadbyte/clay/compare/v2.22.0-beta.3...v2.22.0-beta.4) (2026-04-03)
+
+
+### Bug Fixes
+
+* block auto-update in headless mode and restrict update UI to admins ([1b276f6](https://github.com/chadbyte/clay/commit/1b276f6e4dc03a23124b2533668f9b025e9ced7c)), closes [#258](https://github.com/chadbyte/clay/issues/258)
+* remove mkcert -CAROOT exec from daemon startup ([e627873](https://github.com/chadbyte/clay/commit/e627873d81f68e693bbb95841795e9c73e91f8cd)), closes [#258](https://github.com/chadbyte/clay/issues/258)
+
+# [2.22.0-beta.3](https://github.com/chadbyte/clay/compare/v2.22.0-beta.2...v2.22.0-beta.3) (2026-04-03)
+
+
+### Bug Fixes
+
+* **ui:** hide update banner on reconnect after successful update ([1d8eb03](https://github.com/chadbyte/clay/commit/1d8eb03d1f11944f150bdda7426d074c43f360cb))
+
+
+### Features
+
+* **projects:** allow project owners to manage access and visibility ([12dbb38](https://github.com/chadbyte/clay/commit/12dbb384dcb7c63f17f115e1fcc26ce5b424bd57))
+
+# [2.22.0-beta.2](https://github.com/chadbyte/clay/compare/v2.22.0-beta.1...v2.22.0-beta.2) (2026-04-03)
+
+
+### Features
+
+* **mates:** improve memory digestion with richer context and lower gate threshold ([c4dad96](https://github.com/chadbyte/clay/commit/c4dad96a4c7b3c0be807286a1ef9889877d9c060))
+
+# [2.22.0-beta.1](https://github.com/chadbyte/clay/compare/v2.21.1-beta.1...v2.22.0-beta.1) (2026-04-03)
+
+
+### Features
+
+* **mates:** replace Scout and Sage with 5 perspective mates ([5e4cf70](https://github.com/chadbyte/clay/commit/5e4cf70a65eba2f5eefe1a7fab62abf33e665ff1))
+
+## [2.21.1-beta.1](https://github.com/chadbyte/clay/compare/v2.21.0...v2.21.1-beta.1) (2026-04-03)
+
+
+### Bug Fixes
+
+* **input:** enable send button when attachments are added during processing ([8b0e09f](https://github.com/chadbyte/clay/commit/8b0e09f2e8429a53e97292711bc5b8169bde35dc))
+
+# [2.21.0](https://github.com/chadbyte/clay/compare/v2.20.0...v2.21.0) (2026-04-02)
+
+
+### Bug Fixes
+
+* add missing path require in os-users and handle EIO in shutdown ([40aa14e](https://github.com/chadbyte/clay/commit/40aa14e47ba6ce69494cb509d5505106052ea4d4))
+* **cli:** add error handling for OS users toggle IPC ([92ba05d](https://github.com/chadbyte/clay/commit/92ba05ddf1a7a63347e5c5f9c11ecc5866b3cb2b))
+* **cli:** auto-regenerate setup code and add daemon startup diagnostics ([b0e8987](https://github.com/chadbyte/clay/commit/b0e89873f707ff0a2f7d65fd07fe08e051a33d04))
+* **cli:** resolve multi-user OS isolation setup workflow bugs ([52e52da](https://github.com/chadbyte/clay/commit/52e52da33fe75841c0a5884f60261e47b7767d49))
+* **cli:** run OS user provisioning from CLI with live progress ([6773da9](https://github.com/chadbyte/clay/commit/6773da99d3d6f8a9d1f0428fb05dac568d34f555))
+* **cli:** show config path in main menu and always expose setup code ([f1e6f99](https://github.com/chadbyte/clay/commit/f1e6f99fa3e0d3cbf10798ae0f91e83a99f5d4c5))
+* **config:** add fallbacks for getRealHome under sudo on GCE ([483e35b](https://github.com/chadbyte/clay/commit/483e35b863e8be80d95c39457e6cf82506981ad7))
+* **config:** derive CLAY_HOME from CLAY_CONFIG in daemon mode ([40906b5](https://github.com/chadbyte/clay/commit/40906b5b46995aa04482ba726f51dc1ef1945ff4))
+* **daemon:** add version and IPC debug logging at startup ([e3d2e79](https://github.com/chadbyte/clay/commit/e3d2e79d74837397341382e0c25c98bd57740c50))
+* **daemon:** defer startup ACL provisioning to unblock IPC ([39743bd](https://github.com/chadbyte/clay/commit/39743bdda435785de515886b3f7b55f156d4dee0))
+* **mates:** check all segments of compound bash commands for safe whitelist ([3a278b4](https://github.com/chadbyte/clay/commit/3a278b4c7043b1fd88a68addee80fd9b339d1a66))
+* **os-users:** add early boot diagnostics to SDK worker ([a2b0724](https://github.com/chadbyte/clay/commit/a2b07245b0af9e9d64bf16509ca319cc1605983a))
+* **os-users:** add exit reason diagnostics to SDK worker ([a631f3a](https://github.com/chadbyte/clay/commit/a631f3a02da9c12fbec30ad92eba11cd632ee60e))
+* **os-users:** add keepalive interval to prevent premature worker exit ([e38d492](https://github.com/chadbyte/clay/commit/e38d492c6915cef65029466e96461f60869e4613))
+* **os-users:** add spawn diagnostics and handle premature worker exit ([8c402f6](https://github.com/chadbyte/clay/commit/8c402f6e552133cbfc950e153402b44d0e3c1240))
+* **os-users:** chmod entire node_modules for hoisted SDK deps ([9ce3c7e](https://github.com/chadbyte/clay/commit/9ce3c7e15622649ed5b9825ef2ce1047ca20e88b))
+* **os-users:** grant traverse permission on ancestor dirs for SDK worker ([c02de47](https://github.com/chadbyte/clay/commit/c02de470d190ea481fbc7d314f0c3c9a7cce8fe2))
+* **os-users:** inherit full env for SDK worker spawn ([2f079b9](https://github.com/chadbyte/clay/commit/2f079b974dccc69cd6a5757753bfd1e622166fa0))
+* **os-users:** pre-copy CLI sessions before worker spawn and fix race conditions ([d6cd8c2](https://github.com/chadbyte/clay/commit/d6cd8c2e7080a9d51887b353b4cf0c2566bab49e))
+* **os-users:** skip recursive ACL on home directories ([e95ec4c](https://github.com/chadbyte/clay/commit/e95ec4c9b9d8f717d3ca7ac6d66e1bf554e34bff))
+* **sessions:** suppress noisy migration failed logs on startup ([ecc05d0](https://github.com/chadbyte/clay/commit/ecc05d0319c2e1233d180f487323064e771481cb))
+
+
+### Features
+
+* **os-users:** auto-migrate CLI sessions and fix devMode OS users support ([cbbca7c](https://github.com/chadbyte/clay/commit/cbbca7ccf3169682c1be9dbf2552d5155e14c95e))
+
+
+### Performance Improvements
+
+* **os-users:** skip full ACL re-application on every startup ([e0a0f6a](https://github.com/chadbyte/clay/commit/e0a0f6a16c5ff8989284e0de4e5ba0e6d76b6a72))
+
+# [2.21.0-beta.4](https://github.com/chadbyte/clay/compare/v2.21.0-beta.3...v2.21.0-beta.4) (2026-04-02)
+
+
+### Bug Fixes
+
+* **mates:** check all segments of compound bash commands for safe whitelist ([3a278b4](https://github.com/chadbyte/clay/commit/3a278b4c7043b1fd88a68addee80fd9b339d1a66))
+
+# [2.21.0-beta.3](https://github.com/chadbyte/clay/compare/v2.21.0-beta.2...v2.21.0-beta.3) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** pre-copy CLI sessions before worker spawn and fix race conditions ([d6cd8c2](https://github.com/chadbyte/clay/commit/d6cd8c2e7080a9d51887b353b4cf0c2566bab49e))
+* **sessions:** suppress noisy migration failed logs on startup ([ecc05d0](https://github.com/chadbyte/clay/commit/ecc05d0319c2e1233d180f487323064e771481cb))
+
+
+### Performance Improvements
+
+* **os-users:** skip full ACL re-application on every startup ([e0a0f6a](https://github.com/chadbyte/clay/commit/e0a0f6a16c5ff8989284e0de4e5ba0e6d76b6a72))
+
+# [2.21.0-beta.2](https://github.com/chadbyte/clay/compare/v2.21.0-beta.1...v2.21.0-beta.2) (2026-04-02)
+
+
+### Bug Fixes
+
+* add missing path require in os-users and handle EIO in shutdown ([40aa14e](https://github.com/chadbyte/clay/commit/40aa14e47ba6ce69494cb509d5505106052ea4d4))
+
+# [2.21.0-beta.1](https://github.com/chadbyte/clay/compare/v2.20.1-beta.17...v2.21.0-beta.1) (2026-04-02)
+
+
+### Features
+
+* **os-users:** auto-migrate CLI sessions and fix devMode OS users support ([cbbca7c](https://github.com/chadbyte/clay/commit/cbbca7ccf3169682c1be9dbf2552d5155e14c95e))
+
+## [2.20.1-beta.17](https://github.com/chadbyte/clay/compare/v2.20.1-beta.16...v2.20.1-beta.17) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** add keepalive interval to prevent premature worker exit ([e38d492](https://github.com/chadbyte/clay/commit/e38d492c6915cef65029466e96461f60869e4613))
+
+## [2.20.1-beta.16](https://github.com/chadbyte/clay/compare/v2.20.1-beta.15...v2.20.1-beta.16) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** add exit reason diagnostics to SDK worker ([a631f3a](https://github.com/chadbyte/clay/commit/a631f3a02da9c12fbec30ad92eba11cd632ee60e))
+
+## [2.20.1-beta.15](https://github.com/chadbyte/clay/compare/v2.20.1-beta.14...v2.20.1-beta.15) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** add early boot diagnostics to SDK worker ([a2b0724](https://github.com/chadbyte/clay/commit/a2b07245b0af9e9d64bf16509ca319cc1605983a))
+
+## [2.20.1-beta.14](https://github.com/chadbyte/clay/compare/v2.20.1-beta.13...v2.20.1-beta.14) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** inherit full env for SDK worker spawn ([2f079b9](https://github.com/chadbyte/clay/commit/2f079b974dccc69cd6a5757753bfd1e622166fa0))
+
+## [2.20.1-beta.13](https://github.com/chadbyte/clay/compare/v2.20.1-beta.12...v2.20.1-beta.13) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** add spawn diagnostics and handle premature worker exit ([8c402f6](https://github.com/chadbyte/clay/commit/8c402f6e552133cbfc950e153402b44d0e3c1240))
+
+## [2.20.1-beta.12](https://github.com/chadbyte/clay/compare/v2.20.1-beta.11...v2.20.1-beta.12) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** chmod entire node_modules for hoisted SDK deps ([9ce3c7e](https://github.com/chadbyte/clay/commit/9ce3c7e15622649ed5b9825ef2ce1047ca20e88b))
+
+## [2.20.1-beta.11](https://github.com/chadbyte/clay/compare/v2.20.1-beta.10...v2.20.1-beta.11) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** grant traverse permission on ancestor dirs for SDK worker ([c02de47](https://github.com/chadbyte/clay/commit/c02de470d190ea481fbc7d314f0c3c9a7cce8fe2))
+
+## [2.20.1-beta.10](https://github.com/chadbyte/clay/compare/v2.20.1-beta.9...v2.20.1-beta.10) (2026-04-02)
+
+
+### Bug Fixes
+
+* **os-users:** skip recursive ACL on home directories ([e95ec4c](https://github.com/chadbyte/clay/commit/e95ec4c9b9d8f717d3ca7ac6d66e1bf554e34bff))
+
+## [2.20.1-beta.9](https://github.com/chadbyte/clay/compare/v2.20.1-beta.8...v2.20.1-beta.9) (2026-04-02)
+
+
+### Bug Fixes
+
+* **daemon:** defer startup ACL provisioning to unblock IPC ([39743bd](https://github.com/chadbyte/clay/commit/39743bdda435785de515886b3f7b55f156d4dee0))
+
+## [2.20.1-beta.8](https://github.com/chadbyte/clay/compare/v2.20.1-beta.7...v2.20.1-beta.8) (2026-04-02)
+
+
+### Bug Fixes
+
+* **config:** derive CLAY_HOME from CLAY_CONFIG in daemon mode ([40906b5](https://github.com/chadbyte/clay/commit/40906b5b46995aa04482ba726f51dc1ef1945ff4))
+
+## [2.20.1-beta.7](https://github.com/chadbyte/clay/compare/v2.20.1-beta.6...v2.20.1-beta.7) (2026-04-02)
+
+
+### Bug Fixes
+
+* **config:** add fallbacks for getRealHome under sudo on GCE ([483e35b](https://github.com/chadbyte/clay/commit/483e35b863e8be80d95c39457e6cf82506981ad7))
+
+## [2.20.1-beta.6](https://github.com/chadbyte/clay/compare/v2.20.1-beta.5...v2.20.1-beta.6) (2026-04-02)
+
+
+### Bug Fixes
+
+* **daemon:** add version and IPC debug logging at startup ([e3d2e79](https://github.com/chadbyte/clay/commit/e3d2e79d74837397341382e0c25c98bd57740c50))
+
+## [2.20.1-beta.5](https://github.com/chadbyte/clay/compare/v2.20.1-beta.4...v2.20.1-beta.5) (2026-04-02)
+
+
+### Bug Fixes
+
+* **cli:** run OS user provisioning from CLI with live progress ([6773da9](https://github.com/chadbyte/clay/commit/6773da99d3d6f8a9d1f0428fb05dac568d34f555))
+
+## [2.20.1-beta.4](https://github.com/chadbyte/clay/compare/v2.20.1-beta.3...v2.20.1-beta.4) (2026-04-02)
+
+
+### Bug Fixes
+
+* **cli:** add error handling for OS users toggle IPC ([92ba05d](https://github.com/chadbyte/clay/commit/92ba05ddf1a7a63347e5c5f9c11ecc5866b3cb2b))
+
+## [2.20.1-beta.3](https://github.com/chadbyte/clay/compare/v2.20.1-beta.2...v2.20.1-beta.3) (2026-04-02)
+
+
+### Bug Fixes
+
+* **cli:** show config path in main menu and always expose setup code ([f1e6f99](https://github.com/chadbyte/clay/commit/f1e6f99fa3e0d3cbf10798ae0f91e83a99f5d4c5))
+
+## [2.20.1-beta.2](https://github.com/chadbyte/clay/compare/v2.20.1-beta.1...v2.20.1-beta.2) (2026-04-02)
+
+
+### Bug Fixes
+
+* **cli:** auto-regenerate setup code and add daemon startup diagnostics ([b0e8987](https://github.com/chadbyte/clay/commit/b0e89873f707ff0a2f7d65fd07fe08e051a33d04))
+
+## [2.20.1-beta.1](https://github.com/chadbyte/clay/compare/v2.20.0...v2.20.1-beta.1) (2026-04-02)
+
+
+### Bug Fixes
+
+* **cli:** resolve multi-user OS isolation setup workflow bugs ([52e52da](https://github.com/chadbyte/clay/commit/52e52da33fe75841c0a5884f60261e47b7767d49))
+
+# [2.20.0](https://github.com/chadbyte/clay/compare/v2.19.0...v2.20.0) (2026-04-01)
+
+
+### Bug Fixes
+
+* **auth:** fix PIN digit input not displaying on force-change overlay ([5f432c0](https://github.com/chadbyte/clay/commit/5f432c07b856fa1125c7571685365273dfbae9de))
+* **cli:** show setup code on main menu instead of pre-clear output ([4119465](https://github.com/chadbyte/clay/commit/41194651dd43953ec3c6def03b94dc11a24f01cf))
+* **debate:** robust mention detection against markdown and all scripts ([3752027](https://github.com/chadbyte/clay/commit/3752027b12ec63f52aa7fe8b1fad5518768ccf69))
+* **debate:** skip memory gate for digests and persist conclude state ([d38cbaf](https://github.com/chadbyte/clay/commit/d38cbafc9eb0a4794adf3953b8cd3454710ca90a))
+* **input:** allow paste in debate modal and user settings ([b922771](https://github.com/chadbyte/clay/commit/b922771682945d9ddf848505e107ac8b93c71759)), closes [#debate-modal](https://github.com/chadbyte/clay/issues/debate-modal)
+* **mate:** align sparkle activity inside thinking bubble consistently ([d5f3115](https://github.com/chadbyte/clay/commit/d5f311589434354b5f9a0d2da108ab2a07d00e2d))
+* **mate:** mark debate memories as role-played positions ([2658de4](https://github.com/chadbyte/clay/commit/2658de4423d74e7b39a063d83c3611b957fb316c))
+* **mate:** remove script runners from safe Bash whitelist ([0e7b85f](https://github.com/chadbyte/clay/commit/0e7b85f1b1051df8ec4c16721db49ded1f8b5de5))
+* **mate:** replace three dots with sparkle activity inside thinking bubble ([654d2c4](https://github.com/chadbyte/clay/commit/654d2c49e391690363b0a0b09314539e6b29144a))
+* **mates:** add first session detection to builtin mate prompts ([285dc4d](https://github.com/chadbyte/clay/commit/285dc4d8f29c7a2c6b3d2f079ef318fb2e506e02))
+* **mates:** serve nested static files and include avatarCustom in mate DM ([c2741dd](https://github.com/chadbyte/clay/commit/c2741dd251d6c1588a1ba9976a8b0e2422e4e330))
+* **memory:** use responsePreview for DM digest instead of delta fragments ([eb8ff60](https://github.com/chadbyte/clay/commit/eb8ff601992fed45f190d96cdf5b755d2c113d65))
+* **mobile:** add scheduled task session grouping to mobile bottom sheet ([d8440ec](https://github.com/chadbyte/clay/commit/d8440ec2b4e1c0d31068f08a95179810af9f10ce)), closes [#252](https://github.com/chadbyte/clay/issues/252)
+* **os-users:** check for ACL package before enabling OS user isolation ([8fdf2ba](https://github.com/chadbyte/clay/commit/8fdf2ba29356d44446b8242ccff5fa9c8f153f63))
+* **palette:** render mate sessions with avatar and open DM on click ([1b32741](https://github.com/chadbyte/clay/commit/1b32741ce7e188932947fb7d7fab861e25dbba1c))
+* **search:** include mention and debate entries in Cmd+K search ([fd28e8a](https://github.com/chadbyte/clay/commit/fd28e8a7d3529689ce7c873905c2ba7356c62e83))
+* **status:** show server version and add update check feedback ([8c3743a](https://github.com/chadbyte/clay/commit/8c3743ae8ac63de408e4b33c9d13f30cd9d45cc5)), closes [#footer-version](https://github.com/chadbyte/clay/issues/footer-version) [#257](https://github.com/chadbyte/clay/issues/257)
+* **ui:** close memory panel when switching projects or exiting DM mode ([9fc4333](https://github.com/chadbyte/clay/commit/9fc433396e137d7199fbea03853d05b0d2543260))
+* **ui:** close terminal when file viewer opens ([248a8a7](https://github.com/chadbyte/clay/commit/248a8a71e59f0202ff6fa887b6400f358a5e84d8))
+* **ui:** persist AskUserQuestion responses in session history ([fcbc999](https://github.com/chadbyte/clay/commit/fcbc999795847e86668f0ea9b772527798f58f8f))
+* **ui:** use theme-aware background for PIN input boxes ([234ed6e](https://github.com/chadbyte/clay/commit/234ed6e4056523e8f3d0bee0045bd3486839b92c))
+* **user-settings:** PIN validation on keyup and fix save field name ([4679320](https://github.com/chadbyte/clay/commit/46793200c9cc9a5075e81b86e0c92012d309d8e8))
+* **user-settings:** swap sidebar and content background colors ([cc9f282](https://github.com/chadbyte/clay/commit/cc9f28248e7ee9a4ff1f6c1ec6d5b47472d85c31))
+
+
+### Features
+
+* **dm:** add memory extraction for mate DM conversations ([2304bad](https://github.com/chadbyte/clay/commit/2304bade15acfd1726db0c5c47eaeb526c96c787))
+* **mate:** add Memory panel with read and delete for session digests ([560796a](https://github.com/chadbyte/clay/commit/560796acba8651687c28b6944406908498bd3d2c))
+* **mate:** auto-approve safe Bash commands in mate sessions ([6c3e193](https://github.com/chadbyte/clay/commit/6c3e19300d6ae8f61bcabbbc858fd8eefe9a66eb))
+* **mates:** add built-in mates Ally, Scout, Sage ([8d08c94](https://github.com/chadbyte/clay/commit/8d08c947bf54282189610c1fd03cd7879b1e5143))
+* **mates:** add favorites system and builtin mate re-add flow ([c01e42a](https://github.com/chadbyte/clay/commit/c01e42a8c0abf3dc0931d96c83c0286655d0e638))
+* **memory:** add memory summary system with Haiku gate and tab UI ([e418507](https://github.com/chadbyte/clay/commit/e4185074f36e8707920f9620c7839fc03e34e3f2))
+* **mention:** add stop button to abort active mentions ([f524cf8](https://github.com/chadbyte/clay/commit/f524cf86bb7d7e4ad11153edbf246fd2100b2e7d))
+* **mention:** support images, files, and pastes in [@mentions](https://github.com/mentions) ([cfd1caa](https://github.com/chadbyte/clay/commit/cfd1caa8240f9bebdd10931e1236d3063822d9d1))
+* **notes:** add mate-specific sticky notes with read-only access for Claude ([5c23aee](https://github.com/chadbyte/clay/commit/5c23aeeb6c1910589c54869a57541ed313cab782))
+* **permissions:** allow mode switching when --dangerously-skip-permissions is active ([f11ebd4](https://github.com/chadbyte/clay/commit/f11ebd4e96b0be3bef9804f576ea589c30288c8b)), closes [#256](https://github.com/chadbyte/clay/issues/256)
+* **schedule:** add message scheduling with timer picker ([195d29d](https://github.com/chadbyte/clay/commit/195d29dcabba0c470aab10776f89edfb82257ae9))
+* **upload:** include saved image file paths in SDK message context ([32dc3c3](https://github.com/chadbyte/clay/commit/32dc3c3b420400f71718607823100161b53d9cde))
+* **usage:** add rate limit reset display and auto-continue setting ([8823ec3](https://github.com/chadbyte/clay/commit/8823ec38c29798ec776a848ff3551a24714029cf))
+* **usage:** live countdown for rate limit reset in top bar ([6ca02c0](https://github.com/chadbyte/clay/commit/6ca02c028c52d58f9db940956dce219587737fd4))
+* **usage:** show rate limit reset time and usage check link in top bar ([6609275](https://github.com/chadbyte/clay/commit/660927524bdee808603d3480090072553af85e6c)), closes [anthropics/claude-code#41185](https://github.com/anthropics/claude-code/issues/41185)
+
+# [2.20.0-beta.4](https://github.com/chadbyte/clay/compare/v2.20.0-beta.3...v2.20.0-beta.4) (2026-04-01)
+
+
+### Bug Fixes
+
+* **ui:** use theme-aware background for PIN input boxes ([234ed6e](https://github.com/chadbyte/clay/commit/234ed6e4056523e8f3d0bee0045bd3486839b92c))
+
+# [2.20.0-beta.3](https://github.com/chadbyte/clay/compare/v2.20.0-beta.2...v2.20.0-beta.3) (2026-04-01)
+
+
+### Bug Fixes
+
+* **auth:** fix PIN digit input not displaying on force-change overlay ([5f432c0](https://github.com/chadbyte/clay/commit/5f432c07b856fa1125c7571685365273dfbae9de))
+
+# [2.20.0-beta.2](https://github.com/chadbyte/clay/compare/v2.20.0-beta.1...v2.20.0-beta.2) (2026-04-01)
+
+
+### Bug Fixes
+
+* **mates:** add first session detection to builtin mate prompts ([285dc4d](https://github.com/chadbyte/clay/commit/285dc4d8f29c7a2c6b3d2f079ef318fb2e506e02))
+* **mates:** serve nested static files and include avatarCustom in mate DM ([c2741dd](https://github.com/chadbyte/clay/commit/c2741dd251d6c1588a1ba9976a8b0e2422e4e330))
+
+
+### Features
+
+* **mates:** add built-in mates Ally, Scout, Sage ([8d08c94](https://github.com/chadbyte/clay/commit/8d08c947bf54282189610c1fd03cd7879b1e5143))
+* **mates:** add favorites system and builtin mate re-add flow ([c01e42a](https://github.com/chadbyte/clay/commit/c01e42a8c0abf3dc0931d96c83c0286655d0e638))
+* **schedule:** add message scheduling with timer picker ([195d29d](https://github.com/chadbyte/clay/commit/195d29dcabba0c470aab10776f89edfb82257ae9))
+
+# [2.20.0-beta.1](https://github.com/chadbyte/clay/compare/v2.19.0...v2.20.0-beta.1) (2026-03-31)
+
+
+### Bug Fixes
+
+* **cli:** show setup code on main menu instead of pre-clear output ([4119465](https://github.com/chadbyte/clay/commit/41194651dd43953ec3c6def03b94dc11a24f01cf))
+* **debate:** robust mention detection against markdown and all scripts ([3752027](https://github.com/chadbyte/clay/commit/3752027b12ec63f52aa7fe8b1fad5518768ccf69))
+* **debate:** skip memory gate for digests and persist conclude state ([d38cbaf](https://github.com/chadbyte/clay/commit/d38cbafc9eb0a4794adf3953b8cd3454710ca90a))
+* **input:** allow paste in debate modal and user settings ([b922771](https://github.com/chadbyte/clay/commit/b922771682945d9ddf848505e107ac8b93c71759)), closes [#debate-modal](https://github.com/chadbyte/clay/issues/debate-modal)
+* **mate:** align sparkle activity inside thinking bubble consistently ([d5f3115](https://github.com/chadbyte/clay/commit/d5f311589434354b5f9a0d2da108ab2a07d00e2d))
+* **mate:** mark debate memories as role-played positions ([2658de4](https://github.com/chadbyte/clay/commit/2658de4423d74e7b39a063d83c3611b957fb316c))
+* **mate:** remove script runners from safe Bash whitelist ([0e7b85f](https://github.com/chadbyte/clay/commit/0e7b85f1b1051df8ec4c16721db49ded1f8b5de5))
+* **mate:** replace three dots with sparkle activity inside thinking bubble ([654d2c4](https://github.com/chadbyte/clay/commit/654d2c49e391690363b0a0b09314539e6b29144a))
+* **memory:** use responsePreview for DM digest instead of delta fragments ([eb8ff60](https://github.com/chadbyte/clay/commit/eb8ff601992fed45f190d96cdf5b755d2c113d65))
+* **mobile:** add scheduled task session grouping to mobile bottom sheet ([d8440ec](https://github.com/chadbyte/clay/commit/d8440ec2b4e1c0d31068f08a95179810af9f10ce)), closes [#252](https://github.com/chadbyte/clay/issues/252)
+* **os-users:** check for ACL package before enabling OS user isolation ([8fdf2ba](https://github.com/chadbyte/clay/commit/8fdf2ba29356d44446b8242ccff5fa9c8f153f63))
+* **palette:** render mate sessions with avatar and open DM on click ([1b32741](https://github.com/chadbyte/clay/commit/1b32741ce7e188932947fb7d7fab861e25dbba1c))
+* **search:** include mention and debate entries in Cmd+K search ([fd28e8a](https://github.com/chadbyte/clay/commit/fd28e8a7d3529689ce7c873905c2ba7356c62e83))
+* **status:** show server version and add update check feedback ([8c3743a](https://github.com/chadbyte/clay/commit/8c3743ae8ac63de408e4b33c9d13f30cd9d45cc5)), closes [#footer-version](https://github.com/chadbyte/clay/issues/footer-version) [#257](https://github.com/chadbyte/clay/issues/257)
+* **ui:** close memory panel when switching projects or exiting DM mode ([9fc4333](https://github.com/chadbyte/clay/commit/9fc433396e137d7199fbea03853d05b0d2543260))
+* **ui:** close terminal when file viewer opens ([248a8a7](https://github.com/chadbyte/clay/commit/248a8a71e59f0202ff6fa887b6400f358a5e84d8))
+* **ui:** persist AskUserQuestion responses in session history ([fcbc999](https://github.com/chadbyte/clay/commit/fcbc999795847e86668f0ea9b772527798f58f8f))
+* **user-settings:** PIN validation on keyup and fix save field name ([4679320](https://github.com/chadbyte/clay/commit/46793200c9cc9a5075e81b86e0c92012d309d8e8))
+* **user-settings:** swap sidebar and content background colors ([cc9f282](https://github.com/chadbyte/clay/commit/cc9f28248e7ee9a4ff1f6c1ec6d5b47472d85c31))
+
+
+### Features
+
+* **dm:** add memory extraction for mate DM conversations ([2304bad](https://github.com/chadbyte/clay/commit/2304bade15acfd1726db0c5c47eaeb526c96c787))
+* **mate:** add Memory panel with read and delete for session digests ([560796a](https://github.com/chadbyte/clay/commit/560796acba8651687c28b6944406908498bd3d2c))
+* **mate:** auto-approve safe Bash commands in mate sessions ([6c3e193](https://github.com/chadbyte/clay/commit/6c3e19300d6ae8f61bcabbbc858fd8eefe9a66eb))
+* **memory:** add memory summary system with Haiku gate and tab UI ([e418507](https://github.com/chadbyte/clay/commit/e4185074f36e8707920f9620c7839fc03e34e3f2))
+* **mention:** add stop button to abort active mentions ([f524cf8](https://github.com/chadbyte/clay/commit/f524cf86bb7d7e4ad11153edbf246fd2100b2e7d))
+* **mention:** support images, files, and pastes in [@mentions](https://github.com/mentions) ([cfd1caa](https://github.com/chadbyte/clay/commit/cfd1caa8240f9bebdd10931e1236d3063822d9d1))
+* **notes:** add mate-specific sticky notes with read-only access for Claude ([5c23aee](https://github.com/chadbyte/clay/commit/5c23aeeb6c1910589c54869a57541ed313cab782))
+* **permissions:** allow mode switching when --dangerously-skip-permissions is active ([f11ebd4](https://github.com/chadbyte/clay/commit/f11ebd4e96b0be3bef9804f576ea589c30288c8b)), closes [#256](https://github.com/chadbyte/clay/issues/256)
+* **upload:** include saved image file paths in SDK message context ([32dc3c3](https://github.com/chadbyte/clay/commit/32dc3c3b420400f71718607823100161b53d9cde))
+* **usage:** add rate limit reset display and auto-continue setting ([8823ec3](https://github.com/chadbyte/clay/commit/8823ec38c29798ec776a848ff3551a24714029cf))
+* **usage:** live countdown for rate limit reset in top bar ([6ca02c0](https://github.com/chadbyte/clay/commit/6ca02c028c52d58f9db940956dce219587737fd4))
+* **usage:** show rate limit reset time and usage check link in top bar ([6609275](https://github.com/chadbyte/clay/commit/660927524bdee808603d3480090072553af85e6c)), closes [anthropics/claude-code#41185](https://github.com/anthropics/claude-code/issues/41185)
+
 # [2.19.0](https://github.com/chadbyte/clay/compare/v2.18.0...v2.19.0) (2026-03-29)
 
 

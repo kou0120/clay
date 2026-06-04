@@ -33,10 +33,10 @@ if (_isDev || process.argv.includes("--debug")) {
 }
 
 var crypto = require("crypto");
-var { loadConfig, saveConfig, configPath, socketPath, logPath, ensureConfigDir, isDaemonAlive, isDaemonAliveAsync, generateSlug, clearStaleConfig, loadClayrc, saveClayrc, readCrashInfo } = require("../lib/config");
+var { loadConfig, saveConfig, configPath, socketPath, logPath, ensureConfigDir, isDaemonAlive, isDaemonAliveAsync, generateSlug, clearStaleConfig, loadClayrc, saveClayrc, readCrashInfo, REAL_HOME } = require("../lib/config");
 var { sendIPCCommand } = require("../lib/ipc");
 var { generateAuthToken } = require("../lib/server");
-var { enableMultiUser, disableMultiUser, hasAdmin, isMultiUser } = require("../lib/users");
+var { enableMultiUser, disableMultiUser, hasAdmin, isMultiUser, getSetupCode } = require("../lib/users");
 
 function openUrl(url) {
   try {
@@ -446,12 +446,6 @@ async function restartDaemonFromConfig() {
   var newConfig = Object.assign({}, lastConfig, {
     pid: null,
     port: targetPort,
-    pinHash: lastConfig.pinHash || null,
-    tls: lastConfig.tls !== undefined ? lastConfig.tls : useHttps,
-    debug: lastConfig.debug || false,
-    keepAwake: lastConfig.keepAwake || false,
-    dangerouslySkipPermissions: lastConfig.dangerouslySkipPermissions || false,
-    osUsers: lastConfig.osUsers || false,
     projects: (lastConfig.projects || []).filter(function (p) {
       return fs.existsSync(p.path);
     }),
@@ -610,8 +604,7 @@ function ensureCerts(ip) {
     return null;
   }
 
-  var homeDir = os.homedir();
-  var certDir = path.join(process.env.CLAY_HOME || path.join(homeDir, ".clay"), "certs");
+  var certDir = path.join(process.env.CLAY_HOME || path.join(REAL_HOME, ".clay"), "certs");
   var keyPath = path.join(certDir, "key.pem");
   var certPath = path.join(certDir, "cert.pem");
 
@@ -891,7 +884,7 @@ function promptText(title, placeholder, callback, opts) {
 
     // Resolve ~ to home
     if (current.charAt(0) === "~") {
-      current = os.homedir() + current.substring(1);
+      current = REAL_HOME + current.substring(1);
     }
 
     var resolved = path.resolve(current);
@@ -1418,16 +1411,15 @@ function setup(callback) {
           }
           var isRoot = typeof process.getuid === "function" && process.getuid() === 0;
           if (!isRoot) {
-            // Save config so sudo clay can pick it up
-            var partialConfig = {
-              port: port,
-              host: host,
-              mode: "multi",
-              osUsers: true,
-              setupCompleted: true,
-              dangerouslySkipPermissions: dangerouslySkipPermissions,
-            };
-            saveConfig(partialConfig);
+            // Merge into existing config (preserve projects, TLS, etc.)
+            var existingCfg = loadConfig() || {};
+            existingCfg.port = port;
+            existingCfg.host = host;
+            existingCfg.mode = "multi";
+            existingCfg.osUsers = true;
+            existingCfg.setupCompleted = true;
+            if (dangerouslySkipPermissions) existingCfg.dangerouslySkipPermissions = true;
+            saveConfig(existingCfg);
             log(sym.bar);
             log(sym.warn + "  " + a.yellow + "OS user isolation requires root." + a.reset);
             log(sym.bar + "  Run:");
@@ -1512,10 +1504,9 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
         break;
       }
     }
-    // Restore access settings from previous config
+    // Restore project-level settings from previous config
     if (prevProjectMap[cwd]) {
-      if (prevProjectMap[cwd].visibility) cwdEntry.visibility = prevProjectMap[cwd].visibility;
-      if (prevProjectMap[cwd].allowedUsers) cwdEntry.allowedUsers = prevProjectMap[cwd].allowedUsers;
+      cwdEntry = Object.assign({}, prevProjectMap[cwd], cwdEntry);
     }
     allProjects.push(cwdEntry);
     usedSlugs.push(slug);
@@ -1530,10 +1521,9 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
       var rpSlug = generateSlug(rp.path, usedSlugs);
       usedSlugs.push(rpSlug);
       var rpEntry = { path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() };
-      // Restore access settings from previous config
+      // Restore project-level settings from previous config
       if (prevProjectMap[rp.path]) {
-        if (prevProjectMap[rp.path].visibility) rpEntry.visibility = prevProjectMap[rp.path].visibility;
-        if (prevProjectMap[rp.path].allowedUsers) rpEntry.allowedUsers = prevProjectMap[rp.path].allowedUsers;
+        rpEntry = Object.assign({}, prevProjectMap[rp.path], rpEntry);
       }
       allProjects.push(rpEntry);
     }
@@ -1543,11 +1533,12 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
     pid: null,
     port: port,
     host: host,
-    pinHash: mode === "multi" && cliPin ? generateAuthToken(cliPin) : null,
+    pinHash: mode === "multi" && cliPin ? generateAuthToken(cliPin) : (prevConfig && prevConfig.pinHash) || null,
     tls: hasTls,
     builtinCert: hasBuiltinCert,
     mkcertDetected: mkcertDetected,
     debug: debugMode,
+    headless: headlessMode,
     keepAwake: keepAwake,
     dangerouslySkipPermissions: dangerouslySkipPermissions,
     osUsers: wantOsUsers || osUsersMode,
@@ -1605,14 +1596,11 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
   }
 
   // Enable/disable multi-user mode based on startup config
+  var _pendingSetupCode = null;
   if (config.mode === "multi") {
     var muResult = enableMultiUser();
     if (muResult.setupCode) {
-      log("");
-      log(sym.done + "  " + a.green + "Multi-user mode enabled." + a.reset);
-      log(sym.bar + "  Setup code:  " + a.bold + muResult.setupCode + a.reset);
-      log(sym.bar + "  Open Clay in your browser and enter this code to create the admin account.");
-      log("");
+      _pendingSetupCode = muResult.setupCode;
     }
   } else if (isMultiUser()) {
     disableMultiUser();
@@ -1628,19 +1616,25 @@ async function forkDaemon(mode, keepAwake, extraProjects, addCwd, wantOsUsers) {
     console.log("  " + sym.done + "  " + url);
     if (config.builtinCert) console.log("  " + sym.done + "  d.clay.studio provides HTTPS certificates only. Your traffic never leaves your network.");
     if (config.mkcertDetected) console.log("  " + sym.warn + "  Clay now ships with a builtin HTTPS certificate. To use it, pass --builtin-cert or uninstall mkcert.");
+    if (_pendingSetupCode) {
+      console.log("");
+      console.log("  " + sym.done + "  " + a.green + "Multi-user mode enabled." + a.reset);
+      console.log("  " + sym.bar + "  Setup code:  " + a.bold + _pendingSetupCode + a.reset);
+      console.log("  " + sym.bar + "  Open Clay in your browser and enter this code to create the admin account.");
+    }
     console.log("  " + sym.done + "  Headless mode — exiting CLI");
     process.exit(0);
     return;
   }
 
   // Show success + QR
-  showServerStarted(config, ip);
+  showServerStarted(config, ip, _pendingSetupCode);
 }
 
 // ==============================
 // Dev mode — foreground daemon with file watching
 // ==============================
-async function devMode(mode, keepAwake, existingPinHash) {
+async function devMode(mode, keepAwake, existingPinHash, wantOsUsers) {
   var ip = getLocalIP();
   var hasTls = false;
   var hasBuiltinCert = false;
@@ -1690,8 +1684,7 @@ async function devMode(mode, keepAwake, existingPinHash) {
   }
   // Restore access settings for cwd from previous config
   if (prevDevProjectMap[cwd]) {
-    if (prevDevProjectMap[cwd].visibility) cwdDevEntry.visibility = prevDevProjectMap[cwd].visibility;
-    if (prevDevProjectMap[cwd].allowedUsers) cwdDevEntry.allowedUsers = prevDevProjectMap[cwd].allowedUsers;
+    cwdDevEntry = Object.assign({}, prevDevProjectMap[cwd], cwdDevEntry);
   }
   var allProjects = [cwdDevEntry];
   var usedSlugs = [slug];
@@ -1700,10 +1693,9 @@ async function devMode(mode, keepAwake, existingPinHash) {
     var rpSlug = generateSlug(rp.path, usedSlugs);
     usedSlugs.push(rpSlug);
     var rpDevEntry = { path: rp.path, slug: rpSlug, title: rp.title || undefined, icon: rp.icon || undefined, addedAt: rp.addedAt || Date.now() };
-    // Restore access settings from previous config
+    // Restore project-level settings from previous config
     if (prevDevProjectMap[rp.path]) {
-      if (prevDevProjectMap[rp.path].visibility) rpDevEntry.visibility = prevDevProjectMap[rp.path].visibility;
-      if (prevDevProjectMap[rp.path].allowedUsers) rpDevEntry.allowedUsers = prevDevProjectMap[rp.path].allowedUsers;
+      rpDevEntry = Object.assign({}, prevDevProjectMap[rp.path], rpDevEntry);
     }
     allProjects.push(rpDevEntry);
   }
@@ -1722,6 +1714,7 @@ async function devMode(mode, keepAwake, existingPinHash) {
     mode: mode || "single",
     setupCompleted: true,
     projects: allProjects,
+    osUsers: wantOsUsers || (prevDevConfig ? (prevDevConfig.osUsers || false) : false),
   });
 
   ensureConfigDir();
@@ -1883,18 +1876,12 @@ async function restartDaemonWithTLS(config, callback) {
   }
   clearStaleConfig();
 
-  // Re-fork with TLS
-  var newConfig = Object.assign({}, config || {}, {
+  // Re-fork with TLS (preserve all existing config fields)
+  var newConfig = Object.assign({}, config, {
     pid: null,
-    port: config.port,
-    pinHash: config.pinHash || null,
     tls: true,
     builtinCert: hasBuiltinCert,
     mkcertDetected: mkcertDetected,
-    debug: config.debug || false,
-    keepAwake: config.keepAwake || false,
-    dangerouslySkipPermissions: config.dangerouslySkipPermissions || false,
-    projects: config.projects || [],
   });
 
   ensureConfigDir();
@@ -1959,14 +1946,14 @@ async function restartDaemonWithTLS(config, callback) {
 // ==============================
 // Show server started info
 // ==============================
-function showServerStarted(config, ip) {
-  showMainMenu(config, ip);
+function showServerStarted(config, ip, setupCode) {
+  showMainMenu(config, ip, setupCode);
 }
 
 // ==============================
 // Main management menu
 // ==============================
-function showMainMenu(config, ip) {
+function showMainMenu(config, ip, setupCode) {
   startDaemonWatcher();
   var protocol = config.tls ? "https" : "http";
   var url = config.builtinCert
@@ -1997,6 +1984,7 @@ function showMainMenu(config, ip) {
         parts.push(a.reset + a.yellow + a.bold + totalAwaiting + a.reset + a.yellow + " awaiting" + a.reset + a.dim);
       }
       log("  " + a.dim + parts.join(a.reset + a.dim + " · ") + a.reset);
+      log("  " + a.dim + "~/.clay → " + path.join(REAL_HOME, ".clay") + a.reset);
       log("  Press " + a.bold + "o" + a.reset + " to open in browser");
       log("");
 
@@ -2024,7 +2012,6 @@ function showMainMenu(config, ip) {
 
     function showMenuItems() {
       var items = [
-        { label: "Setup notifications", value: "notifications" },
         { label: "Settings", value: "settings" },
         { label: "Shut down server", value: "shutdown" },
         { label: "Keep server alive & exit", value: "exit" },
@@ -2032,13 +2019,6 @@ function showMainMenu(config, ip) {
 
       promptSelect("What would you like to do?", items, function (choice) {
         switch (choice) {
-          case "notifications":
-            showSetupGuide(config, ip, function () {
-              config = loadConfig() || config;
-              showMainMenu(config, ip);
-            });
-            break;
-
           case "settings":
             showSettingsMenu(config, ip);
             break;
@@ -2097,190 +2077,6 @@ function showMainMenu(config, ip) {
 // ==============================
 // Setup guide (2x2 toggle flow)
 // ==============================
-function showSetupGuide(config, ip, goBack) {
-  var protocol = config.tls ? "https" : "http";
-  var wantRemote = false;
-  var wantPush = false;
-
-  console.clear();
-  printLogo();
-  log("");
-  log(sym.pointer + "  " + a.bold + "Setup Notifications" + a.reset);
-  log(sym.bar);
-
-  function redraw(renderFn) {
-    console.clear();
-    printLogo();
-    log("");
-    log(sym.pointer + "  " + a.bold + "Setup Notifications" + a.reset);
-    log(sym.bar);
-    if (wantRemote) log(sym.done + "  Access from outside your network? " + a.dim + "·" + a.reset + " " + a.green + "Yes" + a.reset);
-    else log(sym.done + "  Access from outside your network? " + a.dim + "· No" + a.reset);
-    log(sym.bar);
-    if (wantPush) log(sym.done + "  Want push notifications? " + a.dim + "·" + a.reset + " " + a.green + "Yes" + a.reset);
-    else log(sym.done + "  Want push notifications? " + a.dim + "· No" + a.reset);
-    log(sym.bar);
-    renderFn();
-  }
-
-  promptToggle("Access from outside your network?", "Requires Tailscale on both devices", false, function (remote) {
-    wantRemote = remote;
-    log(sym.bar);
-    promptToggle("Want push notifications?", "Requires HTTPS", false, function (push) {
-      wantPush = push;
-      log(sym.bar);
-      afterToggles();
-    });
-  });
-
-  function afterToggles() {
-    if (!wantRemote && !wantPush) {
-      log(sym.done + "  " + a.green + "All set!" + a.reset + a.dim + " · No additional setup needed." + a.reset);
-      log(sym.end);
-      log("");
-      promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
-        goBack();
-      });
-      return;
-    }
-    if (wantRemote) {
-      renderTailscale();
-    } else {
-      renderHttps();
-    }
-  }
-
-  function renderTailscale() {
-    var tsIP = getTailscaleIP();
-
-    log(sym.pointer + "  " + a.bold + "Tailscale Setup" + a.reset);
-    if (tsIP) {
-      log(sym.bar + "  " + a.green + "Tailscale is running" + a.reset + a.dim + " · " + tsIP + a.reset);
-      log(sym.bar);
-      log(sym.bar + "  On your phone/tablet:");
-      log(sym.bar + "  " + a.dim + "1. Install Tailscale (App Store / Google Play)" + a.reset);
-      log(sym.bar + "  " + a.dim + "2. Sign in with the same account" + a.reset);
-      log(sym.bar);
-      renderHttps();
-    } else {
-      log(sym.bar + "  " + a.yellow + "Tailscale not found on this machine." + a.reset);
-      log(sym.bar + "  " + a.dim + "Install: " + a.reset + "https://tailscale.com/download");
-      log(sym.bar + "  " + a.dim + "Then run: " + a.reset + "tailscale up");
-      log(sym.bar);
-      log(sym.bar + "  On your phone/tablet:");
-      log(sym.bar + "  " + a.dim + "1. Install Tailscale (App Store / Google Play)" + a.reset);
-      log(sym.bar + "  " + a.dim + "2. Sign in with the same account" + a.reset);
-      log(sym.bar);
-      promptSelect("Select", [
-        { label: "Re-check", value: "recheck" },
-        { label: "Back", value: "back" },
-      ], function (choice) {
-        if (choice === "recheck") {
-          redraw(renderTailscale);
-        } else {
-          goBack();
-        }
-      });
-    }
-  }
-
-  function renderHttps() {
-    if (!wantPush) {
-      showSetupQR();
-      return;
-    }
-
-    // Builtin cert: HTTPS already active, skip mkcert flow entirely
-    if (config.builtinCert) {
-      log(sym.pointer + "  " + a.bold + "HTTPS" + a.reset + a.dim + " · Enabled (builtin certificate)" + a.reset);
-      log(sym.bar);
-      showSetupQR();
-      return;
-    }
-
-    // mkcert flow (--mkcert or fallback)
-    var mcReady = hasMkcert();
-    log(sym.pointer + "  " + a.bold + "HTTPS Setup (for push notifications)" + a.reset);
-    if (mcReady) {
-      log(sym.bar + "  " + a.green + "mkcert is installed" + a.reset);
-      if (!config.tls) {
-        log(sym.bar + "  " + a.dim + "Restarting server with HTTPS..." + a.reset);
-        restartDaemonWithTLS(config, function (newConfig) {
-          config = newConfig;
-          log(sym.bar);
-          showSetupQR();
-        });
-        return;
-      }
-      log(sym.bar);
-      showSetupQR();
-    } else {
-      log(sym.bar + "  " + a.yellow + "mkcert not found." + a.reset);
-      var mkcertHint = process.platform === "win32"
-        ? "choco install mkcert && mkcert -install"
-        : process.platform === "darwin"
-          ? "brew install mkcert && mkcert -install"
-          : "apt install mkcert && mkcert -install";
-      log(sym.bar + "  " + a.dim + "Install: " + a.reset + mkcertHint);
-      log(sym.bar);
-      promptSelect("Select", [
-        { label: "Re-check", value: "recheck" },
-        { label: "Back", value: "back" },
-      ], function (choice) {
-        if (choice === "recheck") {
-          redraw(renderHttps);
-        } else {
-          goBack();
-        }
-      });
-    }
-  }
-
-  function showSetupQR() {
-    var tsIP = getTailscaleIP();
-    var lanIP = null;
-    if (!wantRemote) {
-      var allIPs = getAllIPs();
-      for (var j = 0; j < allIPs.length; j++) {
-        if (!allIPs[j].startsWith("100.")) { lanIP = allIPs[j]; break; }
-      }
-    }
-    var setupIP = wantRemote ? (tsIP || ip) : (lanIP || ip);
-    var setupQuery = wantRemote ? "" : "?mode=lan";
-    // Builtin cert: link directly to the app with push notification guide
-    // mkcert: use HTTP onboarding server for CA install flow
-    var setupUrl;
-    if (config.builtinCert) {
-      setupUrl = toClayStudioUrl(setupIP, config.port, "https") + "/pwa";
-    } else if (config.tls) {
-      setupUrl = "http://" + setupIP + ":" + (config.port + 1) + "/setup" + setupQuery;
-    } else {
-      setupUrl = "http://" + setupIP + ":" + config.port + "/setup" + setupQuery;
-    }
-    log(sym.pointer + "  " + a.bold + "Continue on your device" + a.reset);
-    log(sym.bar + "  " + a.dim + "Scan the QR code or open:" + a.reset);
-    log(sym.bar + "  " + a.bold + setupUrl + a.reset);
-    log(sym.bar);
-    qrcode.generate(setupUrl, { small: !isBasicTerm }, function (code) {
-      var lines = code.split("\n").map(function (l) { return "  " + sym.bar + "  " + l; }).join("\n");
-      console.log(lines);
-      log(sym.bar);
-      if (wantRemote) {
-        log(sym.bar + "  " + a.dim + "Can't connect? Make sure Tailscale is installed on your phone too." + a.reset);
-      } else {
-        log(sym.bar + "  " + a.dim + "Can't connect? Your phone must be on the same Wi-Fi network." + a.reset);
-      }
-      log(sym.bar);
-      log(sym.done + "  " + a.dim + "Setup complete." + a.reset);
-      log(sym.end);
-      log("");
-      promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
-        goBack();
-      });
-    });
-  }
-}
-
 // ==============================
 // Settings sub-menu
 // ==============================
@@ -2296,16 +2092,6 @@ function showSettingsMenu(config, ip) {
     log(sym.bar);
 
     // Detect current state
-    var tsIP = getTailscaleIP();
-    var tsOk = tsIP !== null;
-    var mcOk = hasMkcert();
-
-    var tsStatus = tsOk
-      ? a.green + "Connected" + a.reset + a.dim + " · " + tsIP + a.reset
-      : a.dim + "Not detected" + a.reset;
-    var mcStatus = mcOk
-      ? a.green + "Installed" + a.reset
-      : a.dim + "Not found" + a.reset;
     var tlsStatus = config.tls
       ? a.green + "Enabled" + a.reset
       : a.dim + "Disabled" + a.reset;
@@ -2316,8 +2102,6 @@ function showSettingsMenu(config, ip) {
       ? a.green + "On" + a.reset
       : a.dim + "Off" + a.reset;
 
-    log(sym.bar + "  Tailscale    " + tsStatus);
-    log(sym.bar + "  mkcert       " + mcStatus);
     log(sym.bar + "  HTTPS        " + tlsStatus);
     var muEnabled = isMultiUser();
     var muStatus = muEnabled
@@ -2343,9 +2127,7 @@ function showSettingsMenu(config, ip) {
     log(sym.bar);
 
     // Build items
-    var items = [
-      { label: "Setup notifications", value: "guide" },
-    ];
+    var items = [];
 
     if (!muEnabled) {
       if (config.pinHash) {
@@ -2365,6 +2147,9 @@ function showSettingsMenu(config, ip) {
     } else {
       items.push({ label: "Enable multi-user mode", value: "multi_user" });
     }
+    if (muEnabled) {
+      items.push({ label: "Show setup code", value: "show_setup_code" });
+    }
     if (muEnabled && hasAdmin()) {
       items.push({ label: "Recover admin password", value: "recover_admin" });
     }
@@ -2377,13 +2162,6 @@ function showSettingsMenu(config, ip) {
 
   promptSelect("Select", items, function (choice) {
     switch (choice) {
-      case "guide":
-        showSetupGuide(config, ip, function () {
-          config = loadConfig() || config;
-          showSettingsMenu(config, ip);
-        });
-        break;
-
       case "pin":
         log(sym.bar);
         promptPin(function (pin) {
@@ -2470,7 +2248,9 @@ function showSettingsMenu(config, ip) {
         }
         if (process.getuid() !== 0) {
           log(sym.bar);
-          log(sym.bar + "  " + a.red + "Requires running as root." + a.reset);
+          log(sym.bar + "  " + a.red + sym.warn + " OS user isolation requires root." + a.reset);
+          log(sym.bar + "  " + a.dim + "Shut down this server, then restart with:" + a.reset);
+          log(sym.bar + "    " + a.bold + "sudo npx clay-server" + a.reset);
           log(sym.bar);
           promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
             showSettingsMenu(config, ip);
@@ -2507,33 +2287,107 @@ function showSettingsMenu(config, ip) {
         ], function (confirmChoice) {
           if (confirmChoice === "confirm") {
             sendIPCCommand(socketPath(), { cmd: "set_os_users", value: true }).then(function (res) {
-              if (res.ok) {
-                config.osUsers = true;
+              if (res.error === "acl_not_installed") {
                 log(sym.bar);
-                log(sym.done + "  " + a.green + "OS-level user isolation enabled." + a.reset);
-                if (res.provisioning) {
-                  var p = res.provisioning;
-                  if (p.provisioned.length > 0) {
-                    log(sym.bar);
-                    log(sym.bar + "  " + a.green + "Provisioned " + p.provisioned.length + " Linux account(s):" + a.reset);
-                    for (var pi = 0; pi < p.provisioned.length; pi++) {
-                      log(sym.bar + "    " + a.dim + p.provisioned[pi].username + " -> " + p.provisioned[pi].linuxUser + a.reset);
-                    }
+                log(sym.bar + "  " + a.red + sym.warn + " setfacl is not installed." + a.reset);
+                log(sym.bar);
+                log(sym.bar + "  OS user isolation requires the ACL (Access Control List) package");
+                log(sym.bar + "  to manage per-user file permissions on shared projects.");
+                log(sym.bar);
+                log(sym.bar + "  " + a.bold + "Install it:" + a.reset);
+                log(sym.bar + "  " + a.cyan + res.installCmd + a.reset);
+                log(sym.bar);
+                log(sym.bar + "  " + a.dim + "Then try enabling OS user isolation again." + a.reset);
+                log(sym.bar);
+                showSettingsMenu(config, ip);
+                return;
+              } else if (res.error) {
+                log(sym.bar);
+                log(sym.bar + "  " + a.red + sym.warn + " Failed to enable OS users: " + res.error + a.reset);
+                log(sym.bar);
+                showSettingsMenu(config, ip);
+                return;
+              } else if (!res.ok) {
+                log(sym.bar);
+                log(sym.bar + "  " + a.red + sym.warn + " Unexpected response from daemon." + a.reset);
+                log(sym.bar + "  " + a.dim + JSON.stringify(res) + a.reset);
+                log(sym.bar);
+                showSettingsMenu(config, ip);
+                return;
+              }
+              // Daemon saved the flag. Now provision from CLI with live progress.
+              config.osUsers = true;
+              log(sym.bar);
+              log(sym.done + "  " + a.green + "OS-level user isolation enabled." + a.reset);
+              log(sym.bar);
+
+              // Provision Linux accounts from CLI (we have root + terminal)
+              var osUsersLib = require("../lib/os-users");
+              var usersLib = require("../lib/users");
+
+              try { osUsersLib.ensureProjectsDir(); } catch (e) {
+                log(sym.bar + "  " + a.yellow + sym.warn + " Failed to create projects dir: " + e.message + a.reset);
+              }
+
+              var allUsers = usersLib.getAllUsers();
+              if (allUsers.length === 0) {
+                log(sym.bar + "  " + a.dim + "No users to provision yet. Accounts will be created when users register." + a.reset);
+              } else {
+                log(sym.bar + "  " + a.dim + "Provisioning " + allUsers.length + " user(s)..." + a.reset);
+                for (var ui = 0; ui < allUsers.length; ui++) {
+                  var usr = allUsers[ui];
+                  if (usr.linuxUser && osUsersLib.linuxUserExists(usr.linuxUser)) {
+                    log(sym.bar + "    " + a.dim + sym.done + " " + usr.username + " -> " + usr.linuxUser + " (exists)" + a.reset);
+                    continue;
                   }
-                  if (p.skipped.length > 0) {
-                    log(sym.bar + "  " + a.dim + p.skipped.length + " user(s) already mapped." + a.reset);
-                  }
-                  if (p.errors.length > 0) {
-                    log(sym.bar);
-                    log(sym.bar + "  " + a.red + p.errors.length + " user(s) failed to provision:" + a.reset);
-                    for (var ei = 0; ei < p.errors.length; ei++) {
-                      log(sym.bar + "    " + a.red + p.errors[ei].username + ": " + p.errors[ei].error + a.reset);
-                    }
+                  log(sym.bar + "    " + a.dim + "Creating Linux account for " + usr.username + "..." + a.reset);
+                  var provision = osUsersLib.provisionLinuxUser(usr.username);
+                  if (provision.ok) {
+                    usersLib.updateLinuxUser(usr.id, provision.linuxUser);
+                    log(sym.bar + "    " + a.green + sym.done + " " + usr.username + " -> " + provision.linuxUser + a.reset);
+                  } else {
+                    log(sym.bar + "    " + a.red + sym.warn + " " + usr.username + ": " + (provision.error || "unknown error") + a.reset);
                   }
                 }
-                log(sym.bar + "  " + a.dim + "Restart the daemon for changes to take full effect." + a.reset);
-                log(sym.bar);
               }
+
+              // Set up ACLs for existing projects
+              var cfg = loadConfig() || {};
+              var cfgProjects = cfg.projects || [];
+              if (cfgProjects.length > 0) {
+                log(sym.bar);
+                log(sym.bar + "  " + a.dim + "Setting ACLs for " + cfgProjects.length + " project(s)..." + a.reset);
+                for (var pi = 0; pi < cfgProjects.length; pi++) {
+                  var proj = cfgProjects[pi];
+                  if (osUsersLib.isHomeDirectory(proj.path)) {
+                    log(sym.bar + "    " + a.dim + "~ " + (proj.slug || proj.path) + " (home dir, skipped)" + a.reset);
+                    continue;
+                  }
+                  try {
+                    if (proj.visibility === "public") {
+                      osUsersLib.grantAllUsersAccess(proj.path, usersLib);
+                    }
+                    if (proj.ownerId) {
+                      var ownerUser = usersLib.findUserById(proj.ownerId);
+                      if (ownerUser && ownerUser.linuxUser) {
+                        osUsersLib.grantProjectAccess(proj.path, ownerUser.linuxUser);
+                      }
+                    }
+                    log(sym.bar + "    " + a.dim + sym.done + " " + (proj.slug || proj.path) + a.reset);
+                  } catch (aclErr) {
+                    log(sym.bar + "    " + a.yellow + sym.warn + " " + (proj.slug || proj.path) + ": " + aclErr.message + a.reset);
+                  }
+                }
+              }
+
+              log(sym.bar);
+              log(sym.bar + "  " + a.dim + "Restart the daemon for full effect." + a.reset);
+              log(sym.bar);
+              showSettingsMenu(config, ip);
+            }).catch(function (err) {
+              log(sym.bar);
+              log(sym.bar + "  " + a.red + sym.warn + " IPC error: " + (err.message || err) + a.reset);
+              log(sym.bar);
               showSettingsMenu(config, ip);
             });
           } else {
@@ -2583,54 +2437,100 @@ function showSettingsMenu(config, ip) {
           { label: "Cancel", value: "cancel" },
         ], function (confirmChoice) {
           if (confirmChoice === "confirm") {
-            // Clear setupCompleted so setup() runs fresh
+            // Save old PID before clearing, so we can force-kill if needed
             var cfg = loadConfig() || {};
+            var oldPid = cfg.pid;
+            // Clear setupCompleted so setup() runs fresh
             delete cfg.setupCompleted;
             delete cfg.mode;
             cfg.pid = null;
             saveConfig(cfg);
-            // Shut down the daemon
+
+            // Helper: wait for port to be free, force-kill if needed
+            function waitForPortFree(cb) {
+              var attempts = 0;
+              var maxAttempts = 12; // 6 seconds total
+              function check() {
+                isPortFree(port).then(function (free) {
+                  if (free) return cb();
+                  attempts++;
+                  if (attempts >= maxAttempts) {
+                    // Port still busy, force-kill old daemon
+                    if (oldPid) {
+                      try { process.kill(oldPid, "SIGKILL"); } catch (e) {}
+                    }
+                    // Wait a bit more after SIGKILL
+                    setTimeout(function () {
+                      isPortFree(port).then(function (free2) {
+                        if (!free2) {
+                          log(sym.warn + "  " + a.yellow + "Port " + port + " still in use. Kill the process manually:" + a.reset);
+                          log(sym.bar + "    " + a.bold + "lsof -ti:" + port + " | xargs kill -9" + a.reset);
+                        }
+                        cb();
+                      });
+                    }, 1000);
+                    return;
+                  }
+                  setTimeout(check, 500);
+                });
+              }
+              check();
+            }
+
+            // Helper: run setup wizard after daemon is dead
+            function proceedWithSetup() {
+              clearStaleConfig();
+              setup(function (mode, keepAwake, wantOsUsers) {
+                var rc = loadClayrc();
+                var restorable = (rc.recentProjects || []).filter(function (p) {
+                  return p.path !== cwd && fs.existsSync(p.path);
+                });
+                if (restorable.length > 0) {
+                  promptRestoreProjects(restorable, function (selected) {
+                    forkDaemon(mode, keepAwake, selected, false, wantOsUsers);
+                  });
+                } else {
+                  log(sym.bar);
+                  log(sym.end + "  " + a.dim + "Starting relay..." + a.reset);
+                  log("");
+                  forkDaemon(mode, keepAwake, undefined, true, wantOsUsers);
+                }
+              });
+            }
+
+            // Shut down the daemon, then wait for port to be free
             sendIPCCommand(socketPath(), { cmd: "shutdown" }).then(function () {
-              clearStaleConfig();
-              // Run the setup wizard, then fork a new daemon
-              setup(function (mode, keepAwake, wantOsUsers) {
-                var rc = loadClayrc();
-                var restorable = (rc.recentProjects || []).filter(function (p) {
-                  return p.path !== cwd && fs.existsSync(p.path);
-                });
-                if (restorable.length > 0) {
-                  promptRestoreProjects(restorable, function (selected) {
-                    forkDaemon(mode, keepAwake, selected, false, wantOsUsers);
-                  });
-                } else {
-                  log(sym.bar);
-                  log(sym.end + "  " + a.dim + "Starting relay..." + a.reset);
-                  log("");
-                  forkDaemon(mode, keepAwake, undefined, true, wantOsUsers);
-                }
-              });
+              waitForPortFree(proceedWithSetup);
             }).catch(function () {
-              clearStaleConfig();
-              setup(function (mode, keepAwake, wantOsUsers) {
-                var rc = loadClayrc();
-                var restorable = (rc.recentProjects || []).filter(function (p) {
-                  return p.path !== cwd && fs.existsSync(p.path);
-                });
-                if (restorable.length > 0) {
-                  promptRestoreProjects(restorable, function (selected) {
-                    forkDaemon(mode, keepAwake, selected, false, wantOsUsers);
-                  });
-                } else {
-                  log(sym.bar);
-                  log(sym.end + "  " + a.dim + "Starting relay..." + a.reset);
-                  log("");
-                  forkDaemon(mode, keepAwake, undefined, true, wantOsUsers);
-                }
-              });
+              // IPC failed, daemon may be unresponsive. Try SIGTERM, then wait.
+              if (oldPid) {
+                try { process.kill(oldPid, "SIGTERM"); } catch (e) {}
+              }
+              waitForPortFree(proceedWithSetup);
             });
           } else {
             showSettingsMenu(config, ip);
           }
+        });
+        break;
+
+      case "show_setup_code":
+        // getSetupCode() auto-generates if multi-user is on and no code exists
+        var currentCode = getSetupCode();
+        log(sym.bar);
+        if (currentCode) {
+          log(sym.bar + "  " + a.yellow + sym.warn + " Setup code:  " + a.bold + currentCode + a.reset);
+          if (hasAdmin()) {
+            log(sym.bar + "  " + a.dim + "Admin account exists. This code is for adding the next admin." + a.reset);
+          } else {
+            log(sym.bar + "  " + a.dim + "Enter this code in the browser to create the admin account." + a.reset);
+          }
+        } else {
+          log(sym.bar + "  " + a.dim + "Multi-user mode is not enabled." + a.reset);
+        }
+        log(sym.bar);
+        promptSelect("Back?", [{ label: "Back", value: "back" }], function () {
+          showSettingsMenu(config, ip);
         });
         break;
 
@@ -2742,11 +2642,11 @@ var currentVersion = require("../package.json").version;
     // No config — go through setup (disclaimer, port, mode, etc.)
     if (!devConfig) {
       setup(function (mode, keepAwake, wantOsUsers) {
-        devMode(mode, keepAwake, null);
+        devMode(mode, keepAwake, null, wantOsUsers);
       });
     } else {
       // Reuse existing config (repeat run)
-      await devMode(devConfig.mode || "single", devConfig.keepAwake || false, devConfig.pinHash || null);
+      await devMode(devConfig.mode || "single", devConfig.keepAwake || false, devConfig.pinHash || null, devConfig.osUsers || false);
     }
     return;
   }
@@ -2856,6 +2756,21 @@ var currentVersion = require("../package.json").version;
         console.error("Run:  " + a.bold + "sudo npx clay-server" + a.reset);
         process.exit(1);
         return;
+      }
+
+      // os-users requires setfacl (ACL package)
+      if (savedOsUsers && process.platform === "linux") {
+        var { checkAclSupport } = require("../lib/os-users");
+        var aclCheck = checkAclSupport();
+        if (!aclCheck.available) {
+          console.error(a.red + "OS user isolation requires the 'acl' package (setfacl)." + a.reset);
+          console.error("");
+          console.error("Install it:  " + a.bold + aclCheck.installCmd + a.reset);
+          console.error("");
+          console.error("Then restart Clay.");
+          process.exit(1);
+          return;
+        }
       }
 
       if (savedConfig && savedConfig.port) port = savedConfig.port;
